@@ -1,0 +1,223 @@
+%!TEX encoding = UTF-8 Unicode
+%!TEX program = xelatex
+
+
+\documentclass[a4paper, twoside,12pt]{ctexbook}%{report}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+\usepackage{pdfpages}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{diagbox} 
+\usepackage{booktabs}%设置表格粗线
+\usepackage{subfigure}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{color}
+
+%----------------------font-------------------------------------------
+\usepackage{fontspec}
+
+%\setmainfont{Times New Roman} 
+%--------------------------------------------------------------
+\usepackage{xcolor, colortbl}%table color
+\usepackage[margin=1in, showframe=false]{geometry}
+\definecolor{Gray}{gray}{0.85}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+%--------------------------------------------------------------
+%\usepackage{titletoc}
+%\usepackage{titlesec}
+%\titleformat{\section}{\centering\LARGE\bfseries}{Chapter \arabic{section}}{11pt}{}
+%\titleformat{\subsection}{\large\bfseries}{\arabic{section}.\arabic{subsection}}{1em}{}
+
+\renewcommand{\theequation}%
+  {\arabic{section}.\arabic{equation}}
+%\usepackage{amsmath}
+%\numberwithin{equation}{section}
+
+\renewcommand{\thefigure}
+  {\arabic{section}.\arabic{figure}}
+\renewcommand{\thetable}
+  {\arabic{section}.\arabic{table}}
+
+\usepackage{amsmath} %数学公式
+\usepackage{mathtools}
+\usepackage{bm}%专门处理数学粗体的bm宏包
+%\usepackage{extarrows}
+\usepackage{enumerate}
+%-----------------------------------------------------------------
+\usepackage{url}
+\usepackage{cite}
+\usepackage[colorlinks, linkcolor=blue, anchorcolor=blue, urlcolor=blue, citecolor=blue, breaklinks=true]{hyperref} 
+\usepackage[square, numbers, sort&compress]{natbib} % 上标，加中括号，编号，将8，9，10改为8-10
+\usepackage[hypcap=false]{caption}
+
+%----------------------------------------------------------------------------
+\usepackage{graphicx}% Include figure files
+\graphicspath{{figure/}}%directory of my plots
+%\usepackage{placeins}
+%-----------------------------------------------------------------------------
+
+\usepackage{ctex}   %  添加中文支持
+
+%\renewcommand{\thefigure}{\thechapter{}.\arabic{figure}}
+%\renewcommand{\thetable}{\thechapter{}.\arabic{table}}
+\renewcommand{\theequation}{\thechapter{}.\arabic{equation}}
+\renewcommand{\figurename}{Fig.}
+\def\figureautorefname{Fig.}
+\renewcommand{\tablename}{Tab.}
+\def\tableautorefname{Tab.}
+\def\equationautorefname{Eq.}
+
+\def\figurename{图}%
+\def\tablename{表}%
+\renewcommand{\theequation}{\thesection.\arabic{equation}}%
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}%
+\renewcommand{\thetable}{\thesection.\arabic{table}}%
+\renewcommand{\baselinestretch}{1.25}
+\baselineskip 19pt \cleardoublepage
+
+%------------------------------------------------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{} % clear all fields 
+\fancyfoot{} % clear all fields 
+\fancyhead[LO]{\leftmark}
+\fancyhead[RE]{\rightmark}
+\fancyhead[LE,RO]{\thepage} 
+%\fancyhead[LE, RO]{\includegraphics[scale=0.1]{figure/ccnu_logo.png}} 
+%\fancyfoot[CO]{\thepage} 
+%==================================================
+\newcommand{\thesisTitle}{The study of the Chiral Magnetic Effect in Relativistic Heavy Ion Collisions at STAR}
+\newcommand{\yourName}{Yufu Lin}
+\newcommand{\yourCollege}{College of Physical Science and Technology}
+\newcommand{\yourSchool}{Central China Normal University}
+\newcommand{\yourYear}{2021}
+\newcommand{\yourMonth}{Jun.}
+
+\newcommand{\npart}{$\langle N_{part} \rangle\, $}
+\newcommand{\sNN}{$\sqrt{s_{\mathrm{NN}}}\, $}
+\newcommand{\egy}{$\sqrt{s_{\mathrm{NN}}} =  $ 7.7, 11.5, 14.5, 19.6, 27, 39, 54.4, 62.4 and 200 GeV}
+\newcommand{\egyfive}{$\sqrt{s_{\mathrm{NN}}} = $ 7.7, 11.5, 14.5, 19.6, 27, 39, 62.4 and 200 GeV}
+\newcommand{\egyfxt}{$\sqrt{s_{\mathrm{NN}}} = $ 4.5, 7.7, 11.5, 14.5, 19.6, 27, 39, 54.4, 62.4 and 200 GeV}
+\newcommand{\egycucu}{$\sqrt{s_{\mathrm{NN}}} =  $ 22.4, 62.4 and 200 GeV}
+
+\newcommand{\allSys}{in Au+Au collisions at $\sqrt{s_{\mathrm{NN}}} = 7.7 - $200 GeV, in FXT collisions at $\sqrt{s_{\mathrm{NN}}} =  $ 4.5 GeV and in Cu$+$Cu collisions at $\sqrt{s_{\mathrm{NN}}} =  $ 22.4, 62.4 and 200 GeV\,}
+
+\newcommand{\allpt}{$0.4 < p_{\mathrm{T}} < 2.0 \, (\mathrm{GeV}/c)\,$}
+\newcommand{\lowpt}{$0.4  <p_{\mathrm{T}} < 0.8 \, (\mathrm{GeV}/c)\,$}
+\newcommand{\highpt}{$0.8 < p_{\mathrm{T}} < 2.0 \, (\mathrm{GeV}/c)\,$}
+
+\newcommand{\cum}{$C_1, C_2, C_3$ and $C_4\, $}
+\newcommand{\ratio}{$C_{2}/C_{1}, C_{3}/C_{2}$ and $C_{4}/C_{2}\, $}
+\newcommand{\cumratio}{$C_{1}, C_{2}, C_{3}, C_{4}, C_{2}/C_{1}, C_{3}/C_{2}$ and $C_{4}/C_{2}\, $}
+
+\newcommand{\pt}{$p_{\mathrm{T}}$}
+\newcommand{\dEdx}{$d\mathrm{E}/dx$}
+\newcommand{\MeVc}{$\mathrm{MeV}/c$}
+\newcommand{\GeVc}{$\mathrm{GeV}/c$}
+%\newcommand{\corrfun}{$\kappa_1, \kappa_2, \kappa_3$ and $\kappa_4\, $}
+\newcommand{\corrfun}{$\kappa_{2}/\kappa_{1}, \kappa_{3}/\kappa_{1}$ and $ \kappa_{4}/\kappa_{1}$}
+
+\newcommand{\tofm}{nTofmatch\,}
+\newcommand{\btofm}{Beta\_eta1\,}
+
+\renewcommand{\vec}{\boldsymbol }
+\newcommand{\rap}{Y}
+\newcommand{\qw}{Q_\mathrm{w}}
+\newcommand{\nw}{n_\mathrm{w}}
+\newcommand{\qp}{Q_\mathrm{p}}
+\newcommand{\nt}{N_\mathrm{t}}
+\newcommand{\na}{N_\mathrm{a}}
+\newcommand{\nb}{N_\mathrm{b}}
+\newcommand{\dt}{\Delta_\mathrm{t}}
+
+
+\newcommand{\gevc}{$\mathrm{GeV}/c$}
+\newcommand{\gev}{$\mathrm{GeV}$}
+\newcommand{\rlab}{$r_{\mathrm{lab}}$}
+\newcommand{\rrest}{$r_{\mathrm{rest}}$}
+\newcommand{\rb}{$r_{\mathrm{B}}$}
+\newcommand{\ns}{$n_5/s$}
+
+
+%---------------------------------------------------------------------------------------------
+%=======================================================
+\graphicspath{{figures/}}
+
+
+\begin{document}
+\date{} 
+\includepdf[pages={1}]{Chapter/cover2.pdf}
+%\includepdf[pages={1}]{Chapter/title_CN.pdf}
+%\includepdf[pages={1}]{Chapter/title_EN.pdf}
+%\includepdf[pages={1}]{Chapter/declaration_CN.pdf}
+%=======================================================
+
+\newpage
+\pagenumbering{roman}
+%=======================================================
+%---------------------------------------------------------------------------------------------
+%=======================================================
+%   Abstract 
+\include{Chapter/Abstract_Cc}
+\include{Chapter/Abstract_Ec}
+
+
+\tableofcontents
+\renewcommand{\tableofcontents}{Contents}
+
+\listoffigures
+\renewcommand{\listoffigures}{Figures}
+\listoftables
+
+
+%=======================================================
+
+%-------------------------------------------------------------------------------
+%====================================
+\newpage
+\pagenumbering{arabic} \setcounter{page}{1}
+\include{Chapter/Chapter1} \cleardoublepage % each chapter begin with an odd number
+\include{Chapter/Chapter2} \cleardoublepage 
+\include{Chapter/Chapter3} \cleardoublepage 
+\include{Chapter/Chapter4} \cleardoublepage 
+\include{Chapter/Chapter5} \cleardoublepage 
+\include{Chapter/Chapter6} \cleardoublepage 
+
+
+\bibliographystyle{unsrt}
+%\bibliographystyle{elsarticle-num}
+\bibliography{refs.bib}\cleardoublepage 
+
+
+%=======================================================
+%---------------------------------------------------------------------------------------------
+%=======================================================
+%\include{Chapter/publications}\cleardoublepage 
+%\include{Chapter/acknowledge}
+
+%=======================================================
+%---------------------------------------------------------------------------------------------
+%=======================================================
+
+
+\include{Chapter/Appendix}\cleardoublepage 
+%\subsection{重离子碰撞中的基本概念和定义}   %  Niseem
+
+\addcontentsline{toc}{chapter}{Appendix}
+\setcounter{section}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{equation}{0}
+  
+\renewcommand{\thesection}{\Alph{section}}
+\renewcommand{\theequation}{\Alph{section}.\arabic{equation}}
+\renewcommand{\thefigure}{\Alph{section}.\arabic{figure}}
+\renewcommand{\thetable}{\Alph{section}.\arabic{table}}
+
+\end{document}
+
+

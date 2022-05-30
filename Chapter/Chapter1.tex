@@ -1,0 +1,270 @@
+
+
+\setcounter{section}{0}
+%==========================================
+
+%\section*{第一章：相对论重离子碰撞}
+
+
+\chapter{简介}
+% To add a non numbered chapter
+%\addcontentsline{toc}{第一章}{相对论重离子碰撞}
+% To insert this section on the table of contents
+
+\setcounter{section}{0}
+
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{equation}{0}
+
+\bigskip
+
+\section{基本粒子的标准模型}
+
+
+粒子物理标准模型是描述宇宙中已知的四种基本力中的三种(电磁、弱和强相互作用，不包括引力)的理论，并对所有已知的基本粒子进行分类。目前的框架是在20世纪70年代中期在实验证实夸克存在的基础上最后确定的。对顶夸克(1994)\cite{abe1994evidence,abachi1995observation,d01996observation}、$\tau$中微子(2000)\cite{kodama2001observation} 和希格斯玻色子(2012)\cite{aad2012observation,chatrchyan2012observation}的观测为标准模型增加了进一步的可信度。此外，标准模型还准确地预测了弱中性流和W、Z玻色子的各种性质。
+
+标准模型包含61种基本粒子。其中自旋为1/2的基本粒子，称为费米子，遵循泡利不相容原理。每个费米子都有相应的反粒子。标准模型中的费米子是根据它们如何相互作用以及携带的电荷分类的。有六个夸克(上，下，粲，奇异，顶，底)和六个轻子(电子，电子中微子，$\mu$，$\mu$中微子，$\tau$，$\tau$中微子)。
+
+在这里，费米子被分为三代，每一代粒子有着不同的质量和味量子数。每两个夸克和两个轻子组成一代，第一代费米子包含上夸克，下夸克，电子，电子中微子。第二代费米子包含粲夸克，奇异夸克，$\mu$，$\mu$中微子，第三代费米子包含顶夸克，底夸克，$\tau$，$\tau$中微子。
+
+上述所描述的强相互作用可以用量子色动力学(Quantum Chromodynamics)理论描述。该理论是基于夸克-胶子自由度的非阿贝尔规范理论。它的拉格朗日量为：
+\begin{equation}
+L_{QCD} = \sum_{\psi} \overline \psi_{i} \big (i\gamma^{\mu}(\partial_{\mu}\delta_{ij} - ig_{s}G^{a}_{\mu}T^{a}_{ij}) -m_{\psi\delta_{ij}}\psi_{j} \big ) - \frac{1}{4} G^{a}_{\mu\nu} G^{\mu\nu}_{a}
+\end{equation}
+这里$\psi_{i}$是夸克场狄拉克旋量波函数，$\gamma^{\mu}$是狄拉克矩阵，$G^{a}_{\mu}$是8分量的SU(3)规范场，$T^{a}_{ij}$是SU(3)群的生成元，即3$\times$3盖尔曼矩阵，$G^{a}_{\mu\nu}$是胶子场强张量，$g_{s}$为强相互作用耦合常数。
+
+
+
+
+
+\section{量子色动力学}  
+
+\subsection{渐近自由和禁闭}  
+
+
+QCD理论的两个重要特征是色禁闭和渐进自由。在高能量时夸克和胶子的相互作用较弱，即所谓的渐进自由；在低能量时夸克和胶子的相互作用较强，夸克被禁闭在强子中不能单独存在，称为色禁闭。渐近自由即大动量交换或者近距离时，耦合常数变小，强相互作用会减弱，此时QCD拉格朗日量能够通过微扰求解(perturbative QCD)。 渐近自由于1973年被发现\cite{politzer1973reliable,gross1973ultraviolet}，如公式\ref{eq:qcd_as}所示，给出了跑动耦合常数与能量标度的关系，它随能量标度的增大而减小。
+\begin{equation}
+\alpha_{s}(Q^{2}) = \frac{g_{s}^{2}(Q^{2})}{4\pi} = \frac{1}{\beta_{0}\mathrm{ln}(Q^2/\Lambda^2_{QCD})}
+\label{eq:qcd_as}
+\end{equation}
+如图\ref{fig:qcd_as}所示，是不同实验测量的耦合常数$\alpha_{s}$与动量标度之间的关系，不同实验所测到的值不同是因为不同实验处所处的能量标度不同。当$Q$很大时，$\alpha_{s}$很小，夸克胶子之间的耦合变的很弱，趋近于自由状态。也就是说当$\alpha_{s}$极小的时候可能存在从强子物质到夸克胶子等离子体的相变。
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth,clip]{Figures_Use/qcd_as.png}
+\caption{不同实验测量的强相互作用的耦合常数随着动量交换的关系~\cite{Siegfried2016}。}
+\label{fig:qcd_as}
+\end{figure}
+
+相反的，低能或长距离时，它们之间的相互作用将会随着距离的增加而增大，夸克对的化学势也会增加，并且其化学势足以产生一对新的夸克对。因为胶子是无色的，而夸克是有色的，这就会导致夸克会被胶子场稀释的，即色禁闭。
+
+
+\subsection{夸克胶子等离子体和QCD相图}
+%  基于HIAF集群的QCD相结构研究 马余刚 许怒 刘峰
+%高重子密度区开展的QCD相结构研究是重要的科学问题,为此STAR国际合作组于2010年开始就在相对论重离子对撞机(RHIC)上进行了第一期能量扫描(BES-I).BES-I通过调节核-核碰撞的质心系能量来使碰撞产生的热密物质内部的温度和重子数密度发生变化,帮助我们研究所产生的核物质内部特性,包括集体运动的性质、手征性和临界性,同时寻找可能存在的QCD临界点.到目前为止,BES-I数据已显示很多有趣的现象,特别在低能量高重子密度区.比如,针对RHIC实验发表的实验数据的理论分析表明,QCD临界点不大可能存在于低重子密度区,即在重子数密度数小于450 Me V (µB<3 T)的区域临界点不会存在[1],参见图1.因此对QCD临界点寻找的竞争将在高重子密度区展开.针对高重子密度区的研究,不仅能提供极端条件下核物质的重要信息,同时还帮助人们理解致密天体性质及其演化,因此具有十分重要的意义.为此,美国、德国、俄罗斯和日本等科技强国都在投入巨资建设加速器集群和研制先进探测器系统,我国建设中的强流重离子加速器装置(High Intensity heavy-ion Accelerator Facility,HIAF)和外靶实验装置(Cooling-storagering External Experiment,CEE)为我国研究高重子密度区的物理提供了有利条件。
+
+%相对论重离子碰撞是探索极端条件下核物质性质以及强相互作用新物质状态的理想工具。目前世界上正在运行的，能够将重离子加速的大型对撞机有RHIC和LHC。美国纽约布鲁克海文国家实验室(BNL)的相对论重离子对撞机(RHIC)能够将金离子加速到质心能量为每核子对200GeV进行对撞。在欧洲核子中心(CERN)的大型强子对撞机(LHC)能够将铅离子加速到质心能量为每核子对5.02TeV进行对撞。
+
+在渐进自由这一理论被提出之后，人们开始意识到这将引起巨大的变革。当温度和能量密度很高的时候，强相互作用将会变得很弱。QCD理论预言，在能量密度约为$1\rm{GeV}/fm^{3}$时，夸克和胶子将从强子中解除禁闭能够在强子外自由运动。
+此时一个新的物质形态——夸克胶子等离子体(Quark Gluon Plasma)\cite{shuryak1978quark}产生。并且人们认为QGP存在宇宙早期的演化当中。
+在实验室中，高能重离子碰撞实验是产生这样热密物质的最佳场所。关于QGP的研究已经持续了十几年，并且最近的实验结果认为实验中已经观测到它存在的信号\cite{arsene2005quark,back2005phobos,adams2005experimental,adcox2005formation,aamodt2010k,aamodt2011k}。
+由于该新物质形态具有强耦合低粘滞流体的性质，又被称为“完美流体” (perfect liquid)，俗称“夸克汤”。QGP 存在于宇宙早期，宇宙在膨胀冷却的过程中必然经历了从 QGP 到普通强子物质的转变。
+既然QGP的存在已经被确认了，接下来最重要的任务之一是确定在什么样的温度、重子化学势的条件下强子物质会向夸克胶子转化。也就是探索QCD的相图结构。研究QCD物质相图是相对论重离子碰撞实验的主要目的。
+
+
+\section{高能重离子碰撞}  
+
+20世纪70年代诺贝尔奖得主李政道先生率先提出用相对论重离子碰撞，即使用大型加速器将两束带电重离子加速到光速并发生碰撞来形成并研究QGP~\cite{XiaofengCPreview}。相对论重离子碰撞产生的能量将沉积在一个原子核大小的空间内，并在极短的时间内创造出高温高密的物理环境。该环境将改变真空性质，从真空中激发出粒子并使夸 克与胶子从强子中解除禁闭，形成由自由夸克与 胶子组成的 QGP。相对论重离子碰撞创造出的高 温高密环境与宇宙大爆炸(Big Bang)初期产生的 原初火球有许多相似之处，因此也被称为小爆炸 (Little Bang)，它是目前人类在实验上创造并研究 QGP 性质及其相变的唯一方法~\cite{XiaofengCPreview}。
+
+\subsection{时空演化}
+
+\begin{figure}[htbp]
+\centering
+%\begin{minipage}[t]{0.8\textwidth}
+\includegraphics[width=0.67\textwidth,clip]{figure/collision_geo.pdf}
+%\end{minipage}
+\caption{重离子碰撞示意图}
+\label{fig:collision_geo_evo}
+\end{figure}
+
+
+
+图\ref{fig:collision_geo_evo}中给出了重离子碰撞示意图，。在碰撞的早期两个接近光速的原子核发生对撞，由于洛伦兹收缩两个核子呈饼状，核子之间相互对撞的区域我们称为参与者，用碰撞参数（Inpact Parameter）来表征，没有参与碰撞的核子称为旁观者（Spectator）。碰撞的时空演化图在图\ref{fig:collision_geo_evo2}中给出，对撞之后碰撞区域有会有大量的能量沉积形成了高温高密的环境并释放、激发出解禁闭的夸克与胶子，夸克与胶子之间发生剧烈的相互作用，接下来很快达到预平衡，这个过程有可能产生QGP；在QGP产生后，部分子之间的相互作用使得系统向外扩展并且冷却成为强子；随着系统的演化，强子之间不再发生非弹性散射时系统达化学平衡，之后粒子产额将不再发生变化，这一过程称为化学冻结；化学冻结之后随着时间的演化强子间不再发生弹性散射时，当系统中粒子的动量不再变化时系统达到热力学平衡。
+%\centering
+\begin{figure}[htbp]
+\centering
+%\begin{minipage}[t]{0.6\textwidth}
+\includegraphics[width=0.67\textwidth,clip]{figure/time_evolution.pdf}
+%\end{minipage}
+\caption{重离子碰撞时空演化图}
+\label{fig:collision_geo_evo2}
+\end{figure}
+%\centering
+
+在高能下碎裂，释放并激发出解禁闭的夸克与胶子，根据质能方程，越高的对撞能量激发出越多的粒子。碰撞产生的高温高密系统并非静态不变的，由于存在的动能和压力梯度它迅速膨胀冷却，当温度降低到临界温度 $T_c$以下时，夸克和胶 子会经过复杂的反应重新结合成强子，发生从 QGP 相到强子物质相的相变。最后经过强子间的相互作用以及不稳定强子的衰变，得到在探测器上能够探测到的末态粒子~\cite{XiaofengCPreview}。
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.67\textwidth,clip]{Figures_Use/QCDPhaseDriagram.png}
+\caption{QCD相图~\cite{CAINES2017121}。} %～\cite{CAINES2017121}
+\label{fig:qcd_phase}
+\end{figure}
+ %  Zhenzhen Yang
+图\ref{fig:qcd_phase} 给出了QCD相图的概述。 理论上多种基于QCD的模型预言重子化学势不为零时的相变是一级相变。%  \cite{Alford:1997zt, Ejiri:2008xt, deForcrand:2002hgr, Endrodi:2011gv}
+格点QCD的计算认为在重子化学势接近零时从强子相到夸克相时平滑过度（Cross Over）\cite{Aoki:2006we}。
+
+目前世界上正在运行的，能够将重离子加速的大型对撞机有RHIC和LHC。美国纽约布鲁克海文国家实验室(BNL)的相对论重离子对撞 机(RHIC)能够将金离子加速到质心能量为每核子对200GeV进行对撞。在欧洲核 子中心(CERN)的大型强子对撞机(LHC)能够将铅离子加速到质心能量为每核子 对5.02TeV进行对撞。
+
+
+经过近 20 年的 高能重离子碰撞实验研究，如美国布鲁克海文国家实验室(Brookhaven National Laboratory，简称：BNL)的相对论重离子对撞机(Relativistic Heavy Ion Collider，RHIC)和欧洲日内瓦 的欧洲核子中心(CERN)的大型强子对撞机 (Large Hadron Collider，简称：LHC)。此外还有一些实验室正在筹备当中，例如，在GSI的FAIR（Facility for Anti-proton and Ion Research）\cite{Heuser:2009gg}、在Dubna的NICA(Nuclotron-based Ion Collider Facility)\cite{MOHANTY2009899c}以及在广东惠州的HIAF(High Intensity heavy-ion Accelerator Facility )。众志成城之下，相信在不久的将来我们就能充分了解QGP的性质。
+
+\subsection{横向方位角的各向异性}
+
+研究初态部分子状态的性质的最终要的观测量是横向方位角的各向异性，方位角的各向异性很大程度上取决于部分子的运动过程。各向异性流的测量可以提供早期重离子碰撞压力梯度、状态方程等信息。
+粒子在横动量空间下的方位角分布可以用傅里叶展开：
+\begin{equation}
+    \frac{dN_{\alpha}}{d\Delta\phi} \approx \frac{N_\alpha}{2\pi} [1 + 2v_{1,\alpha}\cos(\Delta\phi) + 2v_{2,\alpha}\cos(2\Delta\phi) + ... + 2a_{1,\alpha}\sin(\Delta\phi) + ...],
+\label{eq:Fourier_expansion}
+\end{equation}
+\noindent 其中$\phi$是粒子的方位角，$\Delta\phi = \phi - \Psi_{RP}$。下标$\alpha$ ($+$ 或 $-$) 表示粒子所带电荷的符号。 按照惯例，不同阶的傅里叶因子$v_1$, $v_2$ 和$v_3$ 分别叫做“直接流（Directed flow）”, “椭圆流（Elliptic flow）”，和“三角流（Triangular flow）”。它们反映了QGP介质对初始碰撞几何形状及其波动的流体动力学响应\cite{Poskanzer:1998yz}。其中这里的"RP"并不一定反应平面，也可以是由末态粒子的集体运动获得的流的对称平面。为简单起见，在接下来的讨论中我们将继续使用RP，其中RP表示特定的流平面。
+
+
+上式中的因子$a_1$ (以及 $a_{1,-} = -a_{1,+}$，正负电荷带有相同大小的$a_1$相反但符号～\cite{Poskanzer:1998yz}，也就是手征磁效应所带来的效果。
+
+
+\section{手征磁效应}
+% Nuclear Physics Review 35.03.225(2018)
+%量子色动力学中夸克和拓扑胶子场的相互作用可以产生局域宇称和共轭电荷宇称不守恒，这也许能解释宇宙中物质-反物质的不对称性。在强磁场下，宇称不守恒会导致粒子按正负电荷分离，此现象称为手征磁效应。在重离子碰撞实验中对电荷分离的测量主要受物理本底的影响，大部分的理论和实验工作一直致力于消除或减少这些本底。在此综述了相对论重离子碰撞中手征磁效应寻找的现状
+
+% Gang Wang PhysRevC.94.041901
+%Quantum chromodynamics (QCD), the modern theory of the strong interaction, permits the violation of parity symmetry (P) or combined charge conjugation and parity symmetry (C P ), although accurate experiments performed so far have not seen such violation at vanishing temperature and density [1]. Recently it was suggested that in the hot and dense matter created in high-energy heavy-ion collisions, there may exist metastable domains where P and CP are violated owing to vacuum transitions induced by topologically nontrivial gluon fields, e.g., sphalerons [2]. In such a domain, net quark chirality can emerge from chiral anomaly, and the strong magnetic field of a noncentral collision can then induce an electric current along the magnetic field, which is known as the chiral magnetic effect (CME) [3,4]; see Refs. [5,6] for recent reviews of the magnetic field and the CME in heavy-ion collisions.
+
+
+近十年来,非微扰QCD理论研究提出了一种理论：受强磁场影响，手征拓扑解会使得QGP中存在手征非平衡的情况，继而通过手征奇异性（Chiral anomaly）造成左手性和右手性夸克数量的差异\cite{ChiralAnomality1,Kharzeev_PLB2006,Kharzeev_PLB2008,Review1,Dmitri_NPA2007,Yin_PRL2015,Kharzeev_PRL2010}。这一理论已在凝聚态物理中得到了一定验证。而基于这一物理背景，理论物理学家提出了一系列可能存在于QGP中的手征非平衡效应，包括手征反常而诱发的集体现象如手征磁波。这些手征非平衡效应与强相互作用下的手征-宇称($CP$)破缺紧密相关。弱相互作用下的宇称$P$、$CP$破缺早在20世纪50–60年代就被预言和发现，并被后续实验不断证实。
+
+在高能重离子对撞实验中，在非对心碰撞中由于带电的旁观者的告诉运动会在对撞区域形成超强磁场~\cite{Kharzeev_PLB2006,Dmitri_NPA2007}，其磁场强度接近$B \sim 10^{14}$~T。 而在碰撞区域中形成的QGP中有自由的夸克，因为夸克是带电的，它的自旋会产生自旋磁矩。那么这样的夸克在强磁场的作用下自旋会极化。而手征性(Chirality)指的是粒子运动的方向与自旋方向矢量点乘的正负，即所指的是粒子是延自旋方向运动（右手征粒子）还是逆着自旋的方向运动（左手怔的粒子）。当手征化学势为零时，左、右手征粒子的数目是相等的，它们的运动呈现一种平衡的状态；而存在手征奇异性时将会打破这个平衡，形成局部的右（或左）手征粒子多的结果，即系统局部区域将会表现出净手征性。在这样的情况下就会出现正、负电荷分离的结果，这就是实验上寻找手征奇异性的突破点。
+如图.\ref{fig:chargesep}给出了在强磁场作用下的手征磁效应示意图。图中红色的箭头表示横动量的方向，绿色的箭头表示夸克自旋的方向。初始状态时左旋、右旋的夸克的数目是相同的，此时所有的夸克都平行于磁场的方向向上或向下运动；在强磁场作用下夸克受到非零的拓朴荷$Q_w$（这里假设$Q_w = -1$）规范结构的影响导致左旋夸克通过动量转向变成了右旋夸克；最后$u$夸克都向上移动， $d$都向下移动，这也就是电荷分离效应，这一效应我们称为手征磁效应（Chiral Magnetic Effect，简称：CME）。 手征磁效应是当前高能核物理热点研究方向之一，在实验中寻找手征磁效应来证实强相互作用局域宇称不守恒和电荷宇称不守恒是否存在。
+这也许能解释宇宙中物质-反物质的不对称性。
+
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.67\textwidth,clip]{./Figures_Use/mechanism}
+\end{center}
+\caption{手征磁效应示意图~\cite{Kharzeev_PLB2006}.   }
+\label{fig:chargesep}
+\end{figure}
+
+
+
+
+
+
+%如果能在高能重离子对撞实验中确认CME的存在，%也就是说夸克和拓扑胶子场的相互作用可以产生局域宇称、共轭电荷宇称不守恒，这也许能解释宇宙中物质-反物质的不对称性。即它将
+
+%对基础物理学中的一下三个领域的发展：有史以来产生的最强磁场的演变、QCD的拓扑阶段和强相互作用下手征对称性的恢复。
+%因此在重离子碰撞中寻找CME存在的信号是目前科研的一个重要方向。科研工作者们致力于从理论和实验求证两方面对CME的存在进行了长达十几年的探索。本文主要是未了在实验上寻找CME信号而做了一些检验与预测。
+
+
+%量子色动力学中夸克和拓扑胶子场的相互作用可以产生局域宇称和共轭电荷宇称不守恒，这也许能解释宇宙中物质-反物质的不对称性。在强磁场下，宇称不守恒会导致粒子按正负电荷分离，此现象称为手征磁效应。在重离子碰撞实验中对电荷分离的测量主要受物理本底的影响，大部分的理论和实验工作一直致力于消除或减少这些本底。在此综述了相对论重离子碰撞中手征磁效应寻找的现状
+
+
+%\section{高能重离子碰撞中的守征磁效应}  %  wen 
+%  基于HIAF集群的QCD相结构研究 马余刚 许怒 刘峰
+%强磁场下的QCD研究是目前高能核物理领域的热点研究方向,尤其是近几年一系列重要实验测量显示该方向具有丰富的物理[1].在相对论重离子对撞实验中,非对心碰撞时高速运动的旁观者(Spectator)能产生超强磁场,参见图3.目前关于这类极端强磁场的强度和寿命等性质,实验上还没有直接的证据和测量手段.因此,通过寻找合适的观测量对其进行探测是一项很有意义的研究.此外,研究QGP在磁场下如何响应也是一个重要的课题.
+%
+
+%但在强相互作用下,目前还没有任何CP破缺被发现,而在高能重离子碰撞从强子态到部分子态的转变过程中,却有可能存在局域的C,P和(或)CP的自发对称性破缺,即手征非平衡效应.这些强磁场下的手征反常效应在过去十年被RHIC和LHC上的实验组在不同碰撞系统和能量下进行测量,发现了许多疑似的信号,但相应的,也包含着相当程度的背景干扰.
+
+%国际高能核物理学界对夸克手征性的研究高度重视,RHIC于2018年专门开展同质异位核的对撞实验,旨在区分测量结果究竟来自信号还是背景.LHC计划在2021年开始新的实验运行,这也为研究手征性的实验数据的背景测量提供了更好的平台.总的来说,研究强磁场的性质,继而探索究竟是否存在强相互作用下的局域CP破缺,是目前十分重要、紧迫的课题.在HIAF能区,预计的磁场场强没有RHIC/LHC能区高,但相对有较长的磁场作用时间,为磁场的效应的研究提供了条件.
+
+
+
+\section{模型介绍}
+
+在本文的工作中用到了三种模型： Toy模型，APMPT模型和EBE-AVFD模型，通过模型来检验、对比不同观测量对信号、背景的影响等。本小节将对这三种模型做一个简要介绍。
+
+\subsection{Toy模型}
+
+Toy模型是一个简单的蒙特卡洛（Monto Carlo）模拟。在Toy模型的设置中主要可以对以下三个部分进行控制和调整：粒子谱、集体流以及电荷分离信号(用$a_1$表示)，因此在Toy模型中我们可以通过调整不同对输入参数以达到检测各种方法对信号、背景的直观反应。在该模拟中，每一个事件包含了195 $\pi^+$ 和 195 $\pi^-$ 介子，这样的设置是STAR实验质心能量为$\sqrt{s_{NN}}=$ 200 GeV的Au+Au碰撞在中心度为$30-40\%$在中快度区域中的粒子数相匹配的~\cite{STAR-pion-spct}。在无背景的情况下，所有的$\pi$介子将视为原初粒子（Primordial Pions，表示原始碰撞中产生对粒子），而不是由共振态衰变而产生的粒子，并且他们的方位角分布是服从公式. \ref {eq:Fourier_expansion}中的二、三阶傅里叶展开系数的。模型中的椭圆流 ($v_2$) 是根据NCQ激发函数（ NCQ-inspired function）~\cite{NCQ-scalling,XU2004165}，即：
+\begin{equation} \label{Toy:V2}
+v_2/\mathcal{N} = {\bf a}/(1+e^{-[(m_T-m_0)/\mathcal{N} -{\bf b}]/{\bf c}}) - {\bf d}, 
+\end{equation}
+式中$\mathcal{N}=2$ 是$\pi$的组分夸克（constituent quarks）的个数，$m_T$ 和 $m_0$ 分别是它的横向质量（Transverse mass）和静止质量（Rest mass）。其中的参数${\bf a}$、 ${\bf b}$、 ${\bf c}$和${\bf d}$是通过利用式.~\ref{Toy:V2} 对实验数据进行拟合而得到的~\cite{Wang:2016iov}。
+为了加入共振态背景，一部分对原初粒子将被替换为通过PYTHIA6~\cite{PYTHIA}描述的，通过$\rho$衰变来得到的$\pi^+$-$\pi^-$粒子对，这里的$\rho$介子的$v_2$ 同样是由式.\ref{Toy:V2}描述。模拟中$v_3$的大小在给定的$p_T$的情况下是$v_2$的五分之一，这一设置是基于STAR实验组相关工作的结果设定的~\cite{STAR-rho-spct}。原初粒子的粒子谱服从波色-爱因斯坦分布（Bose-Einstein distribution）
+\begin{equation}
+\frac{dN_{\pi^\pm}}{dm_T^2} \propto (e^{m_T/T_{\rm BE}}-1)^{-1},
+\end{equation}
+式中$T_{\rm BE} = 212$ MeV是为了与实验观察到的相匹配~\cite{STAR-pion-spct}。$\rho$共振态的谱服从公式：
+\begin{equation}
+\frac{dN_\rho}{dm_T^2} \propto \frac{e^{-(m_T-m_\rho)/T}}{T(m_\rho+T)},
+\end{equation}
+其中 $T = 317$ MeV也是来源于实验观测的结果~\cite{STAR-rho-spct}。Toy模型中原初$\pi$介子和$\rho$共振态的快度、赝快度在$ [-1, 1] $之内是均匀分布的。
+
+
+
+
+\subsection{AMPT 模型}
+
+  \vspace{0.1cm}
+  AMPT(A Multi-Phase Transport Model)是一个多相输运模型，其中包含了部分子和强子的输运过程。AMPT模型有两个版本，即默认版(Default Version) 和弦融化版(String Melting Version)。 这两个版本使用了不同的机制，本文中计算所用的是弦融化版(AMPT-SM)，如图~\ref{Fig:AMPT}所示，该模型主要由四个相对独立的部分组成：HIJING模型弦融化机制给出的初始条件、ZPC级联机制描述部分子相互作用、利用夸克聚集方式描述的强子化过程和主要由ART给出的强子相互作用\cite{lin2005multiphase,lin2014recent}。
+
+  AMPT的初始条件由HIJING模型描述。模型中两碰撞核子的密度分布是Wood-Saxon形状，入射核子之间的多重散射通过Eikonal机制来处理。粒子的产生主要有硬过程和软过程，硬过程主要描述动量转移大于动量截断值($P_0$)，这一过程可以通过微扰QCD计算，并由PYTHIA模型得到喷注。而软过程针对的是动量转移低于动量截断$P_0$的非微扰过程，这一过程主要产生弦，弦产生后通过弦融化机制重新转化为部分子。即将不参与相互作用的激发弦根据夸克的味和自旋分裂成部分子\cite{lin2005multiphase}。由于HIJING模型中没有考虑核遮蔽效应，因此AMPT模型中加入了一个与碰撞参数和核大小有关的参数用于修正部分子在核内的分布函数，
+    \begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{Figures_Use/SM.jpg}
+    \caption{AMPT-SM结构图\cite{lin2005multiphase}}
+    \label{Fig:AMPT}
+    \end{figure}
+ 这一参数在2014 年的更新中有修改\cite{lin2014recent}。部分子相互作通过ZPC(Zhang's Parton Cascade)机制进行模拟，当前的版本中部分子的散射只包含了两体散射，且HIJING模型中的喷注淬火效应(Jet Quenching)用部分子的散射替换了 。然后由夸克聚集(Quark Coalescence) 的方式描述强子化过程，即将最近的两个夸克作用形成介子，最近的三个夸克形成重子或反重子，它所形成的强子种类由结合的部分子的不变质量(Invariant Masses)和味(Flavor)决定。末态粒子相互作用主要由ART(A Relativistic Transport model)描述。
+
+本工作中所用的AMPT模型是还在改进的版本（v2.25t4cu），在这一版本中没有CME的信号加入，但模型中加入了横动量守恒对粒子的影响。在本文的工作中，我们总共产生了大约20million的统计量。 
+% Aihong CPC
+%The AMPT model [24] uses the Heavy Ion Jet Inter- action Generator (HIJING [48, 49]) for generating the ini- tial conditions, the Zhang's Parton Cascade (ZPC [50]) for modeling the partonic scatterings, and A Relativistic Transport (ART [51, 52]) model for treating hadronic scatterings. The version (v2.25t4cu) we used is a version with string melting, in which it treats the initial condition as partons and uses a simple coalescence model to de- scribe hadronization. It is also a version with charge-con- servation being assured [53], which is particularly im- portant for the CME related model-studies.
+
+
+\subsection{EBE-AVFD 模型}
+
+逐事件的奇异粘滞流体动力学模型（ Event-By-Event Anomalous Viscous Fluid Dynamics，简称：EBE-AVFD）\cite{Shi:2017cpu,Jiang:2016wve,Shi:2019wzi} 是一个能够动态的描述重离子碰撞中的手征磁效应的综合的动力学模型。EBE-AVFD模型作为目前最新进的工具，是束流能量扫描理论合作组（Beam Energy Scan Theory Collaboration，简称：BEST合作组）在过去几年的努力以满足RHIC合作组正在进行的能量扫描计划的需求的宗旨下而产生的。寻找CME成功的关键在于对CME信号和相关背景做一个定量对现实的表征。因此，EBE-AVFD模型框架贯彻实现了在早期的相对膨胀的QGP粘滞流体上实现了动态的CME运输过程，并且对CME的相关的主要背景来源，例如LCC和共振态衰变等，巧妙的加入到了这一模型框架中。
+
+更具体的说，EBE-AVFD框架以随智能事件而持续波动的初始条件开始的，它是由数据验证的流体动力学的程序包提供并解决了在粘性大量集体流的背景下实现手征夸克流在线性微扰下的演化。LCC的效果是在动力学冻结过程中加入的，加下来就是强子级联的模拟。图.~\ref{fig.avfd_flow_chart}模型的框架流程图。
+\begin{figure}[!hbt]\centering
+\includegraphics[width=0.67\textwidth]{./Figures_Use/AVFD.eps}
+\caption{EBE-AVFD 框架流程图.\label{fig.avfd_flow_chart}}
+\end{figure}
+
+对于熵密度分布的波动初态是由Monte-Carlo Glauber模型产生的，蒙卡模型的交换时间是$\tau_0=0.6~\text{fm}$，混合参数。其初始轴向电荷密度（$n_5$ ）是与相应的局部熵密度($s$)（local entropy density）有恒定比率的一个近似值。通过改变这一比率参数将能够灵敏的控制CME运输流的强度。
+比如，我们可以在模拟中通过设置\ns 分别等于$0$、$0.1$ 和 $0.2$ 从而达到得到相对应的无、弱和强的CME信号。初始电磁场是Monte-Carlo Glauber初始条件下的智能事件质子配置计算的。
+
+其中流体动力学的演化分两个部分解决的。大量物质的集体流是通过VISH2+1的模拟~\cite{Shen:2014vra}，其中包括格点的状态方程 \texttt{s95p-v1.2}、剪切粘滞系数（shear-viscosity）$\eta/s=0.08$，再加上动力学冻结温度$T_\text{fo}=0.16~$GeV等条件来描述的。
+这种大量流的流体模拟已经通过了广泛的测试并与相关的实验数据进行了验证。CME传输的动力学是在大量流背景之上利用异常流体动力学方程描述的，这里的电荷分离是由于磁场作用下而导致的在QGP的火球中出现电荷分离。另外，传统的传输过程，例如夸克流的扩散和弛豫也被统一的加入了，其中扩散常数为$\sigma=0.1\cdot T$，弛豫时间为 $\tau_r = 0.5/T$。此外可以在文献~\cite{Shi:2017cpu,Jiang:2016wve,Shi:2019wzi}中找到更多于流体动力学状态方程和相关细节的详细讨论。
+
+流体动力学过程结束之后，强子将在所有流体格子的冻结表明局部的产生出来，其中利用到的是Cooper-Frye Freeze-out方程：
+\begin{eqnarray}\label{eq_cooperfrye}
+E \frac{dN}{d^3p} (x^\mu, p^\mu) = \frac{g}{(2\pi)^3} \int_{\Sigma_{\rm fo}} p^\mu d^3\sigma_\mu f(x,p) \,\, .
+\end{eqnarray} 
+这里的局部分布功能自动包括由于CME引起的电荷分离效应以及非平衡的修正。在冻结过程中LCC的效果，在以前是通过文献~\cite{Schenke:2019ruo}中的方法加入的，该方法中强子-反强子对是产生在相同的流体格子中，并且他们对动量是在流体格子的局部静止框架中独立取样得到的。这样处理的前提是假设电荷相关长度小于格子的尺寸，因此这样处理会对异号粒子对的关联加上一个上限。本文中所用的 EBE-AVFD程序包中，对上述过程进行了概括和改进以此来更加实际的模拟有限的电荷关联长度：通过引入一个新对参数$P_\text{LCC}$来表征带电强子对分支比，通过此参数使得可以令正负粒子对能够与文献~\cite{Schenke:2019ruo}对方法取样，而剩下强子则按照独立取样。$P_\text{LCC}$ 对设置范围为在0和1之间，从0到1即从没有LCC效果到达到最大值。
+最后，通过UrQMD对模拟所有从化学冻结中产生对强子进行强子级联~\cite{Bleicher:1999xi}，其中包括了各种强子共振态衰变的过程并自动加入了他们的电荷相关的关联的贡献。
+通过EBE-AVFD模型对实验Au+Au中测量到的$\Delta\delta$和$\Delta\gamma_{112}$的调试，最后得到$P_\text{LCC}$的最优设置大约在 $33\%$，实验室$\Delta\gamma_{112}$的结果中，大约有一半背景的关联来源于LCC，而另一半来自娱共振态衰变。
+
+
+\bigskip
+
+本文共六章。
+
+第一章简要介绍了相对论重离子碰撞，并对与手征磁效应相关的知识进行简单介绍，本文所用到的相关模型进行了简单介绍。
+
+第二章对RHIC对撞机和STAR对探测器进行介绍。
+
+第三章首先介绍了电荷平衡函数法，并在多个模型中对该方法进行检验；然后对$\gamma$关联方法（$\gamma$ correlator）、R关联方法（R-correlator）和电荷平衡函数法这三种方法进行了系统的推导以阐明它们之间的联系，并利用模型对它们之间的相关性进行了检验。
+
+第四章利用电荷平衡函数法对STAR在2016年所采集的Au+Au200~GeV的数据进行了研究和分析。
+
+第五章介绍了STAR实验组所做同质异位核素对撞实验(Isobaric collisions)及实验组所采取的盲分析方法的流程，此外还利用盲分析所冻结的程序包对奇异粘滞流体动力学模型（EBE-AVFD）产生的Isobar数据进行分析以研究不同方法之间的显著性。
+
+第六章是对本文的工作进行总结。
+
+
+
+
+
+

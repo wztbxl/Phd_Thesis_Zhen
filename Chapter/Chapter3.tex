@@ -1,0 +1,594 @@
+
+\setcounter{section}{0}
+
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{equation}{0}
+%==========================================
+
+
+
+\chapter{实验上寻找CME信号的方法}
+
+\bigskip
+
+在实验上致力于在重离子碰撞中寻找CME已经持续了十多年年，但目前还没有令人信服的证据表面观测到CME存在的信号。其主要原因碰撞中产生的一些物理背景同样会造成类似的电荷分离效应。这些年大部分理论和实验工作都致力于消除或减少背景带来的贡献。
+
+本章中首先将对目前实验上所用到的基本的观测方法（$\gamma$关联方法、R关联方法），及其所遇到的问题进行回顾；接下来对新提出的电荷平衡函数法的有效性进行检验；最后对这三种方法进行了系统的推导以阐明它们之间的联系，并对它们之间的联系进行了检验。
+
+
+\section{寻找CME的观测方法及现状}
+
+寻找手征磁效应最基本的是要寻找重离子碰撞中沿着磁场方向上的电荷分离，也就是垂直于反应平面方向上的电荷分离。CME的信号大小由公式.~\ref{eq:Fourier_expansion} 中的$a_{1,\pm}$ 来表征，它是方位角分布通过傅立叶展开的第一阶正弦函数的系数，其大小表现的是该事件正负电荷随反应平面的不对称性，也就是垂直于反应平面的分离效应。因为对撞实验中存在不同的净手征性系统，并且他们的概率是相等的，也就是说对所有事件求平均的话$a_{1,\pm}=0$，所有实验上不能通过测量$a_{1,\pm}$ 的大小来寻找CME，而只能通过测量$a_{1,\pm}$的起伏。
+目前实验上主要有两种方法：由Sergei A. Voloshin在2004提出来的三粒子$\gamma$ 关联法~\cite{Voloshin:2008dg}，该方法是最早提出以及目前应用最广的方法；由Roy A. Lacey和Niseem Magdy提出来的R关联法($R_{{\rm \Psi}_m}(\Delta S)$)~\cite{RCorr-2011,RCorr-2018} 。
+以下将对目前这两种方法及其现状进行简要介绍。
+
+\subsection{ $\gamma$ 关联方法的简介及研究现状}
+
+ $\gamma$关联方法~\cite{Voloshin:2008dg}是基于测量由CME所引起的带电粒子之间的方位角关联而设计的，可以简单的用下式表示：
+\begin{eqnarray}
+\gamma_{112} &\equiv&  \langle \cos(\phi_\alpha + \phi_\beta -2{\rm \Psi_{RP}}) \rangle \nonumber 
+\end{eqnarray}
+\noindent 从公式中可以看出该方法主要是计算流反应平面与粒子对$\alpha$ 和 $\beta$ 之间关联。而正如前面所提到的，CME所导致的结果是正负电荷的分离。那么正负电子对所对应的$\gamma_{112}$的结果必然会是不同的（详细介绍见\ref{sec.gamma}）。在CME信号的作用下异号粒子对$\gamma_{112}^{OS}>0$，而同号电荷对对$\gamma_{112}^{SS}<0$，这是最基本的$\gamma$关联方法对CME的反应结果。
+ $\gamma$关联方法在RHIC~\cite{STAR1,Isobarauaustar,STAR3,STAR4,STAR5,TRIBEDY2017740,JieZhao} 和LHC~\cite{ALICE,CMS1,CMS2} 实验上得到了广泛的应用。
+ 
+ 图～\ref{fig:gamma112}中给出了$\gamma_112$在RHIC实验中Au+Au对撞下不同质心能量（200,  62.4, 39, 27, 19.6, 11.5和7.7GeV）和LHC实验中Pb+Pb质心能量为2.76TeV下的二阶参与者平面的中心度依赖结果~\cite{Review3}。在STAR实验结果中质心能量为200GeV（图中(b)）时，$\gamma_{112}^{OS}$和$\gamma_{112}^{SS}$都随着中心度的增大而减小，造成这个现象的原因可能是被粒子多重数对信号的稀释效果（越中心粒子多重数越多）；还有一个可能的原因是偏心碰撞中由于旁观的质子数较多，因其运动产生的磁场就越强，从而导致CME在偏心碰撞中的效果越大。该数据结果很可能是由于CME所造成的。图～\ref{fig:gamma112}中(a)给出的是在LHC实验中Pb+Pb对撞2.76GeV的结果。它的结果与STAR的200GeV的结果的趋势及其相似，其结果也表现出了CME存在的可能性。 STAR实验数据中其他能量的结果与200GeV的类似的趋势，7.7GeV的结果除外。 在7.7GeV中， $\gamma_{112}^{OS}$和$\gamma_{112}^{SS}$在误差棒范围内是相等的，并没有表现出明显的不同，也就是说在这个能量下没有观察到CME的信号。可能是因为在低能对撞中主要是强子相互作用占主要贡献。这些结果都与理论预期相符，似乎我们以及观测到了CME寻找的信号。
+ 
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=\textwidth,clip]{./Figures_Use/CME_STAR_8E_8panel.pdf}
+\end{center}
+\caption[$\gamma_112$关联方法在RHIC和LHC实验中Au+Au和Pb+Pb系统的分析结果]{$\gamma_112$关联方法在RHIC和LHC实验中Au+Au和Pb+Pb系统的分析结果，图片取自文献~\cite{Review3}}
+\label{fig:gamma112}
+\end{figure}
+
+\subsubsection{重离子碰撞中背景的影响}
+
+然而随着更深入的研究发现横动量守恒（Global Momentum Conservation, GMC）、局部电荷守恒（Local Charge Conservation, LCC）以及共振态粒子的$v_{2}$的贡献同样会造成假的CME信号~\cite{Review2}。如图~\ref{fig:background}，左图是只有CME信号存在下的结果，此时异号($OS$)与同号($SS$)结果的符号不同但大小相当；当加入横动量守恒时（中间的图），会导致同号、异号的结果都压低，此时它们随着坐标轴对称这一现象被打破了；而当同时加入了横动量守恒和LCC效应时，同号和异号又与纯信号时的趋势是类似的。很难认为以上实验结果是单纯的因为CME而导致的。
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=\textwidth,clip]{./Figures_Use/cartoon_bkgd.png}
+\end{center}
+\caption{$\gamma$关联方法中CME信号、横动量守恒和局部电荷守恒的结果，图片取自文献~\cite{Review3}}
+\label{fig:background}
+\end{figure}
+
+除了GMC和LCC之外，非流关联共振态粒子的衰变同样会造成假的CME。如图\ref{fig:rhobackground}，当$\rho$ 衰变成$\pi^{+}$、$\pi^{-}$电子对时，会引入非流的假的CME信号。
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.65\textwidth,clip]{./Figures_Use/cartoon_rho.png}
+\end{center}
+\caption{$\rho$ 共振态衰变示意图，图片取自文献~\cite{Review3}}
+\label{fig:rhobackground}
+\end{figure}
+
+图\ref{fig:Blass}给出了基于Blast-wave理论对背景的研究与STAR实验的对比结果。在该理论模拟中都加入了GMC。红色的点表示的是在化学冻结阶段加入了与实验中相当的LCC的结果；蓝色的点表示的是加入了完美的LCC的结果；黑色的点表示STAR实验的结果。最直观的结果就是在加入了GMC和LCC之后，模拟的结果在只有背景的情况下与STAR实验结果基本重合了。
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=\textwidth,clip]{./Figures_Use/pratt.pdf}
+\end{center}
+\caption{基于Blast-wave理论对LCC和$v2$背景的结果，图片取自文献~~\cite{Review3}}
+\label{fig:Blass}
+\end{figure}
+
+虽然说实验的结果似乎观查到了CME存在的证据，但因为背景也会造成同样但结果。因此目前还不能下定论说已经观测到的就是CME的信号。
+近几年理论和实验上都在致力于扣除或者压低背景在$\gamma$关联方法中的贡献，在此基础上衍生了很多新的观测量（例如： $\gamma_123$, $\kappa_{112} $）。但如何完美的扣除背景带来的效果目前还没有令人信服的解决方法，更多的科研工作还在进行中。
+
+
+
+\subsection{ R关联方法的简介及研究现状}
+
+$\gamma$ 关联方法由于背景的影响，无法准确的下定论，Roy A. Lacey和Niseem Magdy提出了一个新的寻找CME的方法——R关联方法($R_{{\rm \Psi}_m}(\Delta S)$)~\cite{RCorr-2011,RCorr-2018}， 其主要原理也是对逐事件的正负粒子方位角之间的起伏来寻找CME的。该方法的定义如下：
+
+\begin{eqnarray}
+R_{\Psi_m}(\Delta S) &=& C_{\Psi_m}(\Delta S)/C_{\Psi_m}^{\perp}(\Delta S),  \, m=2,3,  \nonumber \\
+C_{\Psi_{m}}(\Delta S) &=&\frac{N_{\text{real}}(\Delta S)}{N_{\text{Shuffled}}(\Delta S)},  \nonumber \\
+\Delta S &=& \frac{{\sum\limits_1^p {\sin (\frac{m}{2}\Delta {\varphi_{m} })} }}{p} - 
+\frac{{\sum\limits_1^n {\sin (\frac{m}{2}\Delta {\varphi_{m}  })} }}{n},  \nonumber 
+\end{eqnarray}
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=\textwidth,clip]{./Figures_Use/RcorrNiseem.png}
+\end{center}
+\caption[R关联方法在AMPT和AVFD中的结果]{R关联方法在AMPT和AVFD中的结果，图片取自文献~\cite{RCorr-2018}}
+\label{fig:RcorrNiseem}
+\end{figure}
+
+\noindent 其中 $\Delta\phi_m = \phi - \Psi_m$，而$\Delta S$表示的是逐事件的方位角波动， $N_+$($N_-$) 是在该事件中的正（负）电子的数量，$\Delta S$，测量的是事件中正负电子的电偶极矩的差异性，加权平均是用来消除由于探测器不同方位接收度的影响。 通过打乱原始事件中电荷的符号随机打乱（Shuffling），以消除CME信号的所带来的关联，并保证打乱前后正负电荷的数量与原始事件一致，从而计算$N_{\text{Shuffled}}(\Delta S)$，那么这个打乱的事件就没有了CME信号的影响，因而用$N_{\text{real}}(\Delta S)$除以$N_{\text{Shuffled}}(\Delta S)$，将会达到扣除背景的效果~\cite{RCorr-2011,RCorr-2018}。最终以与CME相关的$C_{\Psi_m}(\Delta S)$除以$C_{\Psi_m}^{\perp}(\Delta S)$而得到最终的观测量$R_{\Psi_m}(\Delta S)$。
+他们得到的R关联方法在AMPT和AVFD中的模拟结果如图～\ref{fig:RcorrNiseem}所示。$R_{\Psi_2}(\Delta S)$在没有信号的时候是凸起来的、低于1的形状；在AVFD模型中有信号的时候是大于1、凹陷的，且随着CME信号的增大凹陷的程度会增大。而由于三阶反应平面磁场的方向是没有关系的。因此通过三阶反应平面计算的$R_{\Psi_3}(\Delta S)$是与CME信号无关的背景项，因此可以与二阶的信号的一个对比。在他们的模型结果中三阶是向下的、凸起来的。通过这两篇文章~\cite{RCorr-2011,RCorr-2018}中所给出的结果显示R关联方法不仅对信号的反应很灵敏，而且该方法对背景的反应是不同的。即它可以很好的区分背景与信号，是一个非常理想的观测量。并且其实验数据分析的结果显示观测到了CME信号。
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=\textwidth,clip]{./Figures_Use/RcorrCopare.pdf}
+\end{center}
+\caption{R关联方法寻找CME的文章汇总}
+\label{tab:RcorrCopare}
+\end{figure}
+
+R关联方法也存在一些问题。如图~\ref{tab:RcorrCopare}所示，不同的科研小组运用R关联方法所计算得到的$R_{\Psi_2}(\Delta S)$对背景的反应是不一致的。那么造成不同研究小组之间分析结果不同的原因究竟是什么呢？是运用模型的不同导致的其它原因所导致呢？目前没有明确的定论。R关联方法也需要更深入的研究才能确定是否观测到了CME存在的信号。
+
+
+
+
+
+\bigskip
+
+\section{寻找CME的新方法：电荷平衡函数法}
+
+最近文献~\cite{Tang2019}中提出了一种利用电荷平衡函数构建的新方法：电荷平衡函数法（Signed Balance Function)。该方法通过电荷平衡函数对碰撞中磁场所引起的横动量方向的波动来寻找CME。以下将对方法的原理进行介绍。
+
+\begin{figure}[htbp]
+\centering
+\makebox[1cm]{\includegraphics[width=0.37 \textwidth]{./Figures_Use/ChargeSeparation_IsotropicEmission-crop.pdf}}
+\caption{一个各向同性事件中粒子在CME作用下的效果图。红色的实线表示正粒子，灰色的虚线表示负粒子。图片来源于：~\citep{Tang2019}}
+\label{fig:Aihong_KatongChargeSeparation}
+\end{figure}
+
+那么我们究竟要怎样才能找到CME呢？首先让我们来理解一下
+
+CME所带来的效果究竟是怎么样的：对于受磁场$-\hat{B}$作用而形成的正、负粒子对而言，在磁场的作用下会使正、负电子受到磁场作用，从而导致正负电子分别在相反方向上有额外的运动，即横动量分量在磁场方向上得到了增大。也就是说在CME会使得正负电子对的横动量在磁场方向是那个有额外的加强，这是CME所引起的其中一个效应。前面提到的两种CME分析方法主要是基于CME引起的粒子间的方位角关联，它们没有考虑磁场作用对横动量影响。那么让我们重新回到重离子碰撞中时间的方位角分布公式.\ref {eq:Fourier_expansion}：正、负粒子沿着$B$在相反方向上发散，类似于在平行于反应平面方向上的$v_1$。这样就可以通过类似流的特性来表征CME，并且可以利用大量、现有的流相关的复杂的知识来对CME进行研究。但这样方法是有一定局限性的。举个例子，如果一个各向同性事件中粒子在CME作用下，如图图.~\ref{fig:Aihong_KatongChargeSeparation} 所示。可以看到在CME作用下带正电的粒子的横动量向上增大，而于此同时带负电的粒子的横动量向下增大。如果只考虑方位角之间的关联，那么对这个事件的判断就会出错，从而给出错误的判断——这个事件中没有CME。虽然这个问题可以通过对粒子横动量加额外对限制来鉴别，但它不像直接通过磁场作用导致的横动量变化来得直观。电荷平衡函数法就是基于检验由磁场作用而导致的粒子对在磁场方向上的横动量的增量而提出来的新方法。
+
+
+\subsection{电荷平衡函数法}
+
+平衡函数（Balance Function）的一般形式是用来描述了相空间中的粒子的绝对分离情况~\cite{Bass:2000az,Adams:2003kg}。
+在RHIC 和 LHC实验数据分析中，平衡函数在赝快度空间下描述两个平衡粒子之间的赝快度的绝对差异：$\Delta \eta = |\eta_a - \eta_b|$，通常用来研究对撞实验中强子化的衰变~\cite{bf1,bf2,bf3,bf4,bf5}。
+电荷平衡函数法（ signed balance function），它考虑的是相空间下粒子之间平衡函数的符号，而不是前面所提到的绝对差异。在此之前电荷平衡函数法也被用来研究重离子碰撞中的磁场~\cite{Ye:2018jwq}。在进行具体的介绍之前，先对坐标系统做以下规定：$x$坐标表示的是碰撞参数的方向，也就是反应平面的方向；$y$坐标表示的是垂直于反应平面的方向，也就是磁场所在的方向；$z$坐标则是电子束流的方向。
+
+\begin{figure}[htbp]
+\centering
+\makebox[1cm]{\includegraphics[width=0.6 \textwidth]{./Figures_Use/BF_cartoon_noy-crop.pdf}}
+\caption{SBF方法原理示意图 ~\cite{Tang2019} }
+\label{fig:BF_cartoon}
+\end{figure}
+
+电荷平衡函数法可以分为以下四步理解：
+
+\textbf{1) 统计粒子对在横动量方向上排序的标记 } 首先考虑横动量在$y$ 方向上的投影 ($p_y$)，对于任意的两个粒子$\alpha$ 和 $\beta$。如果$p^\alpha_y >  p^\beta_y$，那么就认为$\alpha$ 粒子是领先于$\beta$粒子的，反之则是跟随。以下两个平衡函数关系式可以很好的描述粒子对之间的这一关系：
+\begin{eqnarray}
+\begin{aligned}
+B_{P} (S) =  \frac{N_{+-}(S)-N_{++}(S)}{N_+},
+\end{aligned}
+\label{eq:Bp}
+\end{eqnarray}
+和
+\begin{eqnarray}
+\begin{aligned}
+B_{N} (S) =  \frac{N_{-+}(S)-N_{--}(S)}{N_-}.
+\end{aligned}
+\label{eq:Bn}
+\end{eqnarray}
+这里的下标$P$ 和 $N$ 分别表示正、负粒子项。
+对于给定的项$N_{\alpha\beta}$，若$\alpha$ 领先于 $\beta$ 那么标记$S=+1$，反之 $S=-1$ 。$N_{+(-)}$表示的是在一个事件中正、负粒子的个数。
+
+
+\textbf{2) 计算净的横动量排序的区别 } 一个事件中正、负粒子领先的标记的不同可以表示为：
+\begin{eqnarray}
+\begin{aligned}
+\delta B(\pm 1) =  B_{P}(\pm 1)-B_{N}(\pm 1),
+\end{aligned}
+\label{eq:deltaB_pm}
+\end{eqnarray}
+
+\begin{figure}[htbp]
+\centering
+\makebox[1cm]{\includegraphics[width=0.45 \textwidth]{./Figures_Use/BFHisto_lab_example.pdf}}
+\caption{Toy模型中不同CME情况下$\Delta B$ 的分布图 ~\cite{Tang2019} }
+\label{fig:BFHisto_lab_example}
+\end{figure}
+那么，在这个事件中正、负粒子总标记的不同可以由正粒子领先标记减去负离子跟随的标记，即有：
+\begin{eqnarray}
+\begin{aligned}
+\Delta B =  \delta B(+1) - \delta B(-1).
+\end{aligned}
+\label{eq:deltaB}
+\end{eqnarray}
+
+$\Delta B$ 是表示一个事件总的净横动量排序的不同。在没有CME的情况下，对于正、负粒子对，正粒子领先于负粒子的概率与它跟随的概率是相等的。也就是说此时$B_P$和$B_N$所测的是粒子间与分离效应无关的关联，即都是背景，它的分布只依赖于统计起伏（ 图.~\ref{fig:BF_cartoon}上面的图）。 在CME的影响下，因为正负电荷分离效应的存在，其结果是其中一种粒子领先于另一种粒子。在此的情况下$B_P$和$B_N$不再相等，最终结果就是$\Delta B$的宽度会增大（ 如图.~\ref{fig:BF_cartoon}下半部分所示）
+
+因为$\Delta B$ 计算的是在每个事件中在一个方向上的起伏。
+
+$\Delta B$ 可以分别从 $x$的方向 ($\Delta B_{x}$) 和 $y$ 方向 ($\Delta B_{y}$)方向计算。但由于在$x$方向上没有磁场的作用——没有CME，$\Delta B_{x}$分布的宽度与CME信号无关。图.~\ref{fig:BFHisto_lab_example} 中描述的是$\Delta B_{x}$ 和 $\Delta B_{y}$ 在Toy 模型中得到的结果。可以明显看得当在原始粒子（Primordial particles）中加入一定量的CME信号（$a_1$）时，$\Delta B_y$的宽度要比$\Delta B_x$的要大。
+
+
+\textbf{3) 计算逐事件的净横动量在$y$方向上的增强} 为了减去统计起伏和背景的影响，可以对不同方向上的$\Delta B$做商，即有：
+\begin{eqnarray}
+\begin{aligned}
+r= \sigma_{\Delta B_y} / \sigma_{\Delta B_{x}}.
+\end{aligned}
+\label{eq:r}
+\end{eqnarray}
+
+那么况下$r=1$ ，有信号时在信号的作用下将大于1。也就是有CME信号时：$r > 1$。
+
+\begin{figure}[htbp]
+\centering
+\makebox[1cm]{\includegraphics[width=0.76 \textwidth]{./Figures_Use/boost_cartoon-crop.pdf}}
+\caption{不同参考系下观察一对粒子的领先与跟随效应原理图~\cite{Tang2019}}
+\label{fig:boost_cartoon}
+\end{figure}
+
+\textbf{4) 比较从不同参考系下得到的结果 } 我们的观测量$r$ 既可以在实验室坐标系下计算，即$r_{\mathrm{lab}}$ ；也可以在粒子对的静止坐标系下得到$r_{\mathrm{rest}}$。在电荷平衡函数方法中需要要判断粒子对在横动量方向上的跟随情况。如图.~\ref{fig:boost_cartoon} 所描述的是具有相同$p_y$的粒子在不同参考系下的视图，如果在静止坐标系下观察两个粒子的横动量在$y$方向上的排序关系时，很难分清这两个粒子的关系；但如果在这个粒子对的静止坐标系下，而在静止坐标系下两个粒子永远时背对背运动的，那么一目了然的就能知道粒子$\alpha$ 领先于$\beta$。这个特性会让电荷平衡函数的领先、跟随情况更加清楚、准确，因此对于该方法而言静止坐标系时观测CME的最佳坐标。这里我们把静止坐标系下计算将可以得到$r_{\mathrm{rest}}$。
+
+ 图.~\ref{fig:BFHisto_rest_lab_example} 是在实验室系、粒子对坐标系下得到的加入了CME信号的Toy模型中$\Delta B_x$ 和 $\Delta B_y$ 的分布结果，其中放大的部分是分布的峰顶的区域。当我们看$y$方向上的$\Delta B_y$的分布时，静止坐标系下的分布宽度要比实验室系下要宽；然而在$x$方向上却没有观察到这一现象。这也就是说在有CME的时候，静止坐标系下能够更明显的观测到CME的效果。
+\begin{figure}[htbp]
+\centering
+\makebox[1cm]{\includegraphics[width=0.56 \textwidth]{./Figures_Use/BFHisto_rest_lab_2pcta1_example.pdf}}
+\caption{Toy模型中在不同坐标系下$\Delta B_x$ 和 $\Delta B_y$的分布结果~\cite{Tang2019}}
+\label{fig:BFHisto_rest_lab_example}
+\end{figure}
+
+
+考虑到在$r$下并不能保证完全扣除背景的影响，而静止坐标系下能够更好的观测CME信号。那么将不同坐标系的结果相除，以此进一步扣除$r$中残存的背景贡献，则有：
+\begin{eqnarray}
+\begin{aligned}
+R_{B} \equiv  \frac{r_{\mathrm{rest}}}{r_{\mathrm{lab}}},
+\end{aligned}
+\label{eq:R_B}
+\end{eqnarray}
+这里的“$B$”表示的是平衡函数（Balance function）。在接下来的多种模型的分析结果中，会得到这样一个现象：当$r_{\mathrm{rest}}$，$r_{\mathrm{lab}}$和$R_{B}$随信号的增大而增大时，而于此同时$R_{B}$会随着背景（共振态$v_2$、全局的自旋极化等背景）增大而减小。在某些情况下，这个性质对于识别由于背景引起的电荷分离效应是非常有用的。例如，如果$r_{\mathrm{rest}} $大于1， 并且$R_{B}$也大于1，那么就有理由相信这个情况下有CME的效果存在。
+
+
+\subsection{模型计算结果分析、更新与总结}
+
+前面已经提到在寻找CME的过程中最大的问题是背景也会对观测量有一定的贡献，在本小节中，我们将利用最简单的Toy模型（既可以加入信号也可以加入背景），AMPT模型（包含实验数据中的各种背景）以及EBE-AVFD模型（包括了很多实验数据中的的背景，也可以加入信号），该小节的内容可以在这篇文章中找到~\cite{Lin2021}。
+\begin{figure}[htbp]
+\centering
+\makebox[1cm]{\includegraphics[width=0.56 \textwidth]{./finalplots/fig2.pdf}}
+\caption{Toy模型中加入CME信号、共振态$v_2$时\rrest， $r_{\mathrm{lab}}$和\rb 的结果~\cite{Lin2021}。}
+\label{fig:resonancev2}
+\end{figure} 
+
+\subsubsection{Toy模型}
+因为在Toy模型中，我们可以任意的加入我们需要的信号（$a_{1}$ ）以及各种背景，例如：共振态的$v_2$，$\rho_{00}$自旋极化所引起的背景等。首先让我们看看在只有信号的情况下，如图.~\ref{fig:ToySignalOnly}所示，图中以原初粒子的$a_1$为横坐标，其中$a_1$就是前面所提到的CME的信号。从图中可以看到，当$a_1$为0时，$r_{\mathrm{rest}}$， $r_{\mathrm{lab}}$和 $R_{\mathrm{B}}$都等于1，而随着$a_1$的增大三个观测量也都随之而增大。$r_{\mathrm{rest}}$和 $r_{\mathrm{lab}}$的结果很接近，但是可以明显看到在有信号的情况下$r_{\mathrm{rest}}$比$r_{\mathrm{lab}}$要大，前者比后者对信号对反应更灵敏，这一结果也可以在$R_{\mathrm{B}}$表现出来。这一结果表明SBF方法中对观测量对信号是很敏感的。考虑到$r_{\mathrm{rest}}$和 $r_{\mathrm{lab}}$的性质相近而$r_{\mathrm{rest}}$对信号的反应更加灵敏，所以在接下来的讨论中我们将只这对$r_{\mathrm{rest}}$和$R_{\mathrm{B}}$进行分析。
+
+共振态$v_2$对SBF观测量的影响在图.~\ref{fig:resonancev2}中给出。从图中可以看到\rb 随着共振态$v_2$的增大而减小，而此时\rrest 是随之而增大的。这两个观测量在各种不同的横动量谱下的共振态的影响下表现出相反的趋势。关于SBF方法在Toy模型在各种不同情况下的反映可以在这篇引文~\cite{Tang2020}中看到更加详细的研究。
+
+\begin{figure}[htbp]
+\centering
+\makebox[1cm]{\includegraphics[width=0.56 \textwidth]{./finalplots/fig3.pdf}}
+\caption{Toy模型中加入CME信号、共振态$v_2$和$\rho_{00}$之后\rrest 和\rb 的结果~\cite{Lin2021}。}
+\label{fig:resonancerho00}
+\end{figure} 
+
+在图.~\ref{fig:resonancerho00}中，加入了CME研究中主要的两个背景：共振态$v_2$和共振态的全局极化$\rho_{00}$（ Global Spin alignment ），这是在Toy模型中加入背景最多、最接近实验的情况。从图中可以清楚的看到在背景逐渐增大的时候，\rrest 和\rb 出现了相反的趋势，即在\rrest 随着信号、背景而增大的时候\rb 反而在减小，并且在背景增大到一定程度上的时候\rb 小于1。那么也就是说，在不考虑局部电荷守恒(Local Charge Conservation，简称：LCC)和横动量守恒（Transverse Momentum Conservation，简称：TMC）的前提下，如果\rrest 和\rb 都大于1的话，那么我们可以认为我们观测到了CME信号。
+
+
+\subsubsection{AMPT与EBE-AVFD模型}
+
+前面通过Toy模型的检测我们基本可以确认SBF方法是可以鉴别信号和背景的，那么在更接近实际实验中的AMPT模型和EBE-AVFD模型中我们的方法是否依然有效呢？接下来我们将对此展开讨论。首先允许我再对两个模型进行简要介绍。我们所用的两个模型都是目前比较热门的模型，它们对实验数据中一些主要的特征（粒子谱，椭圆流等）都描述得很好，在一定程度上能够反应实验数据的特性。
+本工作中所用的AMPT模型是还在改进的版本，在这一版本中没有CME的信号加入，但模型中包含了TMC对粒子的影响。因此AMPT的结果将作为没有CME信号下，即纯背景对于观测量的结果，它可以作为无信号情况下的参考。
+EBE-AVFD模型中加入了可以调节CME信号的机制，其CME信号通过轴向电荷与熵的比值表征（\ns ），此外它还控制加入的LCC的效应的大小。利用EBE-AVFD模型我们可以进行定量的、系统的对信号、背景对观测量的反应进行研究。
+图.~\ref{fig:realisticmodel}给出的就是这两个模型下的随重心度依赖的结果（对于EBE-AVFD模型只给出了一个中心度：$30-40\%$）。
+\begin{figure}[htbp]
+\centering
+\makebox[1cm]{\includegraphics[width=0.56 \textwidth]{./finalplots/fig4.pdf}}
+\caption{\rrest 和\rb 在AMPT和AVFD模型中的结果。}
+\label{fig:realisticmodel}
+\end{figure} 
+为了与STAR实验组的接收度相统一，本分析中用到的截断是$|\eta|<1$ 和 $0.2 < p_{T} < 2$ \gevc ，即与实验数据分析中所用到的截断一致。从图中可以看到，对于没有CME信号的两种情况：AMPT和AVFD\ns =0的情况下，$r_{\mathrm{rest}}$ 与 $R_{\mathrm{B}}$ 在统计误差范围内都为1。而在有EBE-AVFD中有CME的情况下不论LCC =  33\% 或者 LCC = 0\%，两个观测量都随着\ns 的增大而增大。在CME的效果下两个观测量都有明显的增大。对比不同大小的LCC情况下，可以看到实心的LCC为0的时候要比空心的LCC = 33\% 时要稍大，更详细的关于LCC影响的工作还在进行。但我要说明的是LCC = 33\% 是根据STAR实验采集的Au + Au 200 \gev 的计算得到的。也就是说LCC = 33\% 是更接近实验事实的，而此时的结果我们能够清楚的看得CME的信号。在后面~\ref{AuAuresults}与实验结果的对比中LCC = 33\% 。
+
+
+%本章将由以下几个部分构成：在第一部分，我们将对三种实验上用于寻找手征磁效应方法：$\gamma$ 关联（$\gamma$ correlator）~\cite{Voloshin:2008dg}， $R$关联和电荷平衡函数（Signed Balance Functions）~\cite{Tang2019,Lin2021}，对他们之间的相关性进行研究讨论。第二部分，我们将利用简单的蒙特卡洛模拟和以及包括流等其他效应的Event-By-Event Anomalous-Viscous Fluid Dynamics (EBE-AVFD)~\cite{Shi:2017cpu,Jiang:2016wve,Shi:2019wzi}，对寻找守征磁效应对方法进行比较研究。
+%第四部分将利用AVFD模型所产生的Isobar的数据，系统的比较三种方法在相同信号、背景下对CME信号的灵敏度进行分析比较。
+%最后一部分将对本章做对工作和结果做一个总结。
+
+\bigskip
+
+\section{实验观测方法之间的相关性}
+\label{Sec.II}
+本章节将对以上所提到的三种基本方法：$\gamma$关联方法~\cite{Voloshin:2008dg}， R关联方法 ($R_{{\rm \Psi}_m}(\Delta S)$)~\cite{RCorr-2011,RCorr-2018} 和电荷平衡函数法~\cite{Tang2019,Lin2021}。这些方法所利用的最基本的信息都是碰撞中所产生磁场对粒子在磁场方向上的关联，因而不同方法都包含了相同的信息。这部分将对这三种方法进行回顾，并揭示他们之间的联系。
+
+
+\subsection{$\gamma$ 关联法}
+\label{sec.gamma}
+
+三粒子关联方法 $\gamma$ (在后面对介绍中主要指 $\gamma_{112}$) 所测量的是相对于反应平面的电荷分离或者$a_{1,\pm}$ 系数的波动~\cite{Voloshin:2008dg},
+\begin{eqnarray}
+\gamma_{112} &\equiv&  \langle \cos(\phi_\alpha + \phi_\beta -2{\rm \Psi_{RP}}) \rangle \nonumber \\
+&=& \langle\cos(\Delta\phi_{\alpha})\cos(\Delta\phi_{\beta}) -
+\sin(\Delta\phi_{\alpha})\sin(\Delta\phi_{\beta})\rangle \nonumber \\
+&=& (\langle v_{1,\alpha}v_{1,\beta}\rangle + B_{\rm IN}) -(\langle a_{1,\alpha}a_{1,\beta}\rangle + B_{\rm OUT}), \label{eq:ThreePoint}
+\end{eqnarray}
+\noindent 上式中取平均分两部分，首先是对一个事件中$\alpha$ 和 $\beta$ 所能组成的粒子对进行平均，然后再对所有的事件取平均。
+对三角函数进行展开，可以明显的看到方位角关联在垂直于反应平面（ {\it in-plane} ）和平行于反应平面（{\it out-of-plane} ）他们之间的不同。在公式~\ref{eq:ThreePoint}中第三项 $\langle a_{1,\alpha}a_{1,\beta}\rangle$，所表示对就是$a_{1,\pm}$ 系数的波动，这也就是我们寻找CME的主要目标。其它项是与CME无关的：其中$\langle v_{1,\alpha}v_{1,\beta}\rangle$ 是与直接流相关的，并且该项在对称的核核对撞中是与电荷的符号、电磁场无关的；$B_{\rm IN}$ 和 $B_{\rm OUT}$ 这两项分别表示的是垂直与平行反应平面的其它可能存在的背景所带来的贡献。如果我们考虑异号电荷（Opposite-sign，简称：OS）和同号电荷（Same-sign，简称:SS）的 $\gamma_{112}$ 的不同时有：
+\begin{equation}
+\Delta \gamma_{112} \equiv \gamma^{\rm OS}_{112} - \gamma^{\rm SS}_{112}, 
+\end{equation}
+\noindent 通过异号与同号做差，直接流相关贡献除去了；其中还残留的背景贡献是与流平面相关的$B_{\rm IN}-B_{\rm OUT}$项，它的大小与椭圆流成正相关性，这是$\Delta \gamma_{112}$ 观测量中主要的背景来源。在实际运用中，流平面可以近似的用实验中探测到的末态粒子重建的事件平面（Event plane，简称：EP），另外由于有效的事件平面分辨率影响，观测量需要对此进行修正~\cite{Poskanzer:1998yz}。
+$\gamma_{112}$ 方法主要对优势在于它直接与$a_1$ 相联系，而且只需要一个简单对过程对事件平面进行修正。
+
+ $\Delta\gamma_{112}$观测方法中与流相关对背景研究可以共振态衰变为例子。如果共振态通过QGP介质运动，那它们的衰变后产生的粒子将会在垂直于流平面对方向上造成电荷分离的效应~\cite{fuqiang2010,Schlichting:2010qia}。运动的共振态会导致局部或者整个事件的横动量守恒（Transverse momentum conservation，简称：TMC）~\cite{Pratt:2010zn,Bzdak:2012ia} 或者局部电荷守恒（Local charge conservation，简称：LCC）~\cite{Schlichting:2010qia}。理想情况下的二粒子关联可以写为：
+\begin{eqnarray}
+\delta &\equiv& \langle \cos(\phi_\alpha -\phi_\beta) \rangle \nonumber \\
+&=& (\langle v_{1,\alpha}v_{1,\beta}\rangle + B_{\rm IN}) +(\langle a_{1,\alpha}a_{1,\beta}\rangle + B_{\rm OUT}),
+\label{eq:delta}
+\end{eqnarray}
+它同样包含了CME对信号$\langle a_{1,\alpha} a_{1,\beta} \rangle$对贡献，但事实上二粒子关联中占主要贡献对是短程对而粒子关联。
+例如，在$\Delta \delta$ 和 $\Delta \gamma_{112}$中，TMC效应的贡献可以用一下关系式表示\cite{Bzdak:2012ia}：
+\begin{eqnarray}
+\Delta \delta^{\rm TMC} &\rightarrow& -\frac{1}{N}
+\frac{\langle p_T \rangle^2_{\rm \Omega}}{\langle p_T^2 \rangle_{\rm F}}
+\frac{1+({\bar v}_{2,{\rm \Omega}})^2-2{\bar{\bar v}}_{2,{\rm F}}{\bar v}_{2,{\rm \Omega}}} {1-({\bar{\bar v}}_{2,{\rm F}})^2},
+\label{eq:TMC1}
+\\
+\Delta \gamma^{\rm TMC}_{112} &\rightarrow& -\frac{1}{N}
+\frac{\langle p_T \rangle^2_{\rm \Omega}}{\langle p_T^2 \rangle_{\rm F}}
+\frac{2{\bar v}_{2,{\rm \Omega}}-{\bar{\bar v}}_{2,{\rm F}}-{\bar{\bar v}}_{2,{\rm F}}({\bar v}_{2,{\rm \Omega}})^2} {1-({\bar{\bar v}}_{2,{\rm F}})^2}
+\nonumber \\
+&\approx& \kappa^{\rm TMC}_{112} \cdot v_{2,{\rm \Omega}} \cdot \Delta \delta^{\rm TMC},
+\label{eq:TMC2}
+\end{eqnarray}
+其中 $\kappa^{\rm TMC}_{112} = (2{\bar v}_{2,{\rm \Omega}}-{\bar{\bar v}}_{2,{\rm F}})/v_{2,{\rm \Omega}}$， ${\bar v}_{2}$ 和 ${\bar{\bar v}}_{2}$ 分别表示$v_2$对于 $p_T$- 和 $p_T^2$-的权重。下标“F”表示在全空间下对所有产生对粒子取平均，然而实际上在实验中能够探测到的只是所有产生的粒子中的一小部分，所有用“${\rm \Omega}$”表示实际能够测量到的这一部分。LCC所带来的贡献与公式~\ref{eq:TMC1} 和公式 ～\ref{eq:TMC2}有相同的结构特点~\cite{Pratt:2010zn,Schlichting:2010qia}。
+基于此我们可以利用$v_2$ 和 $\Delta \delta$对$\Delta \gamma$ 进行归一化：
+%This motivates a normalization of $\Delta \gamma$ by $v_2$ and $\Delta \delta$:
+\begin{equation}
+    \kappa_{112} \equiv \frac{\Delta \gamma_{112}}{v_2 \cdot \Delta \delta}.
+\label{kappa112}
+\end{equation}
+ 只有当$\kappa_{112}$大于 $\kappa^{\rm TMC/LCC}_{112}$的情况下才有可能说找到了CME。在现在$\kappa^{\rm TMC/LCC}_{112}$ 的影响还没有可靠的估算的情况下，只有通过Isobar两个碰撞系统的$\Delta\gamma_{112}$（和$\kappa_{112}$）的结果比较才能对是否有CME信号给出更加明确的结论。 
+%While a reliable estimate of $\kappa^{\rm TMC/LCC}_{112}$ is still elusive, the comparison of $\Delta\gamma_{112}$ (and $\kappa_{112}$) between isobaric collisions may give a more definite conclusion on the CME signal.
+
+\subsubsection{其他的衍生的 $\gamma$ 关联法}
+在以上介绍的$\gamma$ （以及对应的$\kappa$）关联方法的基础上，为了更好的估算 $\kappa_{112}$中背景的贡献~\cite{CMS2}，例如：
+\begin{eqnarray}
+\gamma_{123} \equiv \langle \langle \cos(\phi_\alpha + 2\phi_\beta -3{\rm \Psi_{3}}) \rangle\rangle&,~\ & \kappa_{123} \equiv \frac{\Delta \gamma_{123}}{v_3 \cdot \Delta \delta}, 
+\\
+\gamma_{132} \equiv \langle \langle \cos(\phi_\alpha - 3\phi_\beta + 2{\rm \Psi_{2}}) \rangle\rangle&,~\ &
+\kappa_{132} \equiv \frac{\Delta \gamma_{132}}{v_2 \cdot \Delta \delta}.
+\end{eqnarray}
+其中 $\Psi_{2}$ 和$\Psi_{3}$ 分别表示 二阶（$2^{\rm nd}$- order）和 三阶（$3^{\rm rd}$-order）反应平面。
+式中$\Delta\gamma_{123}$ 和$\Delta\gamma_{132}$ 两项对应的贡献主要是$(v_3 \cdot \Delta\delta)$ 和 $(v_2 \cdot \Delta\delta)$，他们对信号没有反应。因此，在一定程度上可以认为这两个项所反应的结果是完全的背景。然而由于在只有信号的模型AMPT的AuAu碰撞数据的计算结果表明$\kappa_{123}$ 和 $\kappa_{132}$ 与$\kappa_{112}$不相等，这与预期有一定的出入~\cite{Subikash}。因此在接下来的方法比较中，我们将不对这些衍生的$\gamma$ 方法进行研究。
+
+\subsubsection{MSC 和 CMAC}
+在 $\gamma_{112}$ 关联方法中，电荷分离的不同的方位角区间所做的权重是不一样的。在与反应平面成$90^\circ$ 角，也就是垂直与反应平面的粒子对的权重要比与反应平面的夹角较小的哪些粒子对的权重要大。为了解决这个问题，MSC~\cite{STAR3} 的方法尝试对$\gamma_{112}$进行改进，以便所有电荷分离的不同方位角方向上都取同样的权重。
+详细的说也就是说如果粒子对中两个粒子的夹角在$90^\circ$ 的粒子的权重，在此基础上公式.~\ref{eq:ThreePoint} 改写为：
+\begin{equation}
+\langle \cos(\phi_{\alpha}+\phi_{\beta}-2{\rm \Psi_{RP}}) \rangle =
+\langle (M_{\alpha}M_{\beta}S_{\alpha}S_{\beta})_{\rm IN} \rangle -
+\langle (M_{\alpha}M_{\beta}S_{\alpha}S_{\beta})_{\rm OUT} \rangle,
+\label{eq:MMSS}    
+\end{equation}
+其中$M$ 表示所有的幅度（Absolute magnitude ）($0\leq M \leq 1$) ，  $S$ 表示$\sin$或$\cos$项的符号($\pm 1$)。$IN$和$OUT$分别表示公式~\ref{eq:ThreePoint} 中的$\cos$项和$\cos$项。在忽略$\gamma_{112}$中$M$的贡献的前提下，得到：
+\begin{equation}
+{\rm MSC} \equiv \left(\frac{\pi}{4}\right)^2\left({\langle S_{\alpha}S_{\beta} \rangle_{\rm IN}-\langle S_{\alpha}S_{\beta}\rangle_{\rm OUT}}\right).
+\label{eq:msc}    
+\end{equation}
+在AuAu 200 GeV的结果中， MSC方法基本得到了与$\gamma_{112}$关联方法同样的趋势，只是大小一些微小的差别~\cite{STAR3}。
+同样的，MSC方法同样可以通过计算相对于反应平面的电荷来实现。对于同号电荷对在垂直于反应平面的关联可以表示为：
+\begin{equation}
+\langle S_{\alpha}S_{\beta}\rangle_{\rm IN} =
+\frac{N_{\delta}^{\rm L}\left(N_{\delta}^{\rm L}-1\right) + N_{\delta}^{\rm R}\left(N_{\delta}^{\rm R}-1\right) -
+  2N_{\delta}^{\rm L}N_{\delta}^{\rm R}}{N_{\delta}\left(N_{\delta}-1\right)},
+\label{eq:NetCombosSS}  
+\end{equation}
+其中，当$\alpha\beta=++$时$\delta=+$。当$\alpha\beta=--$时，$\delta=-$ 。
+同理的异号电荷对可以表示为：
+\begin{equation}
+\langle S_{\alpha}S_{\beta}\rangle_{\rm IN} =
+\frac{N_{+}^{\rm L}N_{-}^{\rm L} + N_{+}^{\rm R}N_{-}^{\rm R} -
+  N_{+}^{\rm L}N_{-}^{\rm R} - N_{-}^{\rm L}N_{+}^{\rm R}}{N_{+}N_{-}}.
+\label{eq:NetCombosOS}
+\end{equation}
+上式中$N$ 表示对是检测到到粒子是正还是负、是横动量空间下粒子是在垂直于反应平面的左边（$L$）或者右边$R$。同理的平行于反应平面的结果也可以用相同结果的式子，只需要把左、右改成上、下。
+
+
+另外还有一个类似的计算电荷的方法叫做CMAC~\cite{STAR4}，它也得到了类似于MSC方法得到的结果。MSC和CMAC方法与 $\gamma_{112}$原理上是大致相当的，只是这两个方法与$a_1$ 不是直接相关的，并且他们对于事件平面分辨率没有直接的修正方法。因此在本文中不会用这两种方法。但在这两个方法的基础上我们可以把$\gamma_{112}$ 关联方法与其他的方法联系起来，因此对这两个方法做了简要介绍。
+
+\subsection{$R$ 关联法}
+%The $R(\Delta S_m)$ correlator~\cite{RCorr-2011,RCorr-2018} takes the double ratio of four event-by-event distributions,
+$R(\Delta S_m)$ 关联方法\cite{RCorr-2011,RCorr-2018} 是通过对四个逐事件分布的的比值来寻找CME的信号的，即：
+\begin{equation}
+R(\Delta S_m) \equiv \frac{N(\Delta S_{m,\rm real})}{N(\Delta S_{m,\rm shuffled})} / \frac{N(\Delta S^{\perp}_{m,\rm real})}{N(\Delta S^{\perp}_{m,\rm shuffled})}, ~\ m = 2,3,...,
+\end{equation}
+式中一个事件中垂直于$m^{\rm th}$阶反应平面（$\Psi_m$)的电荷分离可以写作：
+\begin{equation}
+\Delta S_{m,\rm real} = \langle\sin(\frac{m}{2}\Delta\phi_m)\rangle_{N_+} - \langle\sin(\frac{m}{2}\Delta\phi_m)\rangle_{N_-}.   
+\end{equation}
+这里的 $\Delta\phi_m = \phi - \Psi_m$， $N_+$($N_-$) 是在该事件中的正（负）电子的数量。加权平均可以消除由于探测器不同方位接受度的影响。 把上式中的$\Psi_m$ 替换为$( \Psi_m + \pi/m)$， 则得到 $\Delta S^{\perp}_m$，它表示平行于事件平面的电荷分离，同理有$\Delta S_m$，这两项表征的是与磁场无关的背景项。
+$\Delta S^{(\perp)}_{m,\rm shuffled}$ 项是通过对一个事件中对正负电荷随机打乱（Shuffling），但保证打乱前后正负电荷的数量与原始事件一致，然后对打乱后的事件进行计算得到。在理想情况下，CME会令$R(\Delta S_2)$ 的分布呈现凹（Concave shape）下去的形状，它与$R(\Delta S_3)$的形状是不一样的~\cite{RCorr-2018}。据推测，后者与 $\gamma_{123}$具有相同的效果，都是用来表示没有CME信号的对比作用。
+
+通过对$R(\Delta S_2)$的分布进行高斯（或反高斯，需根据具体形状选择）函数进行拟合，而所得到的高斯分布的宽度（Gaussian width，$\sigma_{R2}$ ）将用作最终的反应CME信号的观测量。由于$\Delta S^{(\perp)}_{2,\rm real(shuffled)}$这四个项都基本上符合高斯分布，我们可以得到$\sigma_{R2}$ 和这四个项的方差（RMS）的值的关系：
+\begin{equation}
+\frac{S_{\rm concavity}}{\sigma_{R2}^2}   = \frac{1}{\langle (\Delta S_{2,\rm real})^2 \rangle} - \frac{1}{\langle (\Delta S_{2,\rm shuffled})^2\rangle} - \frac{1}{\langle (\Delta S_{2,\rm real}^{\perp})^2  \rangle} + \frac{1}{\langle (\Delta S_{2,\rm shuffled}^{\perp})^2  \rangle}.
+\label{eq:sigma_R2} 
+\end{equation}
+其中$S_{\rm concavity}$的符号由$R(\Delta S_2)$的形状决定，如果它是凸起的是$+1$，反之则为$-1$。首先让我们先理解一下上式中右边各项的意义。为了简便，我们将以1为权重，则等式右边第一项可以展开为：
+\begin{eqnarray}
+& &(\Delta S_{2,\rm real})^2 \nonumber \\
+&\equiv& (\frac{\sum_{i=1}^{N_+}\sin(\Delta\phi_i)}{N_+}-\frac{\sum_{i=1}^{N_-}\sin(\Delta\phi_i)}{N_-})^2 \nonumber \\
+&=& \frac{\sum_{i=1}^{N_+}\sin^2(\Delta\phi_i)+\sum_{i\neq j}^{N_+}\sin(\Delta\phi_i)\sin(\Delta\phi_j)}{N_+^2}+\frac{\sum_{i=1}^{N_-}\sin^2(\Delta\phi_i)+\sum_{i\neq j}^{N_-}\sin(\Delta\phi_i)\sin(\Delta\phi_j)}{N_-^2}\nonumber \\
+& &-\frac{2\sum_{i=1,j=1}^{N_+,N_-}\sin(\Delta\phi_i)\sin(\Delta\phi_j)}{N_+N_-} \nonumber \\
+&=& \frac{\langle \sin^2(\Delta\phi_i)\rangle_{N_+} +(N_+-1) \langle \sin(\Delta\phi_i)\sin(\Delta\phi_j)\rangle_{N_+N_+}}{N_+}  \nonumber \\
+ && +\frac{\langle \sin^2(\Delta\phi_i)\rangle_{N_-} +(N_--1) \langle \sin(\Delta\phi_i)\sin(\Delta\phi_j)\rangle_{N_-N_-}}{N_-} \nonumber \\
+& &-2\langle \sin(\Delta\phi_i)\sin(\Delta\phi_j) \rangle_{N_+N_-}
+\label{eq:dS}
+\end{eqnarray}
+利用三角恒等式, $\sin^2(x) = [1-\cos(2x)]/2$ 和 $2\sin(x)\sin(y) = \cos(x-y)-\cos(x+y)$，我们将得到公式~\ref{eq:dS} 对所有事件对均值：
+\begin{eqnarray}
+\langle(\Delta S_{2,\rm real})^2\rangle 
+&=& \frac{1-v_2^+}{2N_+} + \frac{N_+-1}{2N_+}(\delta^{++}-\gamma^{++}_{112})+\frac{1-v_2^-}{2N_-}  \nonumber \\
+&&+ \frac{N_--1}{2N_-}(\delta^{--}-\gamma^{--}_{112}) - (\delta^{+-}-\gamma^{+-}_{112}) \\
+&\approx& \frac{2(1-v_2-\delta^{\rm SS}+\gamma_{112}^{\rm SS})}{M} - \Delta\delta + \Delta\gamma_{112}.
+\label{eq:s-expand}
+\end{eqnarray}
+最后一行我们假设：$v_2^+ \approx v_2^-$， $N_+ \approx N_- = M/2$。即使在假设的近似估算之前我们也可以看到$\langle(\Delta S_{2,\rm real})^2\rangle$ 项可以用$N_{+(-)}$, $v_2$, $\delta$ 和 $\gamma_{112}$替换，可以得到：
+\begin{eqnarray}
+\langle(\Delta S_{2,\rm real}^\perp)^2\rangle 
+&=& \frac{1+v_2^+}{2N_+} + \frac{N_+-1}{2N_+}(\delta^{++}+\gamma^{++}_{112})  \nonumber \\
+ && +\frac{1+v_2^-}{2N_-} + \frac{N_--1}{2N_-}(\delta^{--}+\gamma^{--}_{112}) - (\delta^{+-}+\gamma^{+-}_{112}) \\
+&\approx& \frac{2(1+v_2-\delta^{\rm SS}-\gamma_{112}^{\rm SS})}{M} - \Delta\delta - \Delta\gamma_{112}.
+\label{eq:sp-expand}
+\end{eqnarray}
+对于shuffled项，$v_2^+$ 和$v_2^-$可以用$(v_2^+ + v_2^-)/2$替换，那么$\delta$则可以用$(\delta^{\rm OS}+\delta^{\rm SS})/2$替换。并且整个$\gamma$关联方法可以用 $(\gamma^{\rm OS}+\gamma^{\rm SS})/2$替换。因此我们得到：
+\begin{eqnarray}
+\langle(\Delta S_{2,\rm shuffled})^2\rangle 
+&\approx& \frac{2(1-v_2)-\delta^{\rm SS}-\delta^{\rm OS}+\gamma_{112}^{\rm SS}+\gamma_{112}^{\rm OS}}{M}
+\label{eq:s-S-expand}\\
+\langle(\Delta S_{2,\rm shuffled}^\perp)^2\rangle 
+&\approx& \frac{2(1+v_2)-\delta^{\rm SS}-\delta^{\rm OS}-\gamma_{112}^{\rm SS}-\gamma_{112}^{\rm OS}}{M}.
+\label{eq:sp-S-expand}
+\end{eqnarray}
+因此，在基于$R(\Delta S_2)$的四个组成部分之间的双重消除之下，我们构造了一个与 $\Delta\gamma_{112}$相联系的关系式：
+\begin{eqnarray}
+\Delta_{R2} & \equiv &\langle (\Delta S_{2,\rm real})^2 \rangle - \langle (\Delta S_{2,\rm shuffled})^2 \rangle - \langle (\Delta S^{\perp}_{2,\rm real})^2 \rangle  + \langle (\Delta S^{\perp}_{2,\rm shuffled})^2 \rangle   \nonumber \\
+ &\approx &2(1-\frac{1}{M})\Delta \gamma_{112}.
+\label{eq:relation1}
+\end{eqnarray}
+这个关系式将在后面的几个部分中详细测试。为了进一步阐明最终的观测量$\sigma^2_{R2}$ 和$\Delta\gamma$之间的联系，我们将公式~\ref{eq:s-expand}， ~\ref{eq:sp-expand}，~\ref{eq:s-S-expand} 和~\ref{eq:sp-S-expand} 代入公式.~\ref{eq:sigma_R2}，即可得到：
+\begin{equation}
+\frac{S_{\rm concavity}}{\sigma_{R2}^2} \approx -\frac{M}{2}(M-1)\Delta\gamma_{112}.    
+\label{eq:relation2}
+\end{equation}
+这里我们假设$\langle (\Delta S_2)^2\rangle$的四个相关项和$\frac{2}{M}$远远大于其它因素的贡献，在一般情况下$\Delta\delta$ 具有最大的影响。
+
+公式.~\ref{eq:relation2} 所表示的关系表明如果$\Delta\gamma$是正的、有限的，那么$R(\Delta S_2)$ 的分布将呈现下凹的形状，反之亦然。反应平面分辨率的修正对于$\Delta_{R2}$ 和 $\sigma^2_{R2}$是很微小的，它的影响可以忽略不计，公式.~\ref{eq:relation1} 、 \ref{eq:relation2}提供了实现这个目标的近似方法。
+
+
+
+\subsection{电荷平衡函数方法}
+
+另一个寻找CME的方法就是上一章中提到的SBF方法~\cite{Tang2019}，
+\begin{eqnarray}
+\Delta B_y 
+&\equiv& [\frac{N_{y(+-)}-N_{y(++)}}{N_+} - \frac{N_{y(-+)}-N_{y(--)}}{N_-}] - [\frac{N_{y(-+)}-N_{y(++)}}{N_+} - \frac{N_{y(+-)}-N_{y(--)}}{N_-}] \nonumber \\
+&=& \frac{N_+ + N_-}{N_+N_-}[N_{y(+-)} - N_{y(-+)}].
+\label{eq:by}
+\end{eqnarray}
+其中 $N_{y(\alpha\beta)}$是一个逐事件的量，它表示在垂直与反应平面方向上粒子对中$\alpha$领先于粒子$\beta$ 的粒子对的个数 ($p_y^\alpha > p_y^\beta$)。
+同理的我们可以计算 $\Delta B_x$，表示在平行于反应平面方向上粒子$\alpha$领先于粒子$\beta$ 的粒子对的个数。然后最终的观测量是基于$\Delta B_y$ 和 $\Delta B_x$ 分布的宽度，即
+\begin{equation}
+r \equiv \sigma(\Delta B_y) / \sigma(\Delta B_x).
+\label{rlab}
+\end{equation}
+由于CME导致的电荷分离效应会使在垂直于反应平面的方向上（$y$方向，与磁场方向平行）的粒子对的投影的波动会比另一个方向上要大。
+$r$ 可以在实验室坐标系下计算，即有$r_{\rm lab}$，也可以在静止坐标系下计算：$r_{\rm rest}$，且认为在静止坐标系下观察电荷分离效应是最好的。并且他们之间的商：
+\begin{equation}
+R_B = r_{\rm rest} / r_{\rm lab},
+\end{equation}
+能够更好的帮助区分背景还是真正的CME信号。
+%An extra care is also needed to correct the $r$ observable for the event plane resolution.
+
+在一个事件中，我们对$\Delta B_y$各个项重新解析得到：
+\begin{equation}
+N_{y(\alpha\beta)}-N_{y(\beta\alpha)} = \sum_{\alpha,\beta} {\rm Sign}[p_{T,\alpha}\sin(\Delta\phi_\alpha)-p_{T,\beta}\sin(\Delta\phi_\beta)].    
+\end{equation}
+因此，为了与其它方法相关联，假设$p_T$是平均横动量，这样就可以先不考虑横动量的影响。在只考虑方位角的情况下，与其它方法一样展开。直接使用$[\sin(\Delta\phi_\alpha) - \sin(\Delta\phi_\beta)]$对Sign()项进行展开，这里需要引入一个归一化因子$C_y$，那么对事件取平均的结果则有：
+\begin{eqnarray}
+\langle N_{y(\alpha\beta)}-N_{y(\beta\alpha)} \rangle &\approx& C_y \Big\langle \sum_{\alpha,\beta} [\sin(\Delta\phi_\alpha) - \sin(\Delta\phi_\beta)] \Big\rangle \nonumber \\
+&=& C_y \Big\langle [N_\beta \sum_{\alpha}\sin(\Delta\phi_\alpha) - N_\alpha \sum_{\beta}\sin(\Delta\phi_\beta)] \Big\rangle \nonumber \\
+&=& C_y N_\alpha N_\beta \langle \langle \sin(\Delta \phi)\rangle _{N_\alpha}-\langle \sin(\Delta\phi)\rangle_{N_\beta} \rangle. \label{eq:constant}
+\end{eqnarray}
+常数可以通过计算粒子对数计算，再加上式..~\ref{eq:Fourier_expansion}中$\frac{dN}{d\Delta\phi}$ ，则有：
+\begin{eqnarray}
+\langle N_{y(\alpha\beta)}-N_{y(\beta\alpha)} \rangle &=& 2\int_{-\pi/2}^{\pi/2} 
+\Big[\int_{-\pi/2}^{\Delta\phi_\alpha} \frac{dN}{d\Delta\phi_\beta}d\Delta\phi_\beta+\int_{\pi-\Delta\phi_\alpha}^{3\pi/2} \frac{dN}{d\Delta\phi_\beta}d\Delta\phi_\beta   \nonumber \\
+&& -\int^{\pi-\Delta\phi_\alpha}_{\Delta\phi_\alpha} \frac{dN}{d\Delta\phi_\beta}d\Delta\phi_\beta\Big]\frac{dN}{d\Delta\phi_\alpha}d\Delta\phi_\alpha \nonumber \\
+&\approx& \frac{8}{\pi^2}(1+\frac{2}{3}v_2)N_\alpha N_\beta (a_{1,\alpha}-a_{1,\beta}).  \label{eq:integral_result}  
+\end{eqnarray}
+通过比较公式.~\ref{eq:constant} 和\ref{eq:integral_result}，我们可以得到$C_y = 8(1+2v_2/3)/\pi^2$。在不考虑 $p_T$ 的权重的情况下$\langle\Delta B_y\rangle$ 变成$\frac{8(1+2v_2/3)}{\pi^2} M \langle\langle \sin(\Delta \phi)\rangle_{N_+} -\langle \sin(\Delta\phi)\rangle_{N_-} \rangle$，它的函数形式与$\langle S_{2,\rm real}\rangle$类似。
+因此类似的我们假设：
+\begin{equation}
+\langle N_{x(\alpha\beta)}-N_{x(\beta\alpha)} \rangle \approx  C_x N_\alpha N_\beta \langle\langle \cos(\Delta \phi)\rangle _{N_\alpha}-\langle \cos(\Delta\phi)\rangle_{N_\beta} \rangle,  
+\end{equation}
+直接的计算统计可以改写为：
+\begin{eqnarray}
+\langle N_{x(\alpha\beta)}-N_{x(\beta\alpha)} \rangle &=& 2\int_{0}^{\pi} 
+\Big[\int_{\Delta\phi_\alpha}^{2\pi-\Delta\phi_\alpha} \frac{dN}{d\Delta\phi_\beta}d\Delta\phi_\beta-\int^{\Delta\phi_\alpha}_{-\Delta\phi_\alpha} \frac{dN}{d\Delta\phi_\beta}d\Delta\phi_\beta\Big]\frac{dN}{d\Delta\phi_\alpha}d\Delta\phi_\alpha \nonumber \\
+&\approx& \frac{8}{\pi^2}(1-\frac{2}{3}v_2)N_\alpha N_\beta (v_{1,\alpha}-v_{1,\beta}).   
+\end{eqnarray}
+因此$C_x = 8(1-2v_2/3)/\pi^2$, 
+式$\langle\Delta B_x\rangle$ 替换为 $\frac{8(1-2v_2/3)}{\pi^2} M \langle\langle \cos(\Delta \phi)\rangle_{N_+} -\langle \cos(\Delta\phi)\rangle_{N_-} \rangle$,相似的有 $\langle \Delta S_{2,\rm real}^{\perp}\rangle$. 
+
+现实中 $\langle\Delta B_{y(x)}\rangle$和$\langle \Delta S_{2,\rm real}^{(\perp)}\rangle$ 这两项为0。可见$C_y$ 和$C_x$ 这两项主要包含了SBF方法的影响因素。因为我们的目标是把$\Delta B_y$、$\Delta B_x$分布的方差与其他方法联系起来，在此给出以下两个关系式（详细推导见附录\ref{appendix1}）：
+
+\begin{eqnarray}
+\sigma^2(\Delta B_y) &\approx& \frac{4M}{3}+ \frac{64M^2}{\pi^4}(1+ \frac{4}{3} v_2)(a_{1,+}-a_{1,-})^2 
+\\
+\sigma^2(\Delta B_x) &\approx& \frac{4M}{3}+ \frac{64M^2}{\pi^4}(1-\frac{4}{3}v_2)(v_{1,+}-v_{1,-})^2 .
+\end{eqnarray}
+那么与 $\gamma$关联方法的相关联，可以有：
+\begin{equation}
+\Delta_{\rm SBF} \equiv \sigma^2(\Delta B_y) - \sigma^2(\Delta B_x) \approx  \frac{128M^2}{\pi^4}(\Delta\gamma_{112}-\frac{4}{3}v_2\Delta\delta).   \label{eq:relation3} 
+\end{equation}
+需要说明的是因为SBF不仅考虑了粒子的方位角，而且考虑了他们的横动量信息。如果式.~\ref{rlab} 中用$\sigma^2(\Delta B_y) - \sigma^2({\Delta B_x})$替换，那么如果考虑了横动量的权重时它将大致等效于 $(\Delta \gamma_{112}-\frac{4}{3}v_2\Delta\delta)$
+
+
+\subsection{三种方法核心部分的比较}
+\label{Sec:kernel}
+这一部分，我们将通过研究Toy模型和EBE-AVFD 以此验证在上一部分介绍的他们之间的关系：$\gamma$ correlator： $\Delta \gamma_{112}$；$R$ correlator, ：$\Delta_{R2}$；SBF:$\Delta_{\rm SBF}$
+我们的目标是通过验证各个方法对与信号、背景的反应，并确认这些实验方法之间的关系式是否成立（式.~\ref{eq:relation1} 和 \ref{eq:relation3}）
+为了方便起见，在这一部分中的结果是在反应平面之下计算的。用于分析的粒子的截断为：$|\eta|<1$ ， $0.2 < p_T < 2$ GeV/$c$.
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=6.2cm]{./Figures_Use/fig_toy.pdf}
+\caption[三种方法核心组成部分在Toy模型中的结果]]{Toy模型中 $2\Delta\gamma_{112}$, $\Delta_{R2}$ 和$\Delta'_{\rm SBF}\equiv(\frac{\pi^4}{64M^2}\Delta_{\rm SBF}+\frac{8}{3}v_2\Delta\delta)$ 的结果}
+\label{fig:toya1}
+\end{figure}
+
+\subsection{Toy模型}
+我们把三种方法的的主要关系式在完全相同的数据、截断下做分析。图\ref{fig:toya1} 给出的是以 $a_1^2$为横坐标，三种不同方法的组成部分：$2\Delta\gamma_{112}$, $\Delta_{R2}$ 和 $\Delta'_{\rm SBF}\equiv(\frac{\pi^4}{64M^2}\Delta_{\rm SBF}+\frac{8}{3}v_2\Delta\delta)$ 的结果。空心的图形表示的是纯信号的情况下，实心的是加入了信号和共振态衰变的情况下的结果，也就是说这两种情况前一种情况是没有背景的而后一种是包括了共振态$v_2$的情况。
+在没有背景的情况下，三个观测量的核心组成部分都具有基本相同的结果，并且他们都落在$4a_1^2$的线性函数之上。因此，三种方法都都同样都CME信号有相同都灵敏度。在这种理想的情况下，$\Delta_{\rm SBF}$ 考虑的横动量信息似乎没有明显的区别。
+当加入共振态$v_2$的影响的情况下，对于所有三种方法，在纯信号贡献的基础上都表现出了相当大的背景效果。而且这一现象在信号越小的时候表现得更加明显。在Toy模型中加入的共振态背景对三种方法的都有类似的反应。当然其中也纯在着一些细微的差异，可能是在公式~\ref{eq:relation1} 、\ref{eq:relation3}的推导中忽略了高阶项的结果引起的。尽管背景的影响取决于粒子谱的不同，尤其是椭圆流共振态的粒子谱~\cite{Feng:2018chm,Schlichting:2010qia,Pratt:2010zn}，但一般而言，我们相信这三种方法在一个大范围大粒子谱和共振态的情形下会有相同的反应。
+
+
+\subsection{EBE-AVFD模型}
+在EBE-AVFD 模型中包含了CME的信号并且该模型中的背景以更加接近与实验中的真实包含的背景。在接下来的模拟之中，我们产生了EBE-AVFD 中心度为30-40\% Au+Au 碰撞在$\sqrt{s_{\rm NN}} = 200$ GeV的事件, 其中 $n_{5}/s$ = 0, 0.1 和 0.2。因此在这三种情况下他们的背景基本是保持不变的，通过改变$n_{5}/s$来改变来CME的信号大小。因为反应平面已知，因此可以得到在模型中的$a_{1,\pm}$的值，见表.\ref{tab:Observeda1AuAu} 。
+\begin{center}
+\begin{table}[h]
+\centering
+\caption{ EBE-AVFD模型AuAu对撞200GeV中的值}
+\begin{tabular}{c|c|c}
+\toprule
+ $n_{5}/s$    &  Positive particles      &   Negative particles   \\  
+\hline
+0   &  0 & 0 \\
+0.10 &  0.0082   $\pm$ 0.0001   &  -0.0067 $\pm$ 0.0001  \\
+0.20 &  0.0154   $\pm$ 0.0001   &  -0.0146 $\pm$ 0.0001  \\
+\bottomrule
+\end{tabular}
+\label{tab:Observeda1AuAu}
+\end{table}
+\end{center}
+
+
+
+图.~\ref{fig:AVFD_delta}(a) 给出了三个核心组成部分$2\Delta\gamma_{112}$, $\Delta_{R2}$ ， $\Delta'_{\rm SBF}$以\ns 为横坐标的结果。这三个方法的结果在相同的\ns 下都有着非常相似的结果，从而进一步证实了式~\ref{eq:relation1} 和 \ref{eq:relation2}所表示的关系的正确性。
+\begin{figure}[htbp]
+\vspace*{-0.01in}
+\centering
+\subfigure{\includegraphics[width=6.2cm]{./figures/fig_AVFD.pdf}}
+\subfigure{\includegraphics[width=6.2cm]{./figures/fig_Equ42.pdf}}
+\captionof{figure}[三种方法核心组成部分在EBE-AVFD中的结果]{三种方法核心组成部分在EBE-AVFD中的结果：(a) 以\ns 为横坐标(以此检验式.~\ref{eq:Superposition}；(b) 扣除全背景项之后的结果。} \label{fig:AVFD_delta}
+\end{figure}
+由于EBE-AVFD模型事件的反应平面是已知的，我们可以很容易的得到$a_{1,\pm}$的值，如表.\ref{tab:Observeda1AuAu}所示，在知道模型数据中$a_1$的情况下我们能够更好的解释不同\ns 的结果。从表中可以看到$a_{1,\pm} = 0$这与$n_{5}/s=0$是一致的，并且$a_{1,+}$和$a_{1,+}$的值在一定的$n_{5}/s$范围内是有限的而且他们之间的符号是相反的。因为在对撞系统中会包含额外的正电荷，因此正、负电荷的$a_{1}$不一定是完全相等的。
+根据$\gamma_{112}$ correlator 在式中的的展开项和三种方之间的关联我们期望这三个方法的核心组成部分（$O(n_{5}/s)$）都能够服以下公式：
+\begin{center}
+\begin{equation}
+O(n_{5}/s) - O(0) =  a_{1,+}^2 + a_{1,-}^2 - 2a_{1,+}a_{1,-}.
+\label{eq:Superposition}
+\end{equation}
+\end{center}
+图.~\ref{fig:AVFD_delta}(b) 所给出的是三种方法在扣除全背景的情形下的结果，三种方法的结果都落在了同一条直线上。EBE-AVFD模型的结果揭示了实验观测量对信号和背景贡献的线性叠加关系。本文中的模型结果证实了大多数尝试将信号和背景分离的分析方法都默认假设了这一点。
+
+在Toy模型和EBE-AVFD模型对三种方法核心组成部分的比较结果表明在一般意义上说三种实验室的观测量对于相同的CME信号、背景的反应是彼此等同的。并没有哪种研究方法比另外的方法更要有优势的说法。
+%The kernel-component comparison using both the toy model and the EBE-AVFD model support the idea that to the first order, the three observables are equivalent to each other, with their very similar responses to the CME signal as well as the backgrounds. Up to this point, we see no  obvious advantage of one over the others.  
+
+
+
+
+\section{本章小结与讨论}
+
+
+本章在第一部分对目前实验上用于寻找CME信号的观测方法：$\gamma$ 关联方法和R关联方法目前的研究现状进行介绍。通过两种方法计算得到的结果都表面实验中有可能观测到了CME信号存在的可能性。但是两种方法都存在仍未解决的问题。背$\gamma$关联方法观测量中信号与背景的贡献很难区分、鉴别，GMC、LCC和共振态衰变所带来的非流关联都可能引起假的CME信号；并且在理论模拟中只包含背景的情况下也可以重现STAR实验在Au+Au对撞200GeV能量下的测量的结果。R关联方法就提出这一方法的作者的结果而言，是一个非常完美的观测量，他们的模型结果表面该方法对信号与背景的是截然不同的，能够轻松的鉴别信号与背景。但它存在的问题是其他人（除了方法提出者之外的人）并不能重复出他们的结果。那么这个不同是什么原因造成的呢？是提出这所用的模型不同还是不同研究者之间程序之间可能存在问题？这个问题需要进一步的验证。因此该方法的结果也不能作为观测到CME信号证据。
+
+在第二部分对新提出的以检验碰撞中磁场所引起的横动量方向的波动来寻找CME的电荷平衡函数法，本文对该方法的模型检验进行来回顾与更新，对该方法的一组观测量对信号、背景的反映进行来进一步的检验。通过对Toy模型中不同信号、背景混合的情况下的研究方检验发现\rrest 和\rb 对CME信号的反应都很灵敏，并且两者对背景有着不同的反应：在\rrest 随着背景的增大而增大时\rb 会随着背景的增大而减小。这一性质无疑让我们能够很好的鉴别信号与背景。最后在更加接近实验数据的AMPT模型和EBE-AVFD模型中的结果也表明我们的方法是能够区分信号与背景的。模型的检验已经证明SBF方法是有效的。下一步就是将该方法应用在实验数据分析中，其分析过程与结果在下一章给出。
+
+在第三部分对三种方法$ \gamma$关联方法、R关联方法和电荷平衡函数法进行了详细详细的推导，最终表面三种方法是相互联系的；
+在Toy模型和EBE-AVFD模型对三种方法核心组成部分的比较结果表明三种实验室的观测量对于相同的CME信号、背景的反应是彼此等同的。并没有哪种研究方法比另外的方法更要有优势的说法。
+%本章中关于Toy模型与AMPT的模拟主要由导师唐爱红完成，本人只是做了一些更新、检查工作；关于EBE-AVFD模型的结果与STAR数据的分析全部由本人完成。
+

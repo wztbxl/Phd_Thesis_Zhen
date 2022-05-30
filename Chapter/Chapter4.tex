@@ -1,0 +1,215 @@
+
+\setcounter{section}{0}
+
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{equation}{0}
+%==========================================
+\chapter{ 电荷平衡函数法在Au+Au~200~GeV的分析结果与讨论}
+
+在上一章中引入了通过测量CME所引起的在磁场方向的横动量分布的波动来寻找CME信号的新方法—— 电荷平衡函数法，多种模型的结果证明该方法所引出的两个观测量\rrest 和\rb 对CME信号都有很好的反应，而且背景对该方法的两个观测量有着不同的放应。即在CME信号的作用下，\rrest 和\rb 都会大于1；\rrest 会随着背景的增大而增大，而与此同时\rb 会压低，且小于1。因此如果\rrest 和\rb 都大于1那就是CME信号存在到证据。模型的检验结果表面通过对比电荷平衡函数的这一组观测量可以很好的鉴别信号与背景。
+
+RHIC@STAR实验对撞点的数据采集以及持续了二十几年，在此期间采集了不同质心能量（$\sqrt{s_{\mathrm{NN}}} =  $ 7.7, 11.5, 14.5, 19.6, 27, 39, 54.4, 62.4 and 200 GeV ）的Au+Au对撞、200GeV UU对撞、pPb对撞以及固定靶的数据，如此多的不同能量、对撞系统的数据无疑为研究QGP对性质提供了一个非常好的平台。对与CME的研究而言，如果我们能够证实CME确实存在，更深入的我们可以研究在什么条件下（质心能量、碰撞系统等）发生了破缺，这必然对我们了解、掌握手征奇异性的性质具有重要意义。因为CME是由磁场引起的，而磁场是由旁观质子的运动而产生的，质心能量越大磁场越强，则能观察到信号的几率就越大。电荷平衡函数法是利用了多次做商来消除背景的贡献，因此该方法对统计量的要求比较高，在此我们优先对2016年所采集的Au+Au~200~GeV进行研究分析。
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=14cm,clip]{./Figures_Use/run16BadrunQA.png}
+\caption{run16 Au+Au200GeV中run的QA图}
+\label{fig:badrun}
+\end{figure}
+
+\section{分析数据的记录与筛选}
+数据采集过程中会把所有的碰撞信息都记录下来。一般情况下每隔一段时间就会对所采集的事件进行一次存储，且根据当时存储的时间进行记录，在对撞实验组中会以20分钟为一个记录，记住一个run。由于实验的探测器并不是随时都能保持最佳的工作状态，运行过程中有可能会出现一些不能用于分析的run，所以需要对这些存储下来run的质量进行筛选。如图\ref{fig:badrun}是不同run的QA图。由于探测器、束流的影响，不同run的$<|VertexZ-pdVz|>$和不同时期的值是不一样的。图中上线两条现外的run表示是距离这个时期run的标准差太远的，称为不好的run（bad run）。这些run是不会应用与数据分析中的。
+
+
+
+
+
+\subsection{事件筛选}
+并不是所记录的所有事件都是好的事件。为了减少这些额外的背景对分析的影响，在分析过程中会对坏的事件进行筛选。
+在本文的分析中所用到的是挑选触发最小偏差(Minimal Bias Trigger, MB) 事件。Minimum Bias trigger 的数据是通过挑选零度量能器（ZDC）两侧的通量和顶点探测器（VPD）探测到的碰撞顶点来挑选。一下是几个最基本的事件筛选的条件：
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=14cm,clip]{./Figures_Use/VpdVz.png}
+\caption{AuAu200GeV中对碰撞顶点筛选后的结果}
+\label{Fig:VpdVz}
+\end{figure}
+
+\begin{itemize}
+\item 通过TPC所重建的初级顶点(Primary Vertex)在束流（z）方向上的距离不能太远，取决于不同的能量，即$|V_z| < $常数。
+\item 初级顶点在垂直于束流的方向（X-Y）上的投影距离TPC的中心小于2cm，即$Vr < 2 cm$。
+\item 在碰撞能量大于等于39GeV（即39，62.4和200GeV）时，VPD重建的顶点位置和TPC重建的初级顶点在z方向上的投影之间的距离要小于3cm，即 $|Vz^{VPD}-Vz^{TPC}| < 3cm$，主要目的是去除在同一事件发生多次碰撞的事件，即碰撞的顶点不只一个（Pile-up event）。
+\end{itemize}
+STAR合作组在16年采集数据的时候加入了HFT探测器，有了HFT探测器会显著提高事件重建的顶点的位置，因此在本文的分析中采用$|V_z| < 6.0   cm$。（在没有HFT探测器的时候是利用VPD所重建的初级顶点来筛选事件的，精确度比较低，此时要求$|V_z| < 30.0 cm$）。图.~\ref{Fig:VpdVz}是本文分析中菜用的截断之后的结果，因为所用的数据（picoDst）已经预先加入了$|V_{z}^{VPD}-V_{z}^{TPC}| < 3.0$因此左图中只有筛选之后的一条色带。从图中可以看到大部分的事件都是集中在中心位置。
+表~\ref{tab:Event_cut}中列出了我们在分析Au+Au200GeV是对事件筛选用到的截断。run16 Au+Au 200GeV在对所有截断之后总共得到将近$1*10^{9}$的好事件。
+\begin{table}[htb]
+\centering
+\caption{Au + Au 200 GeV事件挑选的基本条件}
+\begin{tabular}{c|c|c|c|c}
+\toprule
+$\sqrt{s}_{NN}$  &  $|V_{z}|$(cm)  &  $V_{r}$(cm)  &  $|V_{z}^{VPD}-V_{z}^{TPC}|$  &  Trigger ID (MB)                          \\ \hline
+200 run16       &  $<$ 6          &  $<$ 2        &  $<$ 3                        &       5200-01, 11, 21, 31, 41, 51    \\ 
+\bottomrule
+\end{tabular}
+\label{tab:Event_cut}
+\end{table}
+
+STAR合作组提供了一个C++的标准类：StRefMultCorr，它同时包含了中心度的划分以及事件对于中心度和亮度（Luminosity）的权重，所有的中心对划分都包括在里面。如果\ref{fig:centrality}，根据事件中末态粒子多种数的多少划分中心度（实验中不能直接测量碰撞参数，只能通过末态粒子多重数的大小来区分碰撞的中心度）。在STAR实验组的划分中，末态粒子数小于总事件数$80\%$的部分在分析中是扣除的。从$80\%-0\%$表示的是由偏心碰撞到中心碰撞，即$0\%-5\%$是表示的是事件中末态粒子数最多的那一部分。
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=14cm,clip]{./Figures_Use/run16centrality.png}
+\caption{run16 Au+Au200GeV的中心度分布结果}
+\label{fig:centrality}
+\end{figure}
+
+
+\subsection{带电粒子径迹的筛选}
+从TPC我们会得到很多与粒子径迹相关的信息，为了保证分析中所用到的带电粒子纯度比较高。下面是一些相关参数的简要介绍及用到的截断：
+\begin{itemize}
+\item $DCA$：带电粒子径迹距离重建的初级碰撞顶点的最近距离，在本文的分析中默认设置是$d_{ca}$ < 1 cm。
+\item nFitFits: TPC中拟合带电粒子径迹所用到的碰撞点的个数不得少于15个（总共有45个）。
+\item nHitdDdx：带电粒子径迹用于计算电离能量损失的径迹不得少于5个。
+\item rnHitsFit/nHitsPoss >0.52： 表示拟合径迹的碰撞点与可能是该径迹的碰撞点的个数的比值不能少于0.52%。以此保证去除可能分裂的径迹。
+\end{itemize}
+以上是对带电粒子径迹的质量的筛选。因为带电粒子的质量会影响最终观测量的结果，为了计算系统误差，在以上默认设置之外，还会对不同的截断的结果进行分析以估算最终观测量的系统误差。这一点在后面会详细介绍。
+
+\subsection{带电粒子径迹的筛选}
+在实验中探测器能探测到的粒子有三种：$\pi$、$K$ 和$p$。而碰撞中产额最高的是$\pi$介子，它占了末态粒子大部分。因此在本文的分析中我们只对$\pi$介子进行分析。也因此我们需要对末态粒子进行鉴别。粒子的鉴别主要用到TPC~\cite{Anderson:2003ur} 和TOF~\cite{Llope:2005yw}。TPC探测器可以提供带电粒子的电离能损、动量信息，通过与粒子的理论值相的比较得到它相对于理论值的偏差（$n\sigma$ ），其偏差越小表示它是该种粒子的概率越大。通过TOF可以得到粒子在探测器中的飞行时间，再把粒子的横动量也考虑近去就能够计算出粒子的静止质量($m$)，通过对质量做截断会提高粒子对纯度。图.\ref{Fig:PID}左图给出了在筛选之前对TPC中横动量与电离能损对关系图，可以看到由不同色带所表示的不同的粒子种类；右图中是通过TOF和TPC信息测量的质量随横动量的分布图，通过不同的质量平方的分布可以清晰的分辨不同的粒子。
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=14cm,clip]{./Figures_Use/PID.png}
+\caption{TPC与TOF的粒子鉴别}
+\label{Fig:PID}
+\end{figure}
+表.~\ref{tab:Track_cut}中列出了在我们的分析工作中具体的动力学和粒子鉴别截断。通过这个截断，我们能够更多的利用探测器检测到的带电粒子信息，从而能够更好的放映真实碰撞的物理过程。
+\begin{table}[htb]
+\centering
+\caption{数据分析中具体的动力学、粒子鉴别所用的截断}
+    \centering
+   \resizebox{\textwidth}{!}{
+\begin{tabular}{|c|c|c|}
+\toprule
+	\sNN$(GeV)$   & 动力学截断& 粒子鉴别截断 \\ \midrule[0.5pt]
+ & \multirow{2}{*}{$|\eta| < 1.0 $ } & {\color{red}TPC}\\ 
+	Au+Au    &  & $|n\sigma_{p}|$ < 2 \\ \cline{2-3} 
+	200 GeV  &  \multirow{2}{*}{ $0.2 < p_T<2.0 $ (GeV/c)   }  & {\color{red}TPC+TOF} \\
+					&   &$|n\sigma_{p}|$ < 3 \quad $-0.01<m^2<0.1 (\mathrm{GeV}/c^{2})^{2}$ \\  %\midrule[0.5pt]
+\bottomrule
+\end{tabular}
+}
+\label{tab:Track_cut}
+\end{table}
+
+
+
+
+\bigskip
+\section{事件平面法}
+
+因为CME是跟磁场方向有关的，而磁场的方向与反应平面（一阶、二阶）是垂直的。因此需要了解事件的反应平面位置。因为实验中是无法直接得到碰撞的反应平面，只能利用实验中探测到的粒子来重建事件平面以此来估计反应平面。由于重建的反应平面是根据接收的粒子进行的重建，其与真实反应平面是有一定的偏差的，事件平面分辨率（Event plane resolusion）是表征事件平面与反应平面的偏差~\cite{Poskanzer:1998yz,Voloshin:2008dg}。
+
+反应平面通过流矢量$Q_{n}$的计算来得到，其定义如下：
+\begin{equation}
+\label{eq:Qn_x}
+Q_{\textbf{n},x} = \sum_{i}\omega_{i}\mathrm{cos}(n\varphi_{i})
+\end{equation}
+\begin{equation}
+\label{eq:Qn_y}
+Q_{\textbf{n},y} = \sum_{i}\omega_{i}\mathrm{sin}(n\varphi_{i})
+\end{equation}
+这里的n表示事件平面的阶数。那么事件平面的与事件流矢量$Q_{n}$之间的关系可以表示为：
+\begin{equation}
+\label{eq:EventPlane}
+\Psi_{n} = \frac{1}{n} \mathrm{arctan}(\frac{Q_{\textbf{n},y}}{Q_{\textbf{n},x}})
+\end{equation}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.67\textwidth,clip]{./Figures_Use/fig_EPreconstructed30-40.pdf}
+\caption{AuAu200GeV反应平面重建及修正}
+\label{fig:ep}
+\end{figure}
+在本文的分析中采用TPC所探测到的$0.5 < |\eta| < 1.0$区间的粒子来做事件平面的重建，分析的粒子则用$|\eta|<0.5$，以此来消除自关联效应（Auto-correlation effect）。在重建事件平面的过程中我们用到了重定位修正(recentering correction)方法和中心偏移修正方法（Shift）来消除逐事件的波动和消除由于探测器接受度和探测效率等带来的影响，详细的修正过程可以在文献~\cite{adamczyk2013elliptic}中找到，这里就不赘述。由于重建反应平面时是分开东、西两部分的，因此我们需要用这两个事件平面来估计整个事件平面的分辨率：
+\begin{equation}
+\label{eq:Res_Chi_sub}
+\mathcal{R}_{n,sub} = \sqrt{2\left\langle \mathrm{cos}(km(\Psi_{m}^{East} - \Psi_{m}^{West})) \right\rangle}
+\end{equation}
+如图\cite{Fig:ep}，原始事件的反应平面角分布并不是平的，实验上的反应平面是随机的不应该有起伏，在重定位修正、中心偏移修正之后可以看到反应平面角的分布被拉平了，即表明反应平面的重建及其修正是达到目标的。
+
+
+
+正如前面所提到的因为CME是由旁观的质子运动而产生的，那么理论上最佳的观测CME的平面应该是一阶反应平面。但由于实验利用零度量能器（Zero Degree Calorimeters）所得到的事件平面分辨率太差，不足以观测到CME，因此在本文中利用TPC二阶反应平面进行计算。在接下来的分析中，我们没有对事件平面分辨率进行修正，而是在模型中加入了从实验数据中得到的分辨率应用到模型中以此来达到与实验处在同一程度的比较。
+
+
+
+\section{统计误差和系统误差}
+数据分析中很重要的一部分就是需要对观测量的的不确定性进行计算，即统计误差和系统误差。这一部分将对本文中在计算分析中所用到的误差的计算方法进行简要介绍。
+
+\subsection{统计误差}
+统计误差的计算方法有很多种。例如，误差传递法、Bootstrap 法（随机重复取样计算）和子群法（Sub-Group method）。考虑到在我们的观测量有\rb ，考虑到它的复杂性，误差传递法要考虑的分子、分母之间的关系其推导过于复杂；Bootstrap方法涉及到多次（最少需要二十次）重复对原始样本进行抽样，但我们分析的样本统计有1000百万，这对于计算资源是一个极大的需求。这两个方法都很难实现，因此本文采最后一种子群的方法计算统计误差。
+
+在概率统计中，如果我们把一个整体平均分成N个子群，那么这五个子群的标准差就是：
+\begin{equation}
+S_{x} = \sqrt{    \frac{\sum_{i=1}^{i=N} (x_i -<x>)^2 }{N-1}    }
+\end{equation}
+那么整体样本的标准差就可以通过下式计算：
+\begin{equation}
+\sigma (x) = \dfrac{S_{x}}{sqrt(N)} = \sqrt{    \frac{\sum_{i=1}^{i=N} (x_i -<x>)^2 }{(N-1)*N}    }
+\end{equation}
+通过检验，发现这一方法是行得通的，因此本文计算统计误差的方法就是子群的方法。
+
+\subsection{系统误差}
+在计算系统误差的时候，我们通过改变($DCA$, nFitHits, $n\sigma_{p}$的值来计算系统误差。对于每一种情况，我们改变其中一个而是其他保持为默认的值。每计算一次都能得到一个结果，最后计算这些所得到的结果之间的标准差就是分析最终的系统误差。表.\ref{table:sys_error_cuts}给出来系统误差计算中不同参数的变化总表。最终的系统误差在图.\ref{fig:finalresults}中包含了，在此就不一一列举。
+
+%\definecolor{Gray}{gray}{0.85}
+%\definecolor{LightCyan}{rgb}{0.88,1,1}
+\begin{table}
+ \renewcommand \arraystretch{1.3}%表格行间距,在\begin{table}下加上
+ \caption{系统误差计算中的截断}
+  \label{table:sys_error_cuts}
+ \centering
+%\resizebox{\textwidth}{!}{
+\begin{tabular}{|c|c|c|c|}
+\toprule[1.5pt]  % 在表格最上方绘制横线
+%\rowcolor{LightCyan}
+参数 & 默认截断 & \multicolumn{2}{c|}{ 修改截断}\\ 
+\midrule[1.5pt]
+  \bm{$d_{ca}$} & < 2.0 &    < 1.5& <2.2\\ \hline
+  \textbf{nFitPts} & > 20 &    > 22 &> 25 \\  \hline
+  \bm{$n\sigma_{p}}$& <2.0 & < 2.2 &<2.5\\  \hline
+\bottomrule[1.5pt] 
+\end{tabular} \\
+%}\\
+\end{table}
+
+\section{结果与讨论}
+\label{AuAuresults}
+
+在这一部分将对我们的结果进行讨论和分析。先总结以下本文的分析中所用到的以下参数设置：分析所用到的横动量截断为：$0.2 < p_T < 2 $ GeV/c；所用到的是有TPC在$ 0.5< \eta <1.0$区间内的带电粒子径迹重建的二阶反应平面角$\psi _{2}$；在利用SBF方法分析的时候所用的粒子是$\pi$，它是通过TPC和TOF的相关信息鉴别的，且他们是在$|\eta| <0.5$内（以消除自关联效应）；
+
+图.~\ref{fig:finalresults}给出的是$r_{\mathrm{rest}}$ 、 $r_{\mathrm{lab}}$  和  $R_{\mathrm{B}}$随着中心度变化的结果，其中包括了实验的、EBE-AVFD模型中得到的结果。其中实验数据的结果没有对事件平面分辨率进行修正，为了确保公平的比较在模型事件的分析中加入了从实验数据中得到的事件平面分辨率而对模型的反应平面进行晃动。显而易见的是实验中$r_{\mathrm{rest}}$, $r_{\mathrm{lab}}$和$R_{\mathrm{B}}$的结果在所有中心度的结果中都大于1。为了做一个统一性的比较，我们对实验数据事件中粒子的电荷做一个随机的赋值（保证前后的正负粒子个数相等的前提下），以打破原始时间中正负电子之间的关联——没有CME信号的事件进行与原始数据同样的分析。正如图中所示SBF方法的观测量都如期望中那样都接近1。在中心度为$30-40\%$时，可以看到实验数据的结果比模型的没有信号的结果要大，实验数据的结果很难被认为是只有背景的贡献而导致的。
+
+
+
+
+
+
+\begin{figure}[htbp!]
+	\centering
+	\includegraphics[width=0.365\textwidth]{./finalplots/fig_Result_r.pdf}
+	\includegraphics[width=0.4\textwidth]{./finalplots/fig_Result_RB.pdf}
+	\vspace{-0.7cm}
+	\caption{
+	 $r_{\mathrm{rest}}$ , $r_{\mathrm{lab}}$  和  $R_{\mathrm{B}}$ 在Au + Au 200~GeV 下的结果.
+	}
+	\label{fig:finalresults}
+\end{figure}
+
+
+
+\section{本章小结}
+
+我们对STAR实验组在2016年所采集的Au+Au200 GeV的数据进行系统的分析，实验表明所有的中心度中$r_{\mathrm{rest}}$ 、 $r_{\mathrm{lab}}$  和  $R_{\mathrm{B}}$的值都大于1，并且在$30-40\%$中心度中，实验的结果比EBE-AVFD中无信号的点要大。需要注意的是，SBF方法中$R_{\mathrm{B}}$在有背景的情况下是会被压低的。\rrest 和\rb 同时大于1的情况下很难认为这一结果是完全由背景的贡献而导致的。当然，目前关于LCC对该观测量的影响还没有系统的做完，需要进一步对此进行一个系统的研究。
+
+
+引入了一个寻找CME的新方法：带标记的电荷平衡函数法（Signed Balance Function） 。不同于此前的$\gamma$ correlator和$R$-correlator通过CME导致的带电粒子方位角之间的关联来寻找CME，SBF方法主要通过构造相应的平衡函数，以此寻找由于碰撞早期旁观者的运动产生的磁场所引起的手征磁效应而导致的在磁场方向上横动量的变化来实现其目的的。通过对Toy模型中不同信号、背景混合的情况下的研究方检验发现\rrest 和\rb 对CME信号的反应都很灵敏，并且两者对背景有着不同的反应：在\rrest 随着背景的增大而增大时\rb 会随着背景的增大而减小。这一性质无疑让我们能够很好的鉴别信号与背景。最后在更加接近实验数据的AMPT模型和EBE-AVFD模型中的结果也表明我们的方法是能够区分信号与背景的。模型的检验已经证明SBF方法是有效的。

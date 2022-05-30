@@ -1,0 +1,70 @@
+% !Mode:: "TeX:UTF-8"
+\input{Chapter/Zhen/sduthesis-front-cover.def}
+%------封面------
+
+%------声明------
+\input{Chapter/Zhen/sduthesis-statement.def}
+%------声明------
+
+%------Make------
+\newcommand{\maketitlepagestatement}{%
+  \maketitlepage
+  \thispagestyle{empty}
+  ~
+  \vfill\eject
+  \thispagestyle{empty}
+  \makestatement
+  \vfill\eject
+  \thispagestyle{empty}
+  ~
+  \vfill\eject
+  \setcounter{page}{1}
+}
+\newcommand{\maketableofcontents}{%
+    \pagenumbering{roman}
+    \tableofcontents
+    \ifSDU@opt@double
+        \cleardoublepage
+    \else
+        \clearpage
+    \fi
+ %   \pagenumbering{arabic}\setcounter{page}{1}
+}
+
+
+% titlepageinfo.tex
+% 中图分类号
+\fenlei{O572}
+% 单位代号
+\DWdaihao{10422}
+% 密级
+\miji{公开}
+% 学号
+\StuNum{201711936}
+% 页眉
+\ThesisHeader{山东大学博士学位论文}
+\EThesisHeader{Shandong University Ph.D. Thesis}
+% 论文类型（封面） 中
+\CThesisType{博~士~学~位~论~文}
+% 论文类型（封面） 英
+\EThesisType{Dissertation for Doctoral Degree}
+% 中文标题
+\Ctitle{RHIC上STAR实验 54.4 GeV 金-金对撞中的双电子测量}
+% 英文标题
+\Etitle{Dielectron measurement at 54.4 GeV Au-Au collisions at RHIC-STAR}
+% 作者中文名
+\Cauthor{王桢}
+% 学院
+\Dpart{前沿交叉科学青岛研究院}
+% 专业中文名
+\Cmajor{粒子物理与原子核物理}
+% 年级
+\Grade{2017级}
+% 指导老师中文名
+\Csuperver{许长补~研究员~~杨驰~教授~}
+\Ccosuperver{阮丽娟~研究员}
+% 中文日期
+\Cdate{\today}
+\title{\the\Ctitle}
+\author{\the\Cauthor}
+\date{\the\Cdate}

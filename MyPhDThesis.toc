@@ -1,0 +1,56 @@
+\contentsline {chapter}{Abstract}{iii}{chapter*.2}%
+\contentsline {chapter}{\numberline {第一章\hspace {.3em}}绪论}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}标准模型}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}夸克胶子等离子体}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.3}手征对称性}{5}{section.1.3}%
+\contentsline {section}{\numberline {1.4}相对论重离子对撞}{7}{section.1.4}%
+\contentsline {section}{\numberline {1.5}相对论重离子对撞中的双轻子}{9}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}相对论重离子对撞中的双轻子产生}{9}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}双轻子测量历史}{12}{subsection.1.5.2}%
+\contentsline {subsubsection}{NA45实验}{12}{subsubsection*.6}%
+\contentsline {subsubsection}{NA60实验}{13}{subsubsection*.7}%
+\contentsline {subsubsection}{PHENIX实验}{14}{subsubsection*.8}%
+\contentsline {subsubsection}{STAR实验}{15}{subsubsection*.9}%
+\contentsline {chapter}{\numberline {第二章\hspace {.3em}}实验装置}{19}{chapter.2}%
+\contentsline {section}{\numberline {2.1}相对论重离子对撞机——RHIC}{19}{section.2.1}%
+\contentsline {section}{\numberline {2.2}RHIC上的螺线管径迹探测器——STAR}{20}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}时间投影室}{20}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}飞行时间探测器}{23}{subsection.2.2.2}%
+\contentsline {chapter}{\numberline {第三章\hspace {.3em}}STAR前向升级——STAR Forward Upgrade}{27}{chapter.3}%
+\contentsline {section}{\numberline {3.1}STAR前向升级}{27}{section.3.1}%
+\contentsline {section}{\numberline {3.2}窄读出条窄隙室——sTGC}{28}{section.3.2}%
+\contentsline {section}{\numberline {3.3}sTGC于BNL测试部分}{32}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}小原型机测试}{32}{subsection.3.3.1}%
+\contentsline {subsubsection}{超净室测试}{32}{subsubsection*.10}%
+\contentsline {subsubsection}{束流测试}{37}{subsubsection*.11}%
+\contentsline {subsection}{\numberline {3.3.2}大原型机测试}{39}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}五边形模组漏电流测试}{40}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}sTGC slow simulator 及 Cluster finder}{43}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}slow simulator}{44}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}cluster finder}{46}{subsection.3.4.2}%
+\contentsline {chapter}{\numberline {第四章\hspace {.3em}}双电子谱测量}{53}{chapter.4}%
+\contentsline {section}{\numberline {4.1}数据集和事例判选}{53}{section.4.1}%
+\contentsline {section}{\numberline {4.2}径迹判选和电子鉴别}{53}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}径迹判选}{54}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}电子鉴别(eID)}{54}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}电子对重建}{55}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}同号配对方法}{56}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}混合事例方法}{56}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}光子转换背景}{56}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}原初信号}{57}{subsection.4.3.4}%
+\contentsline {section}{\numberline {4.4}效率修正}{58}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}TPC径迹重建效率}{58}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}TOF探测效率}{59}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}电子鉴别效率}{59}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}双电子效率修正}{60}{subsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.4.5}接收度修正}{61}{subsection.4.4.5}%
+\contentsline {section}{\numberline {4.5}强子衰变模拟}{61}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}介子衰变}{62}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}重味夸克半轻子衰变}{67}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Drell-Yan 过程}{69}{subsection.4.5.3}%
+\contentsline {subsection}{\numberline {4.5.4}pT smearing}{69}{subsection.4.5.4}%
+\contentsline {section}{\numberline {4.6}双电子信号}{69}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}低质量区间}{70}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}中等质量区间}{70}{subsection.4.6.2}%
+\contentsline {chapter}{\numberline {第五章\hspace {.3em}}总结与展望}{71}{chapter.5}%
+\contentsfinish 

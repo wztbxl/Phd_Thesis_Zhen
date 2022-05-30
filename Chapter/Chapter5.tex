@@ -1,0 +1,243 @@
+
+
+\setcounter{section}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{equation}{0}
+%==========================================
+
+\chapter{同质异位素对撞实验}
+
+
+目前实验上寻找CME最大的难点在于背景很难完美的处理。如何能够控制实验中背景的大小呢？近些年理论和实验都在对这一点进行研究。
+在2016年，文章～\cite{isobar1}中提出可以通过同质异位素（钌：$^{96}_{44}$Ru + $^{96}_{44}$Ru  和 锆：$^{96}_{40}$Zr + $^{96}_{40}$Zr） 对撞实验Isobaric Collisions，以下简称：Isobar实验）来解决背景的问题。之后RHIC@STAR实验组在2018年也花费了大量的资源采集了大量的数据，并制定了一套严格分析方法：盲分析方法（Bind analysis），以便排除认为因素而引入的偏差。在本章中将对理论预测的Isobar实验进行解读；然后对STAR实验组所做的相关工作进行介绍；最后一部分利用盲分析中的封装程序（Frozen code）（$\gamma$关联方法和R关联方法）对EBE-AVFD模型所产生对Isobar数据进行分析；为了更充分、全面的对研究CME的分析方法，电荷平衡函数法也对该模型数据进行分析。
+
+
+
+\bigskip
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=\textwidth,clip]{./Figures_Use/MCIsobarDiffer.eps}
+\end{center}
+\caption{Isobar实验的理论预期，图片来源\cite{isobar1}}
+\label{fig:gangisobar}
+\end{figure}
+
+\section{Isobar实验的理论预测}
+
+Isobar对撞实验，即：（钌：$^{96}_{44}$Ru + $^{96}_{44}$Ru  和 锆：$^{96}_{40}$Zr + $^{96}_{40}$Zr）。由于钌原子核中所包含的质子数比锆中多了4个，在钌中由旁观质子运动所产生的磁场比锆中的要大；并且两个系统中有相同的核子数，系统之间的物理背景的区别基本相同（文章~\cite{IsobarBackgr}指出两个系统背景区别不大于$4\%$）。因此同质异位素对撞实验提供了一个理想的环境：在具有相同大小流相关的背景的两个系统中具有不同大小的CME信号。因此通过比较CME观测量在两个系统中的区别就可以找到CME。
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=\textwidth,clip]{./Figures_Use/GangIsobarSignificance.eps}
+\end{center}
+\caption{Isobar实验中观测到CME信号到大小和显著性结果预测，图片来源\cite{isobar1}}
+\label{fig:gangsignificance}
+\end{figure}
+如图\ref{fig:gangisobar}（a）给出了基于理论计算的质心能量为200GeV，Ru和Zr中碰撞初始状态磁场的大小。$B_{sq}$表示的是$\gamma$关联方法对于磁场的反应强度量。显而意见的，由于Ru中包含的带电粒子（主要是质子）比Zr中的要多，Ru+Ru系统初态磁场要比Zr+Zr中大。其中case 1和case 2分别Ru和Zr核不同的形变程度，不同核形变下的结果区别很小。图\ref{fig:gangisobar}（b）给出了两个碰撞系统之间的相对差异。两个系统的$B_{sq}$的相对区别大约为$10-18\%$\cite{isobar1}，在偏心碰撞中大约为$15\%$ (case 1) or $18\%$ (case 2) ，而在中新碰撞中则减小到$13\%$。原子核的形变在偏心碰撞中表现得更加明显，这个不同将于两个系统中但$v_2$相关的背景的基本相同。从图中可以看到在中心度$20-60\%$时，两者的区别小于$4\%$。鉴于两系统之间$B_{sq}$与核形变之间差异性的不同，即$13\%>4\%$，信号的不同远大于背景，因此通过Isobar实验足以鉴别CME信号与背景。
+
+
+图~\ref{fig:gangsignificance}是以背景的大小为横坐标的两个系统之间的相对差异幅度和显著性结果。随着背景的增大，Isobar系统之间的相对差异逐渐减小，相应的其显著性逐渐降低。
+在400百万统计量的情况下，背景的所占比例为$2/3$，看到的显著性为5，这足以表明通过Isobar实验可以从$v_2$背景中鉴别CME信号。
+
+
+\section{STAR实验组的盲分析方法}
+
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=\textwidth,clip]{./Figures_Use/IsobarSTAR.png}
+\end{center}
+\caption{STAR实验组Isobar数据采集目标}
+\label{fig:signalVersusBackgrounds}
+\end{figure}
+
+%STAR合作组提议在2018年采集持续两个3.5周的Isobar实验数据\cite{STARBlinding}。如图所示~\ref{fig:signalVersusBackgrounds}，根据理论估计如果假设$80%$的背景来源于$v_2$ 的条件，Isobar两个系统之间可以观测到的相对信号差异为$3%$，如果想要得到5$\sigma$的显著性需要采集$1.2*10^9$的统计量。
+
+在2018年STAR实验组花费3.5个星期采集了Isobar两个系统（即$^{96}_{44}$Ru + $^{96}_{44}$Ru  和 $^{96}_{40}$Zr + $^{96}_{40}$Zr）的对撞实验，采集任务远远超出了所计划的$1.2*10^9$统计量，而是每一个系统分别收集了$3*10^9$\cite{STARBlinding}。
+如图所示~\ref{fig:signalVersusBackgrounds}，根据理论估计如果假设$80\%$的背景来源于$v_2$ 的条件，Isobar两个系统之间可以观测到的相对信号差异为$3\%$，如果想要得到5$\sigma$的显著性需要采集$1.2*10^9$的统计量。
+因为不同时间取数事件不同、探测器接收度的改变、探测效率和亮度（luminosity）对TPC中带电粒子重建的影响，为了减少由于以上原因可能带来的系统误差，在数据的采集中采用了一下几个方法：1）在数据的采集中，通过改变注入RHIC环的核子种类（Ru或Zr），即按照Ru+Ru, Zr+Zr, Ru+Ru 这样的顺序进行轮换，以确保两个系统所采集的数据所处的外界带来的影响是一样的。2）在STAR~ZDC测量中，确保长时间以稳定亮度的束流进行实验。
+目的是保持两个碰撞系统的运行和探测器条件的精确平衡，以便在两个系统中的观察受到同等影响，那么比较两个系统之间的差异性时就可以消除由系统带来的影响。
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=\textwidth,clip]{./Figures_Use/BlindanalysisProcedure.png}
+\end{center}
+\caption{Blind-analysis流程图~\cite{Tribedy_2020}}
+\label{fig:BlindanalysisProcedure}
+\end{figure}
+
+STAR实验组采用了盲分析方法（Blind-analysis）~\cite{STARBlinding} 来排除在实验数据分析中可能存在的人为引入的偏差，总共有五个分析小组参与了这个分析方法之中。尽管在大部分数据筛选的流程是一样的，但每个组都会用他们特定的方法对数据进行分析。盲分析委员会（Blinding-committee）将确保在任何情况下分析小组都不能访问非盲数据，以此保证盲分析的公正性。 例如，所有数据集run number都是伪造的，参与分析的人员不能直接通过run number来区分它属于哪一个碰撞系统。文献~\cite{STARBlinding} 给出了详细的盲分析流程。图\ref{fig:BlindanalysisProcedure}是对盲分析的主要思想的总结，它可以分为四个部分。
+
+在图\ref{fig:BlindanalysisProcedure}中最左边的橙色表示的是
+模拟数据挑战（Mock data challenge），这是盲分析的准备工作，旨在让分析者们熟悉盲分析的数据结构，这并不完全是盲分析的步骤，它只是让分析者熟悉分析技术细节的关键一步。盲分析第一步是Isobar混合分析（isobar-mixed analysis）。这是盲分析流程的第一步，这是对分析者而言最具挑战对一步。在此一阶段内，分析者将获得混合了两个Isobar碰撞系统的数据样本，每次运行都包含了“混合”的样本事件。对混合数据进行全面的质量保证 (Quality Assurance, QA) 和物理分析，记录分析过程中的每个细节并冻结程序。冻结之后的程序不允许再更改。此后的分析用到的就是这一步冻结的程序，在后面的流程中修改程序是不被允许的。当然为了做到这一点，开发一个自动化的分析QA的程序，然后把它加入到冻结程序中是非常必要的。因此STAR实验组利用现有的Au+Au和U+U对撞的数据对自动化分析QA的稳定性进行测试。接下来就是Isobar盲分析（Isobar-blind analysis）。这一步的主要目标是给出实验数据的逐事件的QA结果。这个阶段中， 将会提供一些数据文件，这鞋文件每个文件只包含一个碰撞系统Ru或者Zr）。而且这些文件必须达到以下两个要求：文件中包含的事件要足够少，通过这些统计量得到的结果并不能给出明显的结论；不同文件的碰撞系统信息是保密的。作为逐事件运行质量保证的一部分，保持时间顺序以识别探测器和运行环境的时间相关性非常重要。有了这样的数据样本，分析者们将可以通过自动化分析QA的程序来筛选出不好的事件。相似原理的程序将用来鉴别和筛选坏的事件。这一步完成之后，将不在允许对QA相关的程序进行修改。盲分析的最后一步是Isobar非盲分析（isobar-unblind analysis）。这个步骤中碰撞系统的信息是已知的，分析者们将利用前面冻结的程序对数据进行分析并得到最后的但结果。这一步所得到的结果将不经过任何修改的直接用来投稿发表。如果在这个过程中发现分析程序中有错误，那么错误的结果将会与与更正后的结果一起发表。图\ref{fig:blindanalysispt}给出的是盲分析中不同阶段的逐事件的平均横动量结果（主要用来筛选坏事件）。
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=\textwidth,clip]{./Figures_Use/avgpt_runid_jerome.eps}
+\end{center}
+\caption{sobar三个数据样本中带电粒子的平均横动量结果\cite{STARBlinding}}
+\label{fig:blindanalysispt}
+\end{figure}
+
+
+
+\section{基于EBE-AVFD模型对不同方法灵敏度的研究}
+
+目前所有分析小组用来分析Isobar数据的程序都已冻结（Frozen code），作为Blind-analysis的一个重要步骤。
+由于Isobar的实验数据分析将会有很多组不同的观测方法同时分析，因此目前迫切的需要了解不同方法之间是否存在联系或者不同，以及需要知道不同方法对于CME信号的敏感性。本文的主要目标是希望能够提供一个在相同的条件下对不同方法进行一个一对一的等价对比较。对于在STAR Blind-analysis 中用到的观测量我们将直接利用STAR实验组封装好的程序包来对模拟数据进行分析。本文的工作旨在能更好的解释为即将出来的STAR Isobar 实验数据分析的结果做一个参考。
+
+
+
+%公式.~\ref{eq:Superposition}的有效性保证了三种实验观测量从Isobar实验中分辨出CME信号的可行性。为了能够消除Isobar施压数据分析过程中引入人为的分析误差，STAR实验组设计了Blind-analysis的分析流程。其中最重要的一个流程是要求在Isobar碰撞实验数据开始大量产生数据之前对所有参与对分析小组所用的分析程序进行冻结（Frozen）。
+在这一部分中我们将利用冻结的程序包对EBE-AVFD模型所产生的模型数据进行分析来研究每一种方法对CME信号的灵敏度。
+经过对基于盲分析冻结的程序的解读，了解到程序报中$\gamma$关联方法所用到的截断是$|\eta|<1$，$0.2 < p_T < 2. $ GeV/$c$ ；R关联方法是$0.35 < p_T < 2$ GeV/$c$(R关联方法到作者Niseem认为在高横动量区域能观察到CME信号到概率会比较大) 。而电荷平衡函数法的动力学截断是：$|\eta|<0.5$，$0.2 < p_T < 2. $(该方法与QM2019中对AVFD模型分析所用到的方法是完全相同的~\cite{Lin2021})。由于在不同分析中所用到的动力学截断不相同，因此灵敏度的研究不能保证在完全等同的条件下比较他们的核心组成部分（如\ref{Sec:kernel}中一样）。但因为封装的程序是不能再修改的，因此我们的结果将作为解释Isobar实验结果的一个重要参考。
+
+对于两个Isobar对撞系统，我们分别产生了质心能量在$\sqrt{s_{\rm NN}} = 200$ GeV下$n_5/s = 0,\,  0.05,\, 0.1, \, \mathrm{and} \, 0.2$总共8种不同情况下的实验数据。所有情况下的中心度都是30-40\% ，这是考虑在这个中心度下良好的事件平面分辨率以及良好的CME信号下选择的。对于$n_5/s = 0$ 和$n_5/s = 0.2$ 的情况，对于两个碰撞系统每一种情况下都有200百万的统计量，其他两种情况为400百万。并且为了模拟STAR TPC的探测性能，模型的分析中随机的加入了TPC的探测效率（随 $p_T$分布）。
+\begin{center}
+\begin{table}[h]
+\centering
+\caption{ EBE-AVFD Isobar 系统中所观测到的$a_1$}
+%(The $a_{1,\pm}$ values calculated for the EBE-AVFD events of 30-40\% isobaric collisions at $\sqrt{s_{\rm NN}} = 200$ GeV.}
+\begin{tabular}{c|cc|cc}
+\toprule
+\multirow{2}{*}{ $n_{5}/s$}       &  \multicolumn{2}{c}{  $a_{1,+}$ (\%) }      & \multicolumn{2}{|c}{  $a_{1,-}$ (\%)  }  \\   \cline{2-5}
+~ & Ru+Ru & Zr+Zr  & Ru+Ru & Zr+Zr  \\ 
+\hline
+0   &  0 & 0 &  0 & 0\\
+0.05 &  0.37 \% &  0.35\%  &  0.35\%  & 0.33\% \\
+0.10 &  0.74 \% &  0.69\%  &  0.71\%  & 0.66\% \\
+0.20 &  1.48 \% &  1.38\%  &  1.42\%  & 1.32\% \\
+\bottomrule
+\end{tabular}
+\label{tab:Observeda1}
+\end{table}
+\end{center}
+ 
+表.~\ref{tab:Observeda1} 中列出了EBE-AVFD在不同\ns 下$a_{1,\pm}$的值。一般而言，$a_{1,\pm}$与\ns 呈线性关系，并且在所有情况下$a_{1,+}$ 
+大约比$a_{1,-}$大了将近$4\%$ ，极好的反映了碰撞系统中的不对称性。与此同时，Ru+Ru碰撞系统中的$a_{1,\pm}$ 要比Zr+Zr中的大了将近7\%，这一结果与文献中预期的两个碰撞系统中磁场之间差异相吻合~\cite{isobar1}。对于前面所提到的实验观测量，由于两个Isobar系统之中的背景含量是基本相同的，那么我们期望计算这些观测量在两个系统（Ru+Ru和Zr+Zr）之中的比值在存在CME的情况下将大于1。因此各个方法的灵敏度将由该比值与1的偏差和对应的统计误差的比值来定义。
+
+
+\subsection{$\gamma$ 关联方法}
+
+\begin{figure}[t]
+\hspace{-1.5cm}
+\centering
+%\includegraphics[width=\textwidth]{fig_allGamma112.eps}
+\subfigure{\includegraphics[width=6.cm]{./figures/fig_allGamma112.pdf}}
+\subfigure{\includegraphics[width=6.cm]{./figures/fig_allDeltaGamma.pdf}}
+\subfigure{\includegraphics[width=6.cm]{./figures/fig_allKappa112.pdf}}
+\caption{$\gamma$ correlator 方法在EBE-AVFD中的计算结果}
+%\caption{EBE-AVFD calculations of  $\gamma_{112}^{\rm OS(SS)}$ (a), $\Delta \gamma_{112}$ (b) and $\kappa_{112}$ (d) as functions of $n_{5}/s$ for 30-40\% isobaric collisions at $\sqrt{s_{\rm NN}} = 200$ GeV, together with the ratios of $\Delta \gamma_{112}$ (c) and $\kappa_{112}$ (e) between Ru+Ru and Zr+Zr. In panels (c) and (e), the second-order-polynomial fit functions illustrate the rising trends starting from (0, 1). 
+%}
+\label{gamma_isobar}
+\end{figure}
+
+图.~\ref{gamma_isobar} 给出的是EBE-AVFD产生的Isobar在中心度为30-40\% 的数据计算的$\gamma_{112}^{\rm OS(SS)}$ , $\Delta \gamma_{112}$  和 $\kappa_{112}$ 结果，Isobar中两个系统对于$\Delta \gamma_{112}$ 和$\kappa_{112}$的比值（$(Ru+Ru)/(Zr+Zr)$）的结果在中、下图中的下半部分给出。分析中所用到的二阶反应平面是利用与分析相同的粒子进行重建的（消除自关联），而且关于$\gamma$ correlator的观测量和$v_2$都已用相对应的事件平面分辨率修正。从图中可以看到对于所有的\ns ，$\gamma_{112}^{\rm OS}$ 的值都保持为正，而$\gamma_{112}^{\rm SS}$ 为负，它们在大的\ns 时的值都很大量级。尽管在CME信号的作用下期望$\gamma_{112}^{\rm OS}$和 $\gamma_{112}^{\rm SS}$ 是相对于0程对称性分布。其不对称性可能是由于与电荷无关的背景，例如横动量守恒、椭圆流等，使得$\gamma_{112}^{\rm OS}$和 $\gamma_{112}^{\rm SS}$ 都向上或向下偏移~\cite{STAR3}。因此让我们把注意力放在$\Delta\gamma_{112}$上，其结果显示在$n_5/s=0$主要是背景的贡献，而随着CME信号的增大它的值也在增大。Ru+Ru 和Zr+Zr之间的区别$\Delta\gamma_{112}^{\rm Ru+Ru}/\Delta\gamma_{112}^{\rm Zr+Zr}$在其比值下看得比较清楚，即当$n_5/s=0$为0，并且它随\ns 的增大呈二次方增大（图中虚线是通过（0，1）点的泡利二项式对数据的拟合曲线）。
+
+
+$\kappa_{112}$的值以及其对应的比值$\kappa_{112}^{\rm Ru+Ru}/\kappa_{112}^{\rm Zr+Zr}$ 在图.\ref{gamma_isobar}左边给出。$\kappa_{112}$ 相比于$\Delta\gamma_{112}$有两个潜在的优势：1）碰撞中两个系统Ru+Ru 和Zr+Zr中的背景的区别可能很小，但仍然是存在的。但$\kappa_{112}$通过对 $v_2$ 和$\Delta\delta$ 进行归一可以进一步减少两个系统中背景的不同，从而增强对CME对灵敏度。2），如公式.~\ref{eq:delta}所示，当$\Delta\delta$的统计误差远远小于$\Delta\gamma_{112}$的情况下，$\Delta\delta$ 中可能包含了一部分 $\langle a_{1,\alpha}a_{1,\beta}\rangle$ 的贡献。因此$\kappa_{112}^{\rm Ru+Ru}/\kappa_{112}^{\rm Zr+Zr}$在相关联的统计误差之下可以得到比 $\Delta\gamma_{112}^{\rm Ru+Ru}/\Delta\gamma_{112}^{\rm Zr+Zr}$更大的比值，也就是说对于相同的CME信号会得到更好的显著性。右图下半部分的结果也表现出随横坐标呈二次方增大的趋势。因此$\kappa_{112}^{\rm Ru+Ru}/\kappa_{112}^{\rm Zr+Zr}$的显著性比$\Delta\gamma_{112}^{\rm Ru+Ru}/\Delta\gamma_{112}^{\rm Zr+Zr}$的要大将近两倍（在后面表.\ref{tab:significance}中给出）。
+总之，EBE-AVFD的模拟结果显示$\Delta\gamma_{112}^\mathrm{Ru+Ru} / \Delta\gamma_{112}^\mathrm{Zr+Zr}$ 和 $\kappa_{112}^\mathrm{Ru+Ru} / \kappa_{112}^\mathrm{Zr+Zr}$对信号的反应很好，并且这些的优异的特性等待Isobar实验数据的验证。
+
+
+\subsection{R关联方法}
+\begin{figure}{b}
+\hspace{-1.2cm}
+\centering
+%\hspace{0.1cm}
+\subfigure{\includegraphics[width=6.2cm]{./figures/fig_RcorrPsi2v2.pdf}}
+\subfigure{\includegraphics[width=6.2cm]{./figures/fig_RcorrSignificance.pdf}}
+%\hspace{0.1cm}
+\caption[$R$-correlator 在EBE-AVFD Isobar 中的结果]{$R$-correlator 在EBE-AVFD Isobar 中的结果
+%Distributions of $R(\Delta S_2^{''})$ from EBE-AVFD events of 30-40\% Ru+Ru (a) and Zr+Zr (b) at 200 GeV with different $n_{5}/s$ inputs. 
+%Panel (c) lists  $\sigma^{-1}_{R2}$ vs $n_{5}/s$, extracted from panels (a) and (b), and the $\sigma^{-1}_{R2}$ ratios between Ru+Ru and Zr+Zr are shown in panel (d), where the linear fit function demonstrates the trend starting from (0, 1).
+}
+\hspace{1.43cm}\label{fig:R_isobar}
+\end{figure}
+
+我们也应用了相同的对于$R(\Delta S_2)$ correlator的分析的冻结程序进行了分析， 其结果在图~\ref{fig:R_isobar}中给出。为了减少粒子多重数起伏的依赖，$R(\Delta S_2)$的分布通过除以水平方向上$N(\Delta S_{2,\rm shuffled})$ 分布的宽度（$RMS$），也就是$\Delta S_2^{'} = \Delta S_2/\sqrt{\langle(\Delta S_{2,\rm shuffled})^2\rangle}$；再对$R(\Delta S_2^{'})$进行事件平面分辨率的修正，即$\Delta S^{''}= \Delta S^{'}/\mathrm{\delta_{Res}}$，其中$\mathrm{\delta_{Res}}$ 是修正因子，更详细的解释可以从文献~\cite{RCorr-2018}中找到。图~\ref{fig:R_isobar}左边给出的是$R(\Delta S_2^{''})$ 的分布图，可以看到随着\ns 的增大，$R(\Delta S_2^{''})$ 的分布显得更加的凹陷（More concave），即定性的表示CME的贡献。
+%通过反高斯分布来拟合对应的$R(\Delta S_2^{''})$ 分布，并得到量化的高斯分布宽度（$\sigma_{R2}$），它们结果（$\sigma^{-1}_{R2}$ ）的值在左图给出，它是随着\ns 的增大而增大的。其 Ru+Ru 和 Zr+Zr 的比值的趋势可以用线性函数很好的拟合。最终的显著性结果在表.~\ref{tab:significance} 中给出。
+
+
+\subsection{电荷平衡函数法}
+
+图~\ref{fig:SBF_isobar}  给出的是SBF方法的显著性研究结果。这个方法没有参与STAR的Blind-analysis，但是它与第二章中所用到的分析方法是一致的（也就是Quark Matter 2019 会议报告中所用到的方法~\cite{Lin2021}）。为了与上述两个方法在相同的坐标系下做比较，在此我们给出了两个观测量$r_\mathrm{lab}$ 和$R_{\rm B}$。
+$r_\mathrm{lab}$的结果展示了与预期结果相符合的结果，即它在每一种系统中都明显的随着CME信号的增大而增大，并且Ru与Zr的比值也能被线性函数拟合的很好。但另一方面，$R_{\rm B}^{\rm Ru+Ru}/R_{\rm B}^{\rm Zr+Zr}$ 的比值没有展现出明显的趋势。这个结果可能是因为多重做商需要更大的统计量，在$n_5/s$ 很小的时候\rb 小于0可能是因为模型中加入了过多的背景信号的结果。这两个观测量的显著性将在表\ref{tab:significance} 中给出。
+
+\begin{figure}
+\hspace{-1.2cm}
+\centering
+\subfigure{\includegraphics[width=6.2cm]{./figures/fig_All_Result_r.pdf}}
+%\hspace{0.1cm}
+\subfigure{\includegraphics[width=6.2cm]{./figures/fig_All_Result_RB.pdf}}
+%\vspace{-0.18cm}
+\caption{ SBF方法在EBE-AVFD Isobar 中的结果
+%$r_{\mathrm{lab}}$ (a) and $R_{\mathrm{B}}$ (c) as  function of $n_{5}/s$ from the EBE-AVFD model for 30-40\% Ru+Ru and Zr+Zr collisions at $\sqrt{s_{\rm NN}} =200$ GeV, with their ratios between Ru+Ru and Zr+Zr in panels (b) and (d), respectively. The linear fit function in panel (b) starts from (0, 1).
+}
+\hspace{1.43cm}\label{fig:SBF_isobar}
+\end{figure}
+
+
+\subsection{三种方法显著性比较}
+三种方法$Ru/Zr$比值的显著性结果在表\ref{tab:significance} 中列出。表中的结果可以用作解释STAR实验数据分析结果的重要参考。
+
+\begin{center}
+\begin{table}[tbh]
+\centering
+\caption{不同方法中 $Ru/Zr$的显著性结果}
+\resizebox{0.67\textwidth}{!}{ % adjust the height of coloum
+%\setlength{\tabcolsep}{5.5mm}{		% adjust the length of coloum
+    \begin{tabular}{c|cccccc}
+    \toprule
+    $n_{5}/s$ & $N_\mathrm{event}$ & $\Delta \gamma_{112} $ &  $\kappa_{112}$ & $r_{\mathrm{lab}}$  & $ \sigma_{R2}^{-1}$ \\
+    %\hline
+    \hline\noalign{\smallskip}
+    0    &   $2\times 10^8 $   &  -1.50  &   -1.21  &  -0.77 & 1.33 \\
+    0.05 &    $4\times 10^8 $   &   0.62 &  1.37  &   0.47 & 0.29 \\
+    0.10 &    $4\times 10^8 $   &  1.91 &  3.43  &   3.11 & 0.62 \\
+    0.20 &     $2\times 10^8 $  & 7.73 &   14.07  &   5.96 & 1.84 \\
+    \bottomrule
+    \end{tabular}
+    }
+    \label{tab:significance}
+\end{table}
+\end{center}
+
+
+从表中可以看到三种方法都对信号有一定的反应，当我们看不同方法对于$Ru/Zr$的比值时，$\Delta \gamma_{112}$与$r_{\mathrm{lab}}$的显著性基本相当，而R关联方法的$ \sigma_{R2}^{-1}$ 观测量随着\ns 的增大却并没有表现出很好的显著性提升，这很有可能是因为R关联方法不同的动力学截断。
+
+在这一部分中我们将利用冻结的程序包对EBE-AVFD模型所产生的模型数据进行分析来研究每一种方法对CME信号的灵敏度。
+经过对基于盲分析冻结的程序的解读，了解到程序报中$\gamma$关联方法所用到的截断是$|\eta|<1$，$0.2 < p_T < 2. $ GeV/$c$ ；R关联方法是$0.35 < p_T < 2$ GeV/$c$(R关联方法到作者Niseem认为在高横动量区域能观察到CME信号到概率会比较大) 。而电荷平衡函数法的动力学截断是：$|\eta|<0.5$，$0.2 < p_T < 2. $(该方法与QM2019中对AVFD模型分析所用到的方法是完全相同的~\cite{Lin2021})。由于在不同分析中所用到的动力学截断不相同，因此灵敏度的研究不能保证在完全等同的条件下比较他们的核心组成部分（如\ref{Sec:kernel}中一样）。但因为封装的程序是不能再修改的，因此我们的结果将作为解释Isobar实验结果的一个重要参考。
+
+因而，在对$R_{\psi_2}$ 和 $\Delta \gamma$ 的程序做了一定程度上的改动——不再是冻结程序。因为EBE-AVFD模型中反应平面角是已知的，为了减少变量，接下来的验证采用了真实反应平面来计算。且这两个方法的动力学截断是：$|\eta|<1$，$0.2 < p_T < 2. $ GeV/$c$ ，以此保证两种方法能够在相同的条件下做比较。在这个情况下的显著性结果如表\ref{tab:significance2}所示，两种方法的显著性大小是相当的。这个结果与\ref{Sec:kernel}中核心部分的比较结果是一致的。
+
+
+\begin{center}
+\begin{table}[tbh]
+\centering
+\caption{$\gamma$关联方法和R关联方法在真实反应平面、相同动力学阶段下 $Ru/Zr$的显著性结果}
+\resizebox{0.48\textwidth}{!}{ % adjust the height of coloum
+%\setlength{\tabcolsep}{5.5mm}{		% adjust the length of coloum
+    \begin{tabular}{c|cccccc}
+    \toprule
+    $n_{5}/s$ & $N_\mathrm{event}$ & $\Delta \gamma_{112} $ & $\kappa_{112}$ & $ \sigma_{R2}^{-1}$ \\
+    %\hline
+    \hline\noalign{\smallskip}
+    0    &   $2\times 10^8 $      &  0.67 & 0.97 & 0.56 \\
+    0.05 &    $4\times 10^8 $   &   2.84 &3.78 & 3.33\\
+    0.10 &    $4\times 10^8 $   &   11.78 & 14.13 & 10.85 \\
+    0.20 &     $2\times 10^8 $  &   37.48 & 47.64 & 27.94\\
+    \bottomrule
+    \end{tabular}
+    }
+    \label{tab:significance2}
+\end{table}
+\end{center}
+
+
+
+
+\section{本章小结与讨论}
+
+在本章中首先对Isobar对撞实验进行了介绍，Isobar实验可以为寻找CME提供一个理想的环境：两个质量数相同、质子数不同的碰撞系统，它们具有不同大小的CME信号，而包含了大小相当的背景。通过比较两个系统观测量的差异性就可以鉴别信号与背景。接下来介绍了STAR实验组实行的盲分析方法，通过盲分析方法可以更为严谨、科学的解读实验数据，以此来保证能够令人信服的结论。最后我们利用盲分析中冻结的程序包（$ \gamma$关联方法 和R关联方法），以及电荷平衡函数法（不参与盲分析）在Quark Matter 2019中所用到的对模型的相同的分析方法，基于EBE-AVFD模型所产生的数据对以上的三种实验上用于寻找CME的方法进行来研究与分析。模型分析结果表明三种方法对CME信号都有一定的灵敏度。在对$Ru/Zr$显著性分析结果中发现$\Delta \gamma_{112}$与$r_{\mathrm{lab}}$有着及其相似的显著性，而于此同时R关联刚发的$ \sigma_{R2}^{-1}$ 对不同的CME信号没有表现很强的区别。这一结果可以为分析讨论STAR Isobar 实验数据提供重要的参考。

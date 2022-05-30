@@ -1,0 +1,766 @@
+
+\setcounter{section}{0}
+
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{equation}{0}
+%==========================================
+
+\chapter[SBF方法寻找CME]{SBF方法的在模型上的检验及其在RHIC@STAR Au + Au 对撞 200 GeV 中的结果分析与讨论}
+%{RHIC@STAR Au + Au 对撞 200 GeV 能量下利用电荷平衡函数方法对沿磁场方向上电荷分离的研究 }
+
+
+在实验上致力于在重离子碰撞中寻找CME已经持续了10年，但由于不能很好的扣除实验中背景的贡献，到目前为止还没有明确的证据表明CME是否存在。最近理论文献~\cite{Tang2019}中提出了一种利用电荷平衡函数构建的新方法：Signed Balance Function，（简称：SBF) 方法可可以用来寻中CME。在本章节中主要分为三部分：第一部分对SBF方法进行介绍；第二部分对该方法在三种模型：Toy 模型，AMPT 模型 和EBE-AVFD模型中的结果进行了回顾、更新。最后一部分利用SBF方法对STAR实验在2016年采集的 Au + Au 200 GeV 数据进行了分析与讨论。
+
+\bigskip
+
+\subsection{SBF方法介绍}
+正如第一章所提到的，实验上研究手征磁效应必须在垂直于反应平面的方向上相对于在反应平面本身方向上的波动寻找增强的电荷分离的波动。这也是重离子碰撞中所有寻找CME的方法所必须遵循的基本原理，当然也包括接下来要介绍的SBF方法。
+
+\begin{figure}[htbp]
+\centering
+\makebox[1cm]{\includegraphics[width=0.2 \textwidth]{./Figures_Use/ChargeSeparation_IsotropicEmission-crop.pdf}}
+\caption{一个各向同性事件中粒子在CME作用下的效果图。红色的实线表示正粒子，灰色的虚线表示负粒子。图片来源于：~\citep{Tang2019}}
+\label{fig:Aihong_KatongChargeSeparation}
+\end{figure}
+
+那么我们究竟要怎样才能找到CME呢？首先让我们来理解一下CME所带来的效果究竟是怎么样的：对于一对受磁场$-\hat{B}$作用而形成的带电的正、负粒子对而言，在磁场的作用下会使正、负电子分别收到相对对磁场方向的两个方向的力，从而导致正负电子分别在相反方向上的横动量得到了增大。这一现象阐明了在由于CME的效果导致的横动量的分离。然而在此前的CME分析方法中主要是基于粒子间的方位角关联来寻找CME，而不是直接与横动量的联系起来。让我们重新回到重离子碰撞事件中的方位角分布公式.\ref {equ:Fourier_expansion}，可以清楚的明白这样一个模式：正、负粒子沿着$B$在相反方向上发散，类似于在平行于反应平面方向上的$v_1$。这样就可以通过类似流的特性来表征CME，并且可以利用大量的、现有的流相关的复杂的知识来对CME进行理解。这样基于方位角关联来寻找CME是有一定局限性的。举个例子，图.~\ref{fig:Aihong_KatongChargeSeparation} 中给出的是一个各向同性事件中粒子在CME作用下的效果图。从图中我们可以清楚的看到在CME作用下带正电的粒子的横动量向上增大，而于此同时带负电的粒子的横动量向下增大。如果我们只考虑方位角之间的关联，那么我们就会给出错误的判断——这个事件中没有CME。这个问题虽然可以通过对粒子横动量加额外对限制来鉴别，但它不想直接通过磁场作用导致但横动量变化那么明显。SBF方法就是通过对横动量空间内粒子之间对关联而设计的。
+
+平衡函数（Balance Function）的一般形式是用来描述了相空间中的粒子的绝对分离情况~\cite{Bass:2000az,Adams:2003kg}。
+
+在RHIC 和 LHC实验数据分析中，平衡函数在赝快度空间下描述两个平衡粒子之间的赝快度的绝对差异：$\Delta \eta = |\eta_a - \eta_b|$，通常用来研究对撞中实验中强子化的衰变的~\cite{bf1,bf2,bf3,bf4,bf5}。
+我们的方法：SBF（ signed balance function，简称：SBF），它考虑的是相空间下粒子之间平衡函数的符号，而不是前面所提到的绝对差异。在此之前SBF方法也被用来研究重离子碰撞中的磁场~\cite{Ye:2018jwq}。在进行具体的介绍之前，让我先对坐标系统做以下规定：$x$坐标表示的是碰撞参数的方向，也就是反应平面的方向；$y$坐标表示的是垂直与反应平面的方向，也就是磁场所在的方向；$z$坐标表示的是电子束流的方向。
+
+SBF方法可以分为以下四步理解：
+
+
+\textbf{1) 统计粒子对在横动量方向的投影的符号 } 首先考虑横动量在$y$ 方向上的投影 ($p_y$)，对于任意的两个粒子$\alpha$ 和 $\beta$。如果$p^\alpha_y >  p^\beta_y$，那么就说$\alpha$ 粒子是领先于$\beta$粒子的，反之则是跟随。以下两个平衡函数关系式可以很好的描述粒子对之间的这一关系：
+\begin{eqnarray}
+\begin{aligned}
+B_{P} (S) =  \frac{N_{+-}(S)-N_{++}(S)}{N_+},
+\end{aligned}
+\label{eq:Bp}
+\end{eqnarray}
+和
+\begin{eqnarray}
+\begin{aligned}
+B_{N} (S) =  \frac{N_{-+}(S)-N_{--}(S)}{N_-}.
+\end{aligned}
+\label{eq:Bn}
+\end{eqnarray}
+这里的下标$P$ 和 $N$ 分别表示正、负离子项。
+对于给定的项$N_{\alpha\beta}$，若$\alpha$ 领先于 $\beta$ 那么符号$S=+1$，反之 $S=-1$ 。$N_{+(-)}$表示的是在一个事件中正、负粒子的个数。
+
+\textbf{2) 统计净的横动量方向投影的区别 } 一个事件中正、负粒子符号的差异性可以表示为：
+
+\begin{eqnarray}
+\begin{aligned}
+\delta B(\pm 1) =  B_{P}(\pm 1)-B_{N}(\pm 1),
+\end{aligned}
+\label{eq:deltaB_pm}
+\end{eqnarray}
+那么可以得到一个事件的净的正电荷领先负电荷的减去
+符号的区别为：
+\begin{eqnarray}
+\begin{aligned}
+\Delta B =  \delta B(+1) - \delta B(-1).
+\end{aligned}
+\label{eq:deltaB}
+\end{eqnarray}
+
+\begin{figure}[htbp]
+\centering
+\makebox[1cm]{\includegraphics[width=0.45 \textwidth]{./Figures_Use/BF_cartoon_noy-crop.pdf}}
+\caption{(Color online) Cartoon illustration of positive (red) and negative (blue) particle directions (left panels (a) and (d)) and $S$ distributions (middle panels (b) and (e)) of an event, as well as the $\Delta B$ distribution over many events (right panels (c) and (f)). The top row is for the case without the CME, and the bottom one, with it.  }
+\label{fig:BF_cartoon}
+\end{figure}
+因为$\Delta B$ 计算的是在每个事件中净横动量
+
+accounts for the normalized net momentum-ordering for each event. When there is no CME effect, for a positive-negative particle pair, the probability of the positive particle leading the negative one equals the probability of tailing it. This means that $B_P$ and $B_N$ are in principle measuring the same quantity, and the distribution of $\Delta B$ is only subject to statistical fluctuation (top row of Fig.~\ref{fig:BF_cartoon}). When there is CME effect, within an event the two probabilities become unbalanced, resulting more pairs with particles of one charge-type leading than tailing the other type. This makes for each event $B_P$ and $B_N$ to differ from each other, and as a consequence, the distribution of $\Delta B$ has a broadened width (bottom row of Fig.~\ref{fig:BF_cartoon}). 
+
+\begin{figure}[htbp]
+\centering
+\makebox[1cm]{\includegraphics[width=0.45 \textwidth]{./Figures_Use/BFHisto_lab_example.pdf}}
+\caption{(Color online) $\Delta B_x$ (bottom) and $\Delta B_y$ (top) distributions for two cases of simulated events, one without the CME ($a_1 = 0$), and the other, with the CME ($a_1 = 2\%$). }
+\label{fig:BFHisto_lab_example}
+\end{figure}
+
+The distribution of $\Delta B$ can be obtained for both $x$ ($\Delta B_{x}$) and $y$ direction ($\Delta B_{y}$). The distribution of $\Delta B_{x}$ is not broadened as there is no charge separation in the $x$ direction. Fig.~\ref{fig:BFHisto_lab_example} shows the distribution of $\Delta B_{x}$ and $\Delta B_{y}$ with simulated events. One can see that when a finite $a_1$ is applied to primordial particles, the distribution of $\Delta B_y$ is broadened relative to $\Delta B_x$. The setup for the simulation is deferred to section~\ref{sec:ToyModelSimulation} where it is described together with other simulation setups.
+
+\textbf{3) Look for enhanced event-by-event fluctuation of net momentum-ordering in $y$ direction. } To cancel out the statistical fluctuation, one can calculate the ratio of the width of the distribution of $\Delta B_{y}$ to that of $\Delta B_{x}$,
+\begin{eqnarray}
+\begin{aligned}
+r= \sigma_{\Delta B_y} / \sigma_{\Delta B_{x}}.
+\end{aligned}
+\label{eq:r}
+\end{eqnarray}
+
+
+ $r$ will be unity for the case without the CME, and greater than unity for the case with it. The strength of the CME will be positively correlated with $r$'s deviation from unity.
+\begin{figure}[htbp]
+\centering
+\makebox[1cm]{\includegraphics[width=0.45 \textwidth]{./Figures_Use/boost_cartoon-crop.pdf}}
+\caption{(Color online) Cartoon illustration of a pair viewed in the laboratory frame (left) and pair's rest frame (right). }
+\label{fig:boost_cartoon}
+\end{figure}
+
+\textbf{4) Compare results obtained with different frames. } The ratio $r$ can be calculated in the laboratory frame ($r_{\mathrm{lab}}$) and pair's rest frame ($r_{\mathrm{rest}}$). Here for the signed balance function approach, it is argued that the rest frame is the most appropriate frame to study charge separations. This can be understood in an intuitive way -- the clearest observation of two particles moving away from each other has to be, naturally, made by an observer who is at rest with the two-particle system under consideration. Boosting from rest frame to lab frame does not always preserve the correct ordering in $P_y$. In Fig.~\ref{fig:boost_cartoon} an example is given to illustrate this point. The cartoon on the left depicts a pair in the laboratory frame, and it is not counted as a case of charge separation by the signed BF approach, as both particles have the same $p_y$. When the same pair is viewed in the rest frame (right cartoon), it is clearly a case of charge separation. Note in the rest frame two particles are traveling back-to-back, and in this particular frame leading(tailing) simply means particle traveling in positive(negative) $\hat{y}$ direction -- making it easy to be identified in the signed BF approach. Indeed by definition $r_{\mathrm{rest}}$ is always the most sensitive one when responding to real charge separation, however, it is not guaranteed so when responding to backgrounds --  $r_{\mathrm{rest}}$ may lag behind $r_{\mathrm{lab}}$. This will be discussed in details later in this paper. 
+
+\begin{figure}[htbp]
+\centering
+\makebox[1cm]{\includegraphics[width=0.45 \textwidth]{./Figures_Use/BFHisto_rest_lab_2pcta1_example.pdf}}
+\caption{(Color online) $\Delta B_x$ (bottom) and $\Delta B_y$ (top) distribution obtained in laboratory frame (blue) and pair's rest frame (red), for simulated events with finite CME ($a_1 = 2\%$). Insets are magnified views of peak regions. }
+\label{fig:BFHisto_rest_lab_example}
+\end{figure}
+
+Fig.~\ref{fig:BFHisto_rest_lab_example} shows $\Delta B_x$ and $\Delta B_y$ distributions obtained in laboratory and pair's rest frame, for simulated events with finite CME effect. It can be seen that $\Delta B_y$ distribution in rest frame is broadened  more than that in laboratory frame, although such effect is relatively small if compared to the difference in width between $\Delta B_x$ and $\Delta B_y$ in either frame.
+
+It would be useful to calculate the ratio of the two,
+\begin{eqnarray}
+\begin{aligned}
+R_{B} \equiv  \frac{r_{\mathrm{rest}}}{r_{\mathrm{lab}}},
+\end{aligned}
+\label{eq:R_B}
+\end{eqnarray}
+where the subscript ``B" stands for Balance Function.
+It will be shown below with simulations that while $R_{B}$
+responds positively to signal (like each of $r_{\mathrm{rest}}$ and $r_{\mathrm{lab}}$ themselves does), it responds in the opposite direction (relative to $r_{\mathrm{rest}}$  and $r_{\mathrm{lab}}$) to backgrounds arising from resonance flow and global spin alignment. This information can be useful under certain scenarios in identifying charge separation induced by backgrounds. For example, if $r_{\mathrm{rest}}$ is above unity and $R_{B}$ is below it (or vice versa), then it is an indication of background contribution. On the other hand, if both $r_{\mathrm{rest}}$ and $R_{B}$ are above unity, then we have a case in favor of the CME.
+ 
+For convenience, in this paper and at a few places, either of the three ratios being above unity, which can be caused by the CME and/or background, will be referred to as apparent charge separation. The apparent charge separation is what is usually measured in experiments.
+
+
+
+
+
+\subsection{分析中所用到的模型的简介}
+
+We invoke a toy model to verify the mathematical relation between different methods with simplified Monte Carlo calculations.
+In this setup, particle spectra, collective flow and charge-separation signals are well constrained and  conveniently adjusted, such that the response of each method to the signal and the background can be understood in a controlled manner.  In the simulations, each event consists of 195 $\pi^+$ and 195 $\pi^-$ mesons to match the total multiplicity at midrapidities within 2 units of rapidity in 30-40\% central Au+Au collisions at $\sqrt{s_{NN}}=$ 200 GeV~\cite{STAR-pion-spct}. In the background-free case, all pions are treated as primordial ones (none from resonance decays), and their azimuthal angle distribution is configured according to Eq. \ref {equ:Fourier_expansion} with $n=2,3$. The elliptic flow ($v_2$) is introduced by an NCQ-inspired function~\cite{NCQ-scalling}
+\begin{equation} \label{Toy:V2}
+v_2/\mathcal{N} = {\bf a}/(1+e^{-[(m_T-m_0)/\mathcal{N} -{\bf b}]/{\bf c}}) - {\bf d}, 
+\end{equation}
+where $\mathcal{N}=2$ is the number of constituent quarks in a pion, and $m_T$ and $m_0$ are its transverse mass and rest mass, respectively. The parameters (${\bf a}$, ${\bf b}$, ${\bf c}$ and ${\bf d}$) are obtained by fitting Eq.~\ref{Toy:V2} to the experimental data~\cite{Wang:2016iov}. To add the resonance background, a fraction of primordial pions (33 $\pi^+$ and 33 $\pi^-$) are replaced with 33 $\pi^+$-$\pi^-$ pairs from $\rho$-meson decays, which is implemented with PYTHIA6~\cite{PYTHIA}. The $\rho$-meson $v_2$ is described by Eq.(\ref{Toy:V2}) with the corresponding $\rho$ masses. $v_3$ is fixed at $1/5$ of $v_2$ at any given $p_T$ for both primordial pions and $\rho$ resonances~\cite{STAR-rho-spct}.
+The primordial-pion spectra  follow the Bose-Einstein distribution,
+\begin{equation}
+\frac{dN_{\pi^\pm}}{dm_T^2} \propto (e^{m_T/T_{\rm BE}}-1)^{-1},
+\end{equation}
+where $T_{\rm BE} = 212$ MeV is set to match the experimentally observed $\langle p_T \rangle$ of 400 MeV~\cite{STAR-pion-spct}. The $\rho$-resonance spectra obey 
+\begin{equation}
+\frac{dN_\rho}{dm_T^2} \propto \frac{e^{-(m_T-m_\rho)/T}}{T(m_\rho+T)},
+\end{equation}
+where $T = 317$ MeV is used to match its $\langle p_T \rangle$ of 830 MeV as observed in data~\cite{STAR-rho-spct}. Rapidity(pseudorapidity) is uniformly distributed in the range of [-1, 1] for primordial pions($\rho$ resonances). 
+
+
+\subsection{EBE-AVFD~\cite{Wang:2018ygc}}  
+%   异常粘流体动力学
+
+The Event-By-Event Anomalous Viscous Fluid Dynamics (EBE-AVFD)~\cite{Shi:2017cpu,Jiang:2016wve,Shi:2019wzi} is a comprehensive simulation framework that dynamically describes  the CME in heavy-ion collisions. This state-of-the-art tool has been developed over the past few years as an important part of the  efforts within the Beam Energy Scan Theory (BEST) Collaboration, aiming to address the needs of the ongoing experimental program at RHIC collision energies.   Critical to the success of the CME search is a quantitative and realistic characterization of the CME signals as well as the relevant backgrounds. Accordingly, the EBE-AVFD  implements the dynamical CME transport for quark currents on top of the relativistically expanding viscous QGP fluid and properly models   major sources of background correlations such as LCC and resonance decays.  
+
+More specifically, the EBE-AVFD framework starts with event-wise fluctuating initial conditions, and solves the evolution of chiral quark currents as linear perturbations on top of the viscous bulk flow background provided by data-validated hydro simulation packages. The  LCC effect is incorporated in the freeze-out process, followed by the hadron cascade simulations. 
+This is illustrated in the following Fig.~\ref{fig.avfd_flow_chart}.
+
+\begin{figure}[htbp]
+\vspace*{-0.01in}
+\subfigure{\includegraphics[width=6.2cm]{./figures/fig_AVFD_finalv1.pdf}}
+\subfigure{\includegraphics[width=6.2cm]{./figures/fig_Equ42final.pdf}}
+\captionof{figure}{(a) The EBE-AVFD simulations of $2\Delta\gamma_{112}$, $\Delta_{R2}$ and $\Delta'_{\rm SBF}\equiv(\frac{\pi^4}{64M^2}\Delta_{\rm SBF}+2v_2\Delta\delta)$ as function of $n_5/s$ in 30-40\% Au+Au collisions at 200 GeV. (b) The same results with the subtraction of the pure-background case vs $(a_{1,+}^2 + a_{1,-}^2 - 2a_{1,+}a_{1,-})$. In comparison, a linear function of $y=x$ is drawn to verify the relation in Eq.~\ref{eq:Superposition}.} \label{fig:AVFD_delta}
+\end{figure}
+
+
+The fluctuating initial conditions for entropy density profiles are generated by the Monte-Carlo Glauber model, with switching time $\tau_0=0.6~\text{fm}$, mixing parameter $\alpha_\text{glb} = 0.118$. The initial axial charge density ($n_5$) is approximated in such a way that it is proportional to  the corresponding local entropy density ($s$) with a constant ratio. This ratio parameter can be varied to sensitively control the strength of the CME transport. For example, one can set  $n_5/s$ to $0$, $0.1$ and $0.2$  in the simulations to represent scenarios of zero, weak and strong CME signals respectively. The initial electromagnetic field is computed according to the event-wise proton configuration in the Monte-Carlo Glauber initial conditions.
+
+The hydrodynamic evolution is solved through two components. The bulk matter collective flow is described by the VISH2+1 simulation package~\cite{Shen:2014vra}, with the lattice equation of state \texttt{s95p-v1.2}, shear-viscosity $\eta/s=0.08$, and freeze-out temperature $T_\text{fo}=0.16~$GeV. Such hydro simulations of bulk flow have been extensively tested and validated by relevant experimental data. The dynamical CME transport is described by anomalous hydrodynamic equations for the quark chiral currents on top of the bulk flow background, where the magnetic-field-induced CME currents lead to a charge separation in the fireball.   Additionally the conventional transport processes like diffusion and relaxation for the quark currents are consistently included, with the diffusion constant  chosen to be $\sigma=0.1\cdot T$ and relaxation time $\tau_r = 0.5/T$. More discussions of the hydrodynamics equations and relevant details can be found in ~\cite{Shi:2017cpu,Jiang:2016wve,Shi:2019wzi}. 
+
+After the hydrodynamic stage, hadrons are locally produced in all fluid cells on the freeze-out hypersurface, using the Cooper-Frye freeze-out formula 
+\begin{eqnarray}\label{eq_cooperfrye}
+E \frac{dN}{d^3p} (x^\mu, p^\mu) = \frac{g}{(2\pi)^3} \int_{\Sigma_{\rm fo}} p^\mu d^3\sigma_\mu f(x,p) \,\, .
+\end{eqnarray} 
+Here, the local distribution function automatically  includes the charge separation effect due to the CME as well as  non-equilibrium corrections. 
+In the freeze-out process, the LCC effect is implemented by extending an earlier method from~\cite{Schenke:2019ruo}. In the approach of~\cite{Schenke:2019ruo},  all charged hadron-antihadron pairs are chosen to be produced at the same fluid cell while their momenta are sampled independently in the local rest frame of the fluid cell. This treatment implicitly assumes the charge-correlation length to be smaller than the cell size, and hence provides an upper limit for the correlations between opposite-sign pairs. In the EBE-AVFD package, the aforementioned procedure is generalized and improved to mimic more realistically the impact of a finite charge-correlation length:   a new parameter $P_\text{LCC}$ is introduced to characterize the fraction of charged hadrons that are sampled in positive-negative pairs in the same way as~\cite{Schenke:2019ruo}, while the rest of the hadrons are sampled independently. Varying the parameter $P_\text{LCC}$ between 0 and 1 would tune the LCC contributions from none to its maximum. 
+Finally, all the hadrons produced from the freeze-out are further subject to hadron cascades through the UrQMD simulations~\cite{Bleicher:1999xi}, which  account for various hadron resonance decay processes and automatically include their contributions to the charge-dependent correlations. The tuning of the EBE-AVFD calculations to the experimental measurements of $\Delta\delta$  and $\Delta\gamma_{112}$ in Au+Au collisions suggests that an optimal value of   $P_\text{LCC}$ is around   $33\%$, and that roughly half of the background correlations come  from LCC and the other half from resonance decays. 
+
+
+\subsubsection{模型计算结果的分析与总结}
+
+
+
+
+
+\section{STAR Au+ Au 200 GeV对撞数据的分析与讨论}
+
+\subsection{事件和径迹的挑选}
+
+\subsection{事件挑选}
+RHIC在2010，2011以及2014年的运行中，STAR实验组分别采集了$\sqrt{s}_{NN}$ = 7.7，11.5，14.5，19.6，27，39，62.4，200~GeV的Au+Au碰撞数据。在这个分析中，我们主要挑选最小无偏差(Minimal Bias Trigger, MB) 事件。在STAR 实验中，Minimum Bias trigger 的数据是通过挑选ZDC探测器两侧的通量和VPD探测到的碰撞定点来挑选。
+
+\begin{itemize}
+\item 我们要求碰撞的初级顶点(Primary Vertex)在z方向上的投影离时间投影室的中心小于一定的值，取决于不同的能量，即$|Vz| < constant$，以确保事件投影室能够探测到更多碰撞产生的粒子。
+\item 同时我们要求原初顶点在X-Y方向上的投影距离时间投影室的中心小于2cm，即$Vr < 2cm$。
+\item 在62.4和200GeV时，我们还要求来自于快探测器重建的顶点位置和TPC重建的初级定点在z方向上的投影之间的距离小于3cm，即 $|Vz^{VPD}-Vz^{TPC}| < 3cm$，来剔除一些包含多次碰撞的事件。
+\end{itemize}
+表格~\ref{tab:Event_cut}中列出了不同能量下所对应的事件挑选截断
+
+\begin{table}[htb]
+\centering
+\caption{不同能量下，事件挑选的条件}
+\begin{tabular}{c|c|c|c|c}
+\toprule
+$\sqrt{s}_{NN}$  &  $|V_{z}|$(cm)  &  $V_{r}$(cm)  &  $|V_{z}^{VPD}-V_{z}^{TPC}|$  &  Trigger ID (MB)                          \\ \hline
+200 run14        &  $<$ 6          &  $<$ 2        &  $<$ 3                        &  4500-05,15,25,50,60         \\ 
+\bottomrule
+\end{tabular}
+\label{tab:Event_cut}
+\end{table}
+
+
+\subsection{碰撞粒子的筛选}
+在TPC中，会有许多参量来描述重建的粒子径迹的好坏，为了确保用在分析中的
+
+
+重建质量较好，在分析中我们要求TPC重建的径迹需要满足以下条件：
+\begin{itemize}
+\item 粒子的径迹为初级定点径迹(Pramary track)，即拟合该径迹时，并不要求其通过碰撞的初级顶点。
+\item 用于拟合径迹的hit数大于15(总共45)，从而保证径迹有好的动量分辨(nHitsfit $>$15)。
+\item 拟合径迹的hit数与可能是该径迹的hit的比大于0.52，从而保证去掉可能分裂的径迹(nHitsfit/nHitsposs $>$ 0.52)。
+\item 粒子的赝快度$|\eta|<1$。
+\item 粒子的横动量$0.15<p_{T}<10~\mathrm{GeV}/\mathit{c}$
+\end{itemize}
+
+
+\subsection{粒子鉴别}
+前面提到，在STAR试验中，TPC可以提供径迹的电离能损和动量信息，并与粒子的理论值相比较，算出其相对理论的误差，得到$n\sigma$，用来鉴别该径迹。TOF能提供粒子飞行时间，结合TPC的动量信息，能够计算出粒子的静质量(m)，能够提高离子鉴别的精度和范围。那么在分析中，\\对于$\pi^{+}$和$\pi^{-}$的鉴别：
+\begin{itemize}
+\item 当径迹只有TPC信息时，$|n\sigma_{\pi}| < 3.0 $
+\item 当径迹有TOF信息时，$0.017-0.013 \times p < m^{2} <0.04 \mathrm{GeV}/\mathit{c} $
+\end{itemize}
+符合上述的径迹，根据其电荷，我们就标记为$\pi^{+}$或$\pi^{-}$。
+\\对于$p$和$\overline{p}$的鉴别：
+\begin{itemize}
+\item 当径迹只有TPC信息时，$|n\sigma_{p}| < 3.0$
+\item 当径迹有TOF信息时，$0.5 < m^{2} < 1.5 \mathrm{GeV}/\mathit{c}$
+\end{itemize}
+
+符合上述的径迹，根据其电荷，我们就标记为$p$或$\overline{p}$。
+
+图~\ref{fig:Dedx_200}为$\sqrt{s}_{NN}$~=~200~GeV时，粒子的电离能损和粒子的质量的平方随其动量/电荷的分布。可以看到，只用TPC信息时，粒子在动量大于1GeV/c时，并不容易被分开。联合TPC 和TOF两个探测器的信息后，$\pi$，$K$，$p$很容易被区分开。
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=10cm,clip]{figure/Dedx_200.pdf}
+\caption{金核金核碰撞，质心系能量$\sqrt{s}_{NN}$~=~200~GeV时，利用TPC得到的粒子的电离能损($dEdx$)随着动量/电荷($p/q$)的变化。}
+\label{fig:Dedx_200}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=10cm,clip]{figure/Mass2_200.pdf}
+\caption{金核金核碰撞中，质心系能量$\sqrt{s}_{NN}$~=~200~GeV时，粒子静质量的平方($m^{2}$) 随着动量/电荷($p/q$)的变化。}
+\label{fig:Mass2_200}
+\end{figure}
+
+\vspace{0.2in}
+
+\bigskip
+
+
+\vspace{0.2in}
+
+
+
+
+\section{事件平面的重建}
+
+由于实验中碰撞的反应平面是不能直接计算出来的，我们只能通过利用末态粒子来重建碰撞事件的事件平面
+
+实验上，碰撞的事件平面可以通过单个碰撞事件的流矢量$Q_{n}$被重建出来。
+在这个分析中，我们运用一阶的事件平面来代替反应平面来确定系统角动量的方向，因为一阶事件平面相较于二阶事件平面来讲，更敏感于系统的角动量。因为束流计数器和零角度量能器测量到的都是前向快度区的粒子信息，特别是零角度量能器，测量到的是未参与碰撞的中子的信息，更能反映出碰撞时刻核子的空间信息，对系统角动量最为敏感。
+对于碰撞能量为7.7~-~39~GeV,我们采用束流计数器(BBC)重建事件平面。由于在高能量的时候，束流计数器(BBC)的里的光电倍增管达到阈值，工作状态不佳，所以对于62.4~-~200~GeV，我们采用零角度量能器(ZDC)，探测中子信息，来重建事件平面。下面，我们讨论如何通过束流计数器和零角度量能器重建一阶事件平面。
+
+\subsection{事件平面的重建}
+%\textbf{$\blacksquare$事件流矢量$Q_{n}$}
+\begin{itemize}
+\item 束流计数器(BBC)的事件流矢量$Q_{n}$ \\
+对于束流计数器(BBC)来讲，我们可用的有18个正六边形的闪烁体模块，但是由于第7个和第9 个，第11个和第13个模块，分别共用光电倍增管，所以对于BBC的一边来讲，总共只有16个电子学读出。那么事件流矢量$Q_{n}$定义如下~\cite{Poskanzer:1998yz,Voloshin:2008dg}：
+\begin{equation}
+\label{eq:BBC_Qn_x}
+Q_{\textbf{n},x} = \sum_{i}^{16}\omega_{i}\mathrm{cos}(n\varphi_{i})
+\end{equation}
+\begin{equation}
+\label{eq:BBC_Qn_y}
+Q_{\textbf{n},y} = \sum_{i}^{16}\omega_{i}\mathrm{sin}(n\varphi_{i})
+\end{equation}
+对于每一个正六边形闪烁体模块，这里的这里的$\varphi_{i}$，即方位角，是固定的，这里列出了每个电子学读出所对应的方位角，如表~\ref{tab:BBC_phi}所示，由于第7个和第9 个，第11个和第13个模块，分别共用光电倍增管，所以反映在表上的第7和12个模块对应角度有两个数值，在分析中，对于不同事件随机取其中一个值。$\omega_{i}$是权重因子，定义如下：
+\begin{equation}
+\label{eq:BBC_weight}
+\omega_{i} = \frac{ADC_{i}}{\sum_{i=1}^{i=16}ADC_{i}}
+\end{equation}
+这里的$ADC_{i}$是每个正六边形闪烁体对应的模拟数字转换器的电子学读出值，在这里，闪烁体上的能量沉积。
+
+\item 零角度量能器(ZDC)的事件流矢量$Q_{n}$ \\
+对于零角度量能器(ZDC)来讲，由于簇射最大值探测器(SMD)有8条横向晶体，有7条纵向晶体，那么事件流矢量$Q_{n}$定义如下：
+\begin{equation}
+\label{eq:ZDC_Qn_x}
+Q_{\textbf{n},x} = \sum_{i}^{7}\omega_{i}x_{i}
+\end{equation}
+
+\begin{equation}
+\label{eq:ZDC_Qn_y}
+Q_{\textbf{n},y} = \sum_{i}^{8}\omega_{i}y_{i}
+\end{equation}
+这里的$x_{i}$和$y_{i}$是每条晶体对应的空间坐标，并且都是固定值，如表~\ref{tab:ZDC_phi_x}和表~\ref{tab:ZDC_phi_y}所示。这里的$\omega_{i}$也是权重因子，含义和式~\ref{eq:BBC_weight} 相同，但对应的是每个ZDC-SMD 里的每个晶体。
+\end{itemize}
+
+\begin{table}[htb]
+\label{tab:BBC_phi}
+\caption{BBC上，每个电子学读出所对应的固定角度}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+\hline
+$\phi$  &1        & 2        & 3         & 4         & 5          & 6         & 7                    & 8           \\ \hline
+east    &$\pi/2$  & $5\pi/6$ & $-5\pi/6$ & $-\pi/2$  & $-\pi/6$   & $\pi/6$   & $\pi/3$ or $2\pi/3$  & $\pi/2$     \\ \hline
+west    &$\pi/2$  & $\pi/6$  & $-\pi/6$  & $-\pi/2$  & $-5\pi/6$  & $5\pi/6$  & $2\pi/3$ or $\pi/3$  & $\pi/2$     \\ \hline
+$\phi$  &9        & 10       & 11        & 12                     &13         & 14         & 15      & 16           \\ \hline
+east    &$5\pi/6$ & $\pi$    & $-5\pi/6$ & $-\pi/3$ or $-2\pi/3$  & $-\pi/2$  & $-\pi/6$   & 0       & $\pi/6$      \\ \hline
+west    &$\pi/6$  & 0        & $-\pi/6$  & $-\pi/3$ or $-2\pi/3$  & $-\pi/2$  & $-5\pi/6$  & $\pi$   & $5\pi/6$    \\ \hline \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[htb]
+\centering
+\label{tab:ZDC_phi_x}
+\caption{ZDC上，横向晶体的中心对应的位置}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+\hline
+X(cm)   &1    &2  &3    &4  &5    &6  &7      \\ \hline
+east    &0.5  &2  &3.5  &5  &6.5  &8  &9.5    \\ \hline
+west    &-0.5 &-2 &-3.5 &-5 &-6.5 &-8 &-9.5   \\ \hline \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[htb]
+\centering
+\label{tab:ZDC_phi_y}
+\caption{ZDC上，纵向晶体的中心对应的位置}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+\hline
+Y(cm)   &1               &2             &3              &4              &5              &6               &7               &8    \\ \hline
+east    &$\frac{1.25}{\sqrt{2}}$ &$\frac{3.25}{\sqrt{2}}$ &$\frac{5.25}{\sqrt{2}}$ &$\frac{7.25}{\sqrt{2}}$ &$\frac{9.25}{\sqrt{2}}$ &$\frac{11.25}{\sqrt{2}}$ &$\frac{13.25}{\sqrt{2}}$ &$\frac{15.25}{\sqrt{2}}$                    \\ [4pt] \hline
+west    &$\frac{1.25}{\sqrt{2}}$ &$\frac{3.25}{\sqrt{2}}$ &$\frac{5.25}{\sqrt{2}}$ &$\frac{7.25}{\sqrt{2}}$ &$\frac{9.25}{\sqrt{2}}$ &$\frac{11.25}{\sqrt{2}}$ &$\frac{13.25}{\sqrt{2}}$ &$\frac{15.25}{\sqrt{2}}$                    \\ [4pt]\hline
+\hline
+\end{tabular}
+\end{table}
+
+
+
+%\textbf{$\blacksquare$事件事件平面$\Psi_{n}$}
+那么，事件平面的与事件流矢量$Q_{n}$之间的关系如下：
+\begin{equation}
+\label{eq:EventPlane}
+\Psi_{n} = \frac{1}{n} \mathrm{arctan}(\frac{Q_{\textbf{n},y}}{Q_{\textbf{n},x}})
+\end{equation}
+
+由于束流计数器和零角度量能器，在时间投影室东西两侧都有，那么可以对于东西两侧，我们都可以得到对应的事件流矢量，分别记为：$\vec{Q}_{east}$和$\vec{Q}_{west}$，那么对应的整个事件的流矢量，可以记为$\vec{Q}_{full}$，那么$\vec{Q}_{east}$，$\vec{Q}_{west}$，$\vec{Q}_{full}$之间的关系如下：
+\begin{equation}
+\label{eq:full_east_west}
+\vec{Q}_{full} = \vec{Q}_{west} - \vec{Q}_{east}
+\end{equation}
+在这里，我们用$\vec{Q}_{west}$减去$\vec{Q}_{east}$来定义整个事件的流矢量，因为位于TPC东侧的BBC或者ZDC探测到的粒子更多来源于朝$-\hat{p}_{beam}$方向的原子核，而位于TPC 西侧的BBC或者ZDC 探测到的粒子更多来源于朝$\hat{p}_{beam}$方向的粒子，所以这样相减，$\vec{Q}_{full}$ 的方向和碰撞参数$\vec{b}$ 的方向一致。
+
+\begin{itemize}
+\item \textbf{增益修正(gain correction)}: \\
+对于一个理想探测器，BBC和ZDC-SMD的每一个模块对一个相同的能量沉积，分别应该有相同电子学读出(ADC)。但是对于现有的技术，探测器不可能达到理想情况，所以对于每一个模块，我们需要用一个归一化因子，来修正每个模块的ADC的分布，使得其平均值相同。这个归一化的操作，需要建立在足够的统计之上。反映在实际的重建事件平面的过程中，就是将ADC 除以归一化因子，即:
+\begin{equation}
+ADC_{corrected} = \frac{ADC}{f_{norm}}
+\end{equation}
+这里的$f_{norm}$是归一化因子，它对应的值在1附近浮动。对于BBC，一小短时间内，内圈的6个光电倍增管应该具有相同的电子学响应，所以应该共同求平均值，然后求出对应的归一化因子，外圈的12 个广电倍增管，也用相同的方法，求出归一化因子。对于ZDC，对于7个横向晶体条和8个纵向晶体条，我们也分成两组处理，每组单独挑出一个模块，作为基准，其余模块以这个模块为基准，然后归一化。
+
+\item \textbf{再定位修正(recentering correction)} \\
+对于碰撞参数没有方向取向性的事件，它的流矢量$\vec{Q}$的模应该是中心值为0的高斯分布。即使是在做了增益修正之后，$\vec{Q}$的模的分布的平均值仍然有可能不为零，这是因为，BBC或者ZDC的某一个模块相比于其他的模块更容易达到饱和状态，这会影响其对应的ADC，因此就会出现碰撞参数的方向有取向性。所以，原则上，再定位修正是要运用到事件平面的重建过程中的。具体在重建的过程中，就是将$Q_{n,x}$ 和$Q_{n,y}$减去其平均值，即：
+\begin{equation}
+Q_{n,x}\prime = Q_{n,x} - \langle Q_{n,x} \rangle
+\end{equation}
+\begin{equation}
+Q_{n,y}\prime = Q_{n,y} - \langle Q_{n,y} \rangle
+\end{equation}
+
+\item \textbf{移位修正(shift correction)}: \\
+原则上来讲，因为碰撞过程是随机的，碰撞参数的方向也是随机的，因此事件平面的分布应该是均匀的。但是由于探测器的接受度和效率问题，真实的事件平面的分布并不是均匀的。为了使事件平面的分布变均匀，这里使用一种移位修正的方法，强行使得事件平面的分布变均匀。事件平面的分布可以写成常数项加上一个级数展开，一般来讲，只有前几阶级数不为零，我们只需要消除这几阶级数，就可以得到均匀的分布了。那么，下面就是移位修正的具体数学推倒过程：
+
+事件平面的分布可以用傅立叶级数展开如下：
+\begin{equation}
+\frac{dN}{d\psi} = \frac{a_{0}}{2} + \sum_{0}(a_{n}\mathrm{cos}n\psi + b_{n}\mathrm{sin}n\psi)
+\label{eq:dN_dPsi_1}
+\end{equation}
+展开系数$a_{n}$和$b_{n}$的具体形式为：
+\begin{equation}
+a_{n} = \frac{1}{\pi} \int^{\pi}_{-\pi} \frac{dN}{d\psi}\cdot \mathrm{cos}n\psi \cdot d\psi
+\end{equation}
+\begin{equation}
+b_{n} = \frac{1}{\pi} \int^{\pi}_{-\pi} \frac{dN}{d\psi}\cdot \mathrm{sin}n\psi \cdot d\psi
+\end{equation}
+
+为了强行拉平事件平面的分布，给$\psi$一个小的修正量，记为$\Delta\psi$，并且表现为傅立叶级数形式，那么修正之后的$\psi\prime$与$\psi$之间的关系可以写成：
+\begin{equation}
+\psi\prime = \psi + \Delta\psi = \psi + \sum_{n}(A_{n}\mathrm{cos}n\psi + B_{n}\mathrm{sin}n\psi)
+\end{equation}
+因为经过修正之后的事件平面的分布是均匀的，所以：
+\begin{equation}
+\frac{dN}{d\psi\prime} = \frac{N}{2\pi} = \frac{a_{0}}{2}
+\end{equation}
+那么没经过修正的事件平面的分布可以重新写成:
+\begin{equation}
+\frac{dN}{d\psi} = \frac{dN}{d\psi\prime} \cdot \frac{d\psi\prime}{d\psi} = \frac{a_{0}}{2} \cdot (1+\sum_{n}(-n \cdot A_{n}\mathrm{cos}n\psi + n \cdot B_{n}\mathrm{sin}n\psi))
+\label{eq:dN_dPsi_2}
+\end{equation}
+通过比较公式~\ref{eq:dN_dPsi_1}和公式~\ref{eq:dN_dPsi_2}，我们可以得到$A_{n}$和$B_{n}$ 的具体形式：
+\begin{equation}
+A_{n} = -\frac{2}{n} \cdot \frac{b_{n}}{a_{0}} = -\frac{2}{n} \langle \mathrm{sin}n\psi \rangle
+\end{equation}
+\begin{equation}
+B_{n} = -\frac{2}{n} \cdot \frac{a_{n}}{a_{0}} = \frac{2}{n} \langle \mathrm{cos}n\psi \rangle
+\end{equation}
+那么，修正之后的事件平面$\psi\prime$可以写为：
+\begin{equation}
+\psi\prime = \psi + \sum_{n} \frac{2}{n}( -\langle \mathrm{sin}n\psi \rangle \mathrm{cos}n\psi + \langle \mathrm{cos}n\psi \rangle \mathrm{sin}n\psi)
+\label{eq:dN_dPsi_prime}
+\end{equation}
+在实际的移位修正过程中，我们一般取傅立叶级数的前二十阶，式~\ref{eq:dN_dPsi_prime} 中$n$~=~20，以确保所有的高阶项都被减掉。
+\end{itemize}
+
+图~\ref{fig:EP_dis_19_200}是左边部分金核金核碰撞，质心系能量$\sqrt{s}_{NN}$~=~19~GeV时，用BBC重建的，经过再定位修正之后的事件平面分布和经过移位修正之后的事件平面分布事件平面分布。图~\ref{fig:EP_dis_19_200}是右边部分金核金核碰撞，质心系能量$\sqrt{s}_{NN}$~=~200~GeV 时，用ZDC重建的，经过再定位修正之后的事件平面分布和经过移位修正之后的事件平面分布。图~\ref{fig:EP_dis_19_200}中，红线是经过再定位修正之后的事件平面分布，蓝线是经过移位修正之后的事件平面分布。我们发现不管是BBC还是ZDC重建的事件平面，在经过再定位修正之后，事件平面的分布并不均匀，上下震荡，而经过移位修正之后，事件平面的分布都已经被拉平了。
+
+\begin{figure}[htbp]
+\begin{minipage}[t]{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth,clip]{figure/EventPlane_19.pdf}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth,clip]{figure/EventPlane_200_Y11.pdf}
+\end{minipage}
+\caption{左图为金金碰撞中，质心系能量$\sqrt{s}_{NN}$~=~19~GeV时，利用BBC重建的，经过再定位修正之后和经过移位修正之后的事件平面的分布。右图为金金碰撞中，$\sqrt{s}_{NN}$~=~200~GeV，利用ZDC重建的，经过再定位修正之后和经过移位修正之后的事件平面的分布。}
+\label{fig:EP_dis_19_200}
+\end{figure}
+
+\subsection{事件平面分辨率}
+由于探测器的限制，我们重建的事件平面和真实的反应平面之间会有小的差距，那么怎样衡量这个事件平面与反应平面的差距呢？这里定义事件平面分辨率$\mathcal{R}_{n}$，用来描述事件平面与反应平面之间的差距~\cite{Poskanzer:1998yz,Voloshin:2008dg}：
+\begin{equation}
+\label{eq:Res_EP}
+\mathcal{R}_{n} = \left\langle \mathrm{cos}(km[\Psi_{m}-\Psi_{RP}]) \right\rangle
+\end{equation}
+这里$n=km$，m是事件平面的阶数，而n则是各向异性流的阶数。并且$\mathcal{R}_{n}$和一个参数$\chi$有关:
+\begin{equation}
+\label{eq:Res_Chi}
+\mathcal{R}_{n}(\chi_{m}) = \frac{\sqrt{\pi}}{2}\chi_{m} e^{-\chi_{m}^2/2} \left[ I_{\frac{k-1}{2}}(\chi_{m}^2/2) + I_{\frac{k+1}{2}}(\chi_{m}^2/2) \right]
+\end{equation}
+而参数$\chi$与事件的各向异性流和粒子数有关：
+\begin{equation}
+\label{eq:Chi}
+\chi = v_{m}\sqrt{M}
+\end{equation}
+图~\ref{fig:Res_Chi}~\cite{Voloshin:2008dg}描述的是分辨率$\mathcal{R}_{n}$和$\chi$ 之间的关系，我们可以看到，$\chi$越大，分辨率越大，当$\chi$足够大时，$\mathcal{R}_{n}$趋于饱和。
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=10cm]{figure/Res_Chi.pdf}
+\caption{当k=1和2时，事件平面分辨率随着$\chi$的变化}
+\label{fig:Res_Chi}
+\end{figure}
+
+因为实验上没法测量到反应平面$\Psi_{RP}$，但是我们可以利用BBC和ZDC东西两边重建的事件平面，即用子事件平面来估计整个事件平面的分辨率：
+\begin{equation}
+\label{eq:Res_Chi_sub}
+\mathcal{R}_{n,sub} = \sqrt{\left\langle \mathrm{cos}(km(\Psi_{m}^{East} - \Psi_{m}^{West})) \right\rangle}
+\end{equation}
+因为东西两边的探测器探测到的粒子数是整个探测器探测到的粒子数的一半，那么由公式~\ref{eq:Chi}可知：
+\begin{equation}
+\label{Res_full_sub}
+\mathcal{R}_{n,full} = R_{n}(\sqrt{2}\chi_{sub})
+\end{equation}
+
+%\textbf{$\blacksquare$ 相同阶的事件平面分辨率} \\
+
+\textbf{ 相同阶的事件平面分辨率} \\
+
+这里的相同阶的意思是式~\ref{eq:Res_EP}中，m=k。在这个分析中，对应的情况是，n=1=km，m=k=1，即这里的分辨率对应的是相同阶的分辨率，即用一阶事件平面计算直接流($v_{1}$) 的分辨率。
+
+在计算质心系能量为7.7~-~200~GeV事件平面分辨率的过程中，我们可以提取到分辨率$\mathcal{R}$ 对应的参数$\chi$，如图~\ref{fig:EP_Chi_BBC_ZDC}所示，在7.7~-~39~GeV 下，$\chi$随着碰撞中心度的变化，先增大，后减小，并且随着能量的增大而减小。在62.4~-~200~GeV时，随着能量的增大而增大。在200~GeV$\chi$随着碰撞中心度的变化，先增大，后减小。在62.4~GeV时，则从对心碰撞到边缘碰撞一直增大
+
+\begin{figure}[htbp]
+\begin{minipage}[t]{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth,clip]{figure/EP_Chi_BBC.pdf}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth,clip]{figure/EP_Chi_ZDC.pdf}
+\end{minipage}
+\caption{左图为金金碰撞中，$\sqrt{s}_{NN}$~=~7.7~-~39~GeV，BBC重建的一阶事件平面分辨率对应的$\chi$随碰撞中心度的变化。右图为金金碰撞中，$\sqrt{s}_{NN}$~=~62.4~-~200~GeV，ZDC重建的一阶事件平面分辨率对应的$\chi$随碰撞中心度的变化。}
+\label{fig:EP_Chi_BBC_ZDC}
+\end{figure}
+
+图~\ref{fig:EP_Res_BBC_ZDC}显示的是金核金核碰撞，质心系能量为7.7~-~200~GeV情况下，用BBC和ZDC-SMD重建的是一阶事件平面的分辨率。
+可以看出当能量从7.7GeV上升到39GeV时，BBC重建的事件平面分辨率醉着能量的上升而下降，能量的上升到62.4GeV时，BBC重建的事件平面分辨率过低，所以，我们改用ZDC-SMD来重建事件平面，发现ZDC-SMD 重建的一阶事件平面分辨率，随能量的上升而上升。从7.7~GeV至39~GeV和200~GeV，分辨率都是在半中心的时候最大，在对心和边缘碰撞的时候较小。在62.4~GeV时，分辨率则从对心碰撞到边缘碰撞一直增大。
+
+\begin{figure}[htbp]
+\begin{minipage}[t]{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth,clip]{figure/EP_Res_BBC.pdf}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth,clip]{figure/EP_Res_ZDC.pdf}
+\end{minipage}
+\caption{左图为金金碰撞中，$\sqrt{s}_{NN}$~=~7.7~-~39~GeV，相同阶事件平面分辨率$\mathcal{R}$随碰撞中心度的变化.右图为金金碰撞中，$\sqrt{s}_{NN}$~=~62.4~-~200~GeV相同阶事件平面分辨率$\mathcal{R}$随碰撞中心度的变化}
+\label{fig:EP_Res_BBC_ZDC}
+\end{figure}
+%\textbf{$\blacksquare$ 混合阶的事件平面分辨率} \\
+\textbf{ 混合阶的事件平面分辨率} \\
+
+由于我们在前面利用BBC和ZDC-SMD重建的是一阶事件平面，并且计算的的是相同阶的事件平面的分辨率。但是当我们利用一阶事件平面来计算二阶的椭圆流的时候，对应的分辨率则会发生变化。
+即$km$~=~2，但是$k$~=~2，$m$~=~1。则此时公式~\ref{eq:Res_Chi}变换为:
+\begin{equation}
+\label{eq:Mix_Res_Chi_1}
+\mathcal{R}_{n} = \frac{\sqrt{\pi}}{2}\chi e^{-\chi_{m}^2/2} \left[ I_{\frac{1}{2}}(\chi_{m}^2/2) + I_{\frac{3}{2}}(\chi_{m}^2/2) \right]
+\end{equation}
+将修正贝塞尔函数带入公式~\ref{eq:Mix_Res_Chi_1}可以得到：
+\begin{equation}
+\label{eq:Mix_Res_Chi_2}
+\mathcal{R}_{mix} = \frac{\sqrt{2}}{2}\chi_{m} \sqrt{\chi_{m}^2} e^{-\frac{\chi_{m}^2}{2}}  \left[ \frac{2\mathrm{sinh}(\frac{\chi_{m}^2}{2})}{\chi_{m}^2} + \frac{2\mathrm{cosh}(\frac{\chi_{m}^2}{2})}{\chi_{m}^2} - \frac{4\mathrm{sinh}(\frac{\chi_{m}^2}{2})}{\chi_{m}^4} \right]
+\end{equation}
+
+将各个能量，各个中心度下对应的$\chi$带入公式~\ref{eq:Mix_Res_Chi_2}中，我们可以得到，用一阶事件平面计算椭圆流，所对应的分辨率，如图\ref{fig:EP_Res_BBC_ZDC_Mix}所示，在7.7~-~39~GeV下，混合阶分辨率$\mathcal{R}_{mix}$随着碰撞中心度的变化，先增大，后减小，并且随着能量的增大而减小。在62.4~-~200~GeV下，混合阶分辨率$\mathcal{R}_{mix}$随着能量的增大而增大。在200~GeV时，混合阶分辨率$\mathcal{R}_{mix}$随着碰撞中心度的变化，先增大，后减小，并且随着能量的增大而增大。在62.4~GeV时，混合阶分辨率$\mathcal{R}_{mix}$随着碰撞中心度一直增大。
+
+
+
+
+\section{事件平面分辨率的修正}
+前面提到，实验上我们通过探测器测量到的事件平面和真实的反应平面之间是相隔一个角度的，那么我们测量到的$P_{H}$对于$\phi-\Psi$的依赖也是需要修正的。那么下面，我们讨论事件平面的不准确性是如何影响方位角依赖性的，以及如何修正这部分的影响
+\subsection{事件平面相对反应平面的扰动产生的影响}
+由于事件平面测量的不准确性，$P_{H} = \frac{8}{\pi\alpha} \langle \mathrm{sin}(\Psi-\phi^{\star}) \rangle $和$\phi_{\Lambda}-\Psi$这两部分都受到了事件平面不能准确测量的影响。当事件平面($\Psi_{EP}$)相较于真实的反应平面($\Psi_{RP}$)有一个小的扰动($\Delta\Psi$)的时候，如图~\ref{fig:RCM_1} 所示，$\Lambda$超子会在Y-轴上穿插，即$\mathrm{sin}(\Psi-\phi^{\star})$的值会产生影响，并且当我们分了不同的$\phi_{\Lambda}-\Psi$的我区间时，粒子会在X-轴上面穿插，即粒子的会错误被分到别的$\phi_{\Lambda}-\Psi$区间。所以当$\Psi$和$\Psi_{RP}$不同的时候，在图~\ref{fig:RCM_1} 表现出来的形式就是粒子从一个二维的区间跳到另一个区间。这样，不仅导致我们观测到的$P_{H}$ 小于其真实的值，而且也会导致$P_{H}$对于$\phi_{\Lambda}-\Psi$的依赖性相较于其真实的依赖性要小。所以当我们针对其做事件平面分辨率修正的时候，和椭圆流的研究不同，不能仅仅对不同的$\phi_{\Lambda}-\Psi$区间的$P_{H}$除以相同的分辨率，而应该对于不同$\phi_{\Lambda}-\Psi$区间的$P_{H}$ 做不同的分辨率修正。为了提出一个好的修正方法，首先我们要追踪粒子在X-轴和Y-轴上的穿插是如何发生的。
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=10cm,clip]{figure/RCM_1.pdf}
+\caption{当事件平面相对于反应平面有扰动时，粒子在$\phi-\Psi$区间和$\mathrm{sin}(\Psi-\phi^{\star})$区间都有移动的示意图。}
+\label{fig:RCM_1}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=15cm,clip]{figure/RCM_2.pdf}
+\caption{当事件平面相对于反应平面有扰动时，粒子产额在$\phi-\Psi$区间的混合示意图。}
+\label{fig:RCM_2}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=15cm,clip]{figure/RCM_3.pdf}
+\caption{当事件平面相对于反应平面的扰动大小不同时，粒子落在不同$\phi-\Psi$区间的示意图。}
+\label{fig:RCM_3}
+\end{figure}
+
+如图~\ref{fig:RCM_2}所示，当$\Psi$是反应平面的时候，我们可以测量到$\Lambda$粒子在每个$\phi_{\Lambda}-\Psi$区间的粒子数，当事件平面与反应平面有一个夹角的时候，我们可以重新测量落在不同$\phi_{\Lambda}-\Psi$区间的粒子数，这个时候，我们可以追踪粒子的来源和去向。如在真实区间1的粒子，可以落在观测区间1，2，3，4。同样在真实区间2，3，4的粒子，可以落在观测区间1，2，3，4。这样我们就可以定义粒子的产额$M_{ij}$，用来追踪起源于真实的第i个$\phi_{\Lambda}-\Psi$区间，被观测落在第j个$\phi_{\Lambda}-\Psi$区间的粒子数：
+\begin{equation}
+\label{eq:M_ij}
+M_{ij} = \sum_{k} m^{k}_{ij}
+\end{equation}
+这里$m^{k}_{ij}$表示的和$M_{ij}$同样的意思，但是针对的是第k个事件。
+
+前面只是描述了$\Lambda$超子的数目在不同的$\phi_{\Lambda}-\Psi$区间的变化，下面我们讨论事件平面相对反应平面大小的扰动，对$\Lambda$超子落在哪个$\phi_{\Lambda}-\Psi$区间的影响。如图~\ref{fig:RCM_3}所示，左图描述的是，当我们用反应平面划分区间的时候，$\Lambda$超子落在第一个$\phi_{\Lambda}-\Psi$区间。中间的图像描述的是，当事件平面相对反应平面有一个较小的扰动的时候，$\Lambda$超子有可能仍然被观测落在第一个$\phi_{\Lambda}-\Psi$区间。右边的图像描述的是，当事件平面相对反应平面有一个较大的扰动的时候，这时$\Lambda$超子有可能被观测落在第二个$\phi_{\Lambda}-\Psi$区间。那么这张图告诉我们，当$\Lambda$超子落在和它真实的区间相近的区间的时候，这些事件经历了较小的事件平面扰动。当$\Lambda$超子落在和它真实的区间相距较远的区间的时候，这些事件经历了较大的事件平面扰动。这就意味着，事件平面分辨率的修正对于不同的$\phi_{\Lambda}-\Psi$区间应该区分对待，而不是都修正一个相同的事件平面分辨率。这里我们定义一个粒子层次的分辨率$r_{ij}$,用来描述$\Lambda$超子从真实的第i个$\phi_{\Lambda}-\Psi$区间，落到第j个$\phi_{\Lambda}-\Psi$区间的分辨率:
+\begin{equation}
+\label{eq:r_ij}
+r_{ij} = \frac{\sum_{k} (m^{k}_{ij}) \cdot w_{ij}^k \cdot \mathrm{cos}[(\Psi_{EP}^{k} - \Psi_{RP})]} {M_{ij}} ,
+\end{equation}
+这里的$w_{ij}^k = \frac{<\sum_{j}m_{ij}>}{\sum_{j}m_{ij}^{k}}$是一个权重因子，$\left\langle\dots\right\rangle$ 表示是的事件平均。
+
+$M_{ij}$和$r_{ij}$两个变量，不仅描述了事件平面的扰动是如何影响$P_{H}$的方位角依赖性的，而且也量化了不同的事件平面扰动产生的影响。那么如何将$\Big[ P_{H}^{obs} \Big]$和$[ P_{H}^{real} \Big ]$ 之间通过$M_{ij}$和$r_{ij}$联系起来呢？
+
+
+
+
+\section{系统误差}
+分析中系统误差的分析主要包括以下部分：
+\begin{itemize}
+\item $\Lambda$和$\bar{\Lambda}$的重建带来的不确定性。
+
+在重建$\Lambda$和$\bar{\Lambda}$时，应用了拓扑结构的截断来减下组合背景，那么我们可以利用拓扑结构的截断的变化，来研究这一部分带来的系统误差。在分析中。我们主要通过变化$p$和$\pi$之间的DCA($DCA_{p\pi})$，还有$\Lambda$的DCA($DCA_{\Lambda}$)以及$\Lambda$的衰变长度($DL$)，来估计拓扑结构的截断所导致的不确定性。即对于$DCA_{p\pi}$，$DCA_{\Lambda}$，$DL$均上下变化一个的范围，定义为val。但是对于不同的截断，这里的val不一定相同。那么这三个部分引入的不确定性计算如下：
+\begin{equation}
+S_{DCA_{p\pi}} = \frac{1}{\sqrt{2}} \sqrt{(P_{H}^{DCA_{p\pi}+val} - P_{H}^{default})^2 + (P_{H}^{DCA_{p\pi}-val} - P_{H}^{default})^2}
+\label{eq:sys_1}
+\end{equation}
+\begin{equation}
+S_{DCA_{\Lambda}} = \frac{1}{\sqrt{2}} \sqrt{(P_{H}^{DCA_{\Lambda}+val} - P_{H}^{default})^2 + (P_{H}^{DCA_{\Lambda}-val} - P_{H}^{default})^2}
+\label{eq:sys_2}
+\end{equation}
+\begin{equation}
+S_{DL} = \frac{1}{\sqrt{2}} \sqrt{(P_{H}^{DL+val} - P_{H}^{default})^2 + (P_{H}^{DL-val} - P_{H}^{default})^2}
+\label{eq:sys_3}
+\end{equation}
+
+\item 分辨率修正时，修正矩阵$A$的计算带来的不确定性。
+
+在计算修正矩阵$A$是，我们用到了$\chi$和$v_{2}$，由于$\chi$的误差极小，在这里我们不考虑由$\chi$的不确定性，而引入的误差。而$v_{2}$的统计误差相对较大，我们需要考虑在计算修正矩阵$A$的时候，$v_{2}$的误差引入的不确定性，如图~\ref{fig:v2_energy}，特别是相较于$\sqrt{s}_{NN}$~=~200~GeV，$\sqrt{s}_{NN}$~=~7.7~-~62.4~GeV对应的$v_{2}$对应的值都较大，在这里，对于$\sqrt{s}_{NN}$~=~200~GeV，我们不考虑$v_{2}$的不确定性，在计算修正矩阵$A$时，引入的系统误差。具体方案如下：取$v_{2}$统计误差的1个$\sigma$的值，即$v_{2} \pm err$，重新计算修正矩阵$A$，然后用新的矩阵$A$来修正$P^{obs}_{H}$相对与$\phi-\Psi_{obs}$ 的分布，会得到两组新的$P_{H}$相对与$\phi-\Psi$的分布。那么由修正矩阵$A$的不确定性引入的误差计算如下：
+\begin{equation}
+S_{v_{2}} = \frac{1}{\sqrt{2}} \sqrt{(P_{H}^{v_{2}+err} - P_{H}^{default})^2 + (P_{H}^{v_{2}-err} - P_{H}^{default})^2}
+\label{eq:sys_4}
+\end{equation}
+\end{itemize}
+
+那么总体的系统误差可以估计为：
+\begin{equation}
+S_{err} = \sqrt{ S_{DCA_{p\pi}}^{2} + S_{DCA_{\Lambda}}^{2} + S_{DL}^{2} + S_{v_{2}}^{2} }
+\end{equation}
+在这里需要强调的是：对于$\sqrt{s}_{NN}$~=~200~GeV的结果，目前只考虑了2011年的数据和2014年的数据之间的差异，作为系统误差，即：
+\begin{equation}
+S_{err} = \frac{1}{\sqrt{2}} \sqrt{ (P_{H}^{ave}-P_{H}^{2011})^2 + (P_{H}^{ave}-P_{H}^{2014})^2 }
+\end{equation}
+因为对于$\sqrt{s}_{NN}$~=~200~GeV，拓扑结构的截断带来的系统误差相对于$P_{H}$的值小于3\%，并且$v_{2}$的误差也很小，所以这里也不考虑由$v_{2}$引起修正矩阵$A$的不确定性而引入的系统误差。如图~\ref{fig:sys_phi_energy} 所示：列出了在$\sqrt{s}_{NN}$~=~7.7~-~62.4~GeV $S_{DCA_{p\pi}}^{2}$，$S_{DCA_{\Lambda}}^{2}$，$S_{DL}^{2}$，$S_{v_{2}}^{2}$这四种误差的大小，并且也列出了$\sqrt{s}_{NN}$~=~200~GeV时的系统误差。
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth,clip]{figure/SYS_Phi_Energy.pdf}
+\caption{金-金碰撞中，$\sqrt{s}_{NN}$~=~7.7~-~200~GeV，中心度为20-50\%，$P_{H}$的系统误差组分随着方位角($\phi-\Psi$)的变化。}
+\label{fig:sys_phi_energy}
+\end{figure}
+
+
+text
+%\section{Introduction}
+%\label{intruduction}
+
+
+It has been pointed out that the hot and dense matter created in relativistic heavy-ion collisions may form metastable domains where the parity and
+time-reversal symmetries are locally violated, creating fluctuating, finite topological charges~\cite{ref1}. In non-central collisions, when such domains are immersed  in the ultra-strong magnetic fields produced by spectator protons,  they can induce electric charge separation parallel to the system's orbital angular momentum --- the chiral magnetic effect (CME)~\cite{ref2}. 
+To study the CME experimentally one has to look for the enhanced fluctuation of charge separation in the direction perpendicular to the reaction plane, relative to the fluctuation in the direction of reaction plane itself. This is the basis of all CME searches in heavy-ion collisions.
+Recently,  a new method,  namely the Signed Balance Function (SBF) method, is proposed as an alternative way to study the charge separation induced by CME in relativistic heavy-ion collisions~\cite{tang2019probe}.
+The SBF method is based on the idea of examining the fluctuation of net momentum ordering of charged pairs along the in- and out-of-plane directions.  In this approach, a pair of observables were proposed,  one is $r_{\mathrm{rest}}$, the out-of-plane to in-plane ratio of $\Delta B$ measured in pair's rest frame, where $\Delta B$ is the difference between signed balance functions; the other is a double ratio $R_{\mathrm{B}} = r_{\mathrm{rest}}/r_{\mathrm{lab}}$,  where $r_{\mathrm{lab}}$ is a measurement similar to $r_{\mathrm{rest}}$ but performed in the laboratory frame.
+These two observables have positive responses to signal, but opposite, limited responses to known backgrounds arising from resonance flow and global spin alignment. In this proceedings, we review tests made for the SBF with toy models, and give an update on tests made with realistic models. Latter ones include combinations of background and signal with various strengths. After that we will show SBF results from Au + Au collisions at 200~GeV measured by the STAR experiment at RHIC. 
+
+\vspace{-0.38cm}
+
+%\section{Results and discussion}
+\label{results}
+
+\vspace{-0.08cm}
+
+%\subsection{ Review on toy model studies and update on realistic model studies}
+\label{simulation}
+ The major challenge in CME searches is that backgrounds, in particular those related to resonance elliptic flow and global spin alignment, can produce similar enhancement of fluctuations with the CME signal in the direction perpendicular to the reaction plane \cite{tang2019, ref4}. The effects of both signal and backgrounds have been implemented in toy model simulations~\cite{Tang2019}, and for the configuration details of toy model please see Ref~\cite{toymodel}. With the toy model, the responses of SBF observables can be studied  using various signal and background combinations, in a controlled and systematic way.
+ 
+ 
+
+\begin{figure}[htbp!]
+\vspace{-0.4cm}
+%\hspace{-0.75cm}
+\centering 
+\begin{minipage}[b]{0.33\textwidth} 
+\centering 
+\includegraphics[width=1\textwidth]{./finalplots/fig1.pdf}
+\caption{ The $r_{\mathrm{rest}}$, $r_{\mathrm{lab}}$ and  $R_{\mathrm{B}}$  as a function of $a_{1}$ obtained for the toy model (signal only, no backgrounds) ~\cite{tang2019probe}. 
+\vspace{3.4mm}
+ }
+\label{Fig.1}
+\end{minipage}
+\hspace{0.10cm}
+\begin{minipage}[b]{0.33\textwidth} 
+\centering 
+\includegraphics[width=1\textwidth]{./finalplots/fig2.pdf}
+\caption{  The $r_{\mathrm{rest}}$ and $R_{\mathrm{B}}$ as a function of resonance $v_{2}$ for various transverse momentum/mass spectra obtained for the toy model ~\cite{tang2019probe}. }
+\label{Fig.2}
+\end{minipage}
+%\hspace{0.10cm}
+%\begin{minipage}[b]{0.33\textwidth} 
+%\centering 
+%\includegraphics[width=1\textwidth]{fig_rho00Change_noFlowNoA1_compareSpectra.pdf}
+%\caption{  $r_{\mathrm{rest}}$ and $R_{B}$ as a function of resonance $v_{2}$, for various $a_{1}$ values ( Fig comes from  ~\cite{tang2019probe}).}
+%\label{Fig.3}
+%\end{minipage}
+\end{figure}
+
+
+
+In Fig.~\ref{Fig.1} SBF observables are shown as a function of primordial $a_1$, which $a_1$ refers to the signal of CME, without any backgrounds. Here $a_1$ represents the strength of CME signal~\cite{tang2019probe}. The $r_{\mathrm{rest}}$, $r_{\mathrm{lab}}$ and $R_{B}$ are consistent with unity when $a_{1}=0$, and increase with increasing $a_{1}$. The $r_{\mathrm{rest}}$ and $r_{\mathrm{lab}}$ follow each other to the first order but $r_{\mathrm{rest}}$ responds to signal more than $r_{\mathrm{lab}}$ does, which is the information shown in the bottom panel.  The results indicate that SBF observables are sensitive to the CME signal. 
+The influence of elliptic flow of resonances are shown in Fig.~\ref{Fig.2}. The $R_{\mathrm{B}}$  is found to decrease with the increasing of resonance $v_2$, while the $r_{\mathrm{rest}}$  increases with it. The two observables show opposite dependence on resonance $v_2$  assuming various transverse momentum ($p_{T}$) spectra shape.  More cases with additional background configurations can be found in Ref~\cite{tang2019probe}. 
+%Similar simulation to study the effects of global spin alignment ($\rho_{00}$ can be found in ref~\cite{tang2019probe}, $r_{rest}$ and $R_B$ give a opposite responses to the CME and backgrounds. 
+Figure ~\ref{Fig.4} shows toy model results with CME signal and two major backgrounds (resonance flow and global spin alignment) considered, which are  closer to the realistic scenario. One can see that similar to the case of resonance flow only, $r_{\mathrm{rest}}$  and $R_{\mathrm{B}}$ respond in opposite directions to the change of global spin alignment ($\rho_{00}$). On top of that, both increase with increasing signal ($a_1$). It will be a case supporting CME if both $r_{\mathrm{rest}}$ and $R_{\mathrm{B}}$ are larger than unity, barring additional background from Local Charge Conservation (LCC) and Transverse Momentum Conservation (TMC). Both LCC and TMC have to be studied with realistic models, which will be presented below. 
+
+
+\begin{figure}[htbp!]
+\vspace{-0.25cm}
+%\hspace{-0.25cm}
+\centering 
+\begin{minipage}[b]{0.33\textwidth} %43
+\centering 
+\includegraphics[width=0.96\textwidth]{./finalplots/fig3.pdf}
+\caption{ The $r_{\mathrm{rest}}$ and $R_{\mathrm{B}}$ as a function of resonance $\rho_{00}$ for various $a_{1}$ values obtained for the toymodel~\cite{tang2019probe}).}
+\label{Fig.4}
+\end{minipage}
+\hspace{0.45cm}
+\begin{minipage}[b]{0.33\textwidth} 
+\centering 
+\includegraphics[width=1\textwidth]{./finalplots/fig4.pdf}
+\caption{The $r_{\mathrm{rest}}$ and $R_{\mathrm{B}}$ as a function of centrality, calculated for events from AMPT and AVFD. }
+\label{fig:AMPT_AVFD}
+\end{minipage}
+\end{figure}
+\vspace{-0.18cm}
+
+The two observables are also tested with two popular realistic models, namely  the AMPT~\cite{amptLin:2004}  and  AVFD~\cite{avfdref} models. Both models can reasonably describe data's key features (spectra,  elliptic flow, etc.).  For the AMPT version that is used in the test, no CME signal is implemented and charge-conservation has been assured. It can serve as a good baseline for apparent charge separation arising from pure backgrounds.
+In the  AVFD model~\cite{avfdref}, the anomalous transport current from CME has been implemented by introducing finite ratio of axial charge over entropy ($n_{5}/s$),
+%the anomalous transport current from CME has been implemented (the CME signal is sensitively related to the initial condition for the axial charge, $n_{5}/s$), 
+allowing a  quantitatively and systematically study on observable's responses to signal embedded an environment of realistic backgrounds.  
+Figure~\ref{fig:AMPT_AVFD} shows the results of  $r_{\mathrm{rest}}$ and $R_{\mathrm{B}}$ as a function of centrality for AMPT and AVFD events. To match the typical acceptance used by the STAR Collaboration, only particles in $|\eta|<1$ and $0.2 < p_{T} < 2$ GeV/$c$ are considered in the analysis.
+For the two cases without  CME (AMPT and AVFD with $n_{5}/s = 0$), $r_{\mathrm{rest}}$ and $R_{\mathrm{B}}$ are consistent with unity within statistical uncertainties.  Both $r_{\mathrm{rest}}$ and $R_{\mathrm{B}}$ increase with increasing $n_{5}/s$ in AVFD results, results for the two LCC cases  (LCC =  33\% and LCC = 0\%).  The increase of the strength of LCC shifts both $r_{\mathrm{rest}}$ and $R_{\mathrm{B}}$ upwards, but only limited response is seen for the SBF observables when LCC changes from 0\% to 33\%. More detailed investigation on LCC is ongoing. 
+
+\vspace{-0.08cm}
+
+% \subsection{}
+\vspace{-0.08cm}
+
+Experimental data used in this analysis are 200~GeV Au + Au collisions taken by the STAR  experiment in year 2016. About one billion minimum-bias events were used in the analysis.
+The transverse momentum range for particles included in the analysis is $0.2 < p_T < 2 $ GeV/c. The second order event-plane  (EP), $\psi _{2}$, is reconstructed with Time Projection Chamber (TPC) withing $ 0.5< \eta <1.0$. Pions are used to calculate SBF, and they are identified with the information from both the TPC and the Time-Of-Flight detector. Pion kinematic region is confined in $|\eta| <0.5$, a different region than that for $\psi _{2}$ to avoid auto-correlation effects. In Fig.~\ref{fig:finalresults}, $r_{\mathrm{rest}}$ , $r_{\mathrm{lab}}$  and  $R_{\mathrm{B}}$ are shown as a function of centrality for both experimental data and AVFD model events. Results presented in Fig.~\ref{fig:finalresults}  are not corrected for the EP resolution. Instead, we smeared reaction plane in AVFD events with measured  event plane resolution in order to compare with data. The finite efficiency effect is also applied to AVFD events to assure a fair comparison.  One can find that both $r_{\mathrm{rest}}$, $r_{\mathrm{lab}}$, and $R_{\mathrm{B}}$ are larger than unity for all centralities for experimental data. As a consistency check, we also randomized each particle's charge while keep the total number of charged particles (positive and negative) in event unchanged. Such events and they are called shuffled events, and they are analyzed in the same way as what real events are analyzed. As shown in ~\ref{fig:finalresults}, SBF observables for shuffled events are at unity as expected. In the centrality of  30-40\%,  $r_{\mathrm{rest}}$ and $R_{\mathrm{B}}$ from data are both larger than the AFVD calculation without CME (the case of $a_1 =0$), indicating that there is a room to accommodate the CME explanation. Our overall observation is difficult to be explained by background-only model.
+
+
+\begin{figure}[htbp!]
+	\centering
+	\includegraphics[width=0.365\textwidth]{./finalplots/fig_Result_r.pdf}
+	\includegraphics[width=0.4\textwidth]{./finalplots/fig_Result_RB.pdf}
+	%\includegraphics[width=6.9cm]{./fig_Result_r.pdf}
+	%\includegraphics[width=7.53cm]{./fig_Result_RB.pdf}
+	\vspace{-0.7cm}
+	\caption{(Color online) 
+	$r_{\mathrm{rest}}$ , $r_{\mathrm{lab}}$  and  $R_{\mathrm{B}}$ as a function of centrality from Au + Au 200~GeV at STAR.
+	}
+	\label{fig:finalresults}
+\end{figure}
+
+\vspace{-0.37cm}
+%\section{Summary}
+%\label{summary}
+\vspace{-0.08cm}
+
+We reviewed tests of SBF with toy models, and gave an update on studies made with two realistic models. 
+Toy model simulation studies show that the two observables, $r_{\mathrm{rest}}$ and $R_{\mathrm{B}}$, respond in opposite directions to signal and backgrounds arising from resonance $v_2$ and $\rho _{00}$.  If both  $r_{\mathrm{rest}}$ and $R_{\mathrm{B}}$ are larger than unity, then it can be regarded as a case in favor of the existence of CME. 
+In Au+Au collisions at 200~GeV,  $r_{\mathrm{rest}}$ ,  $r_{\mathrm{lab}}$ and $R_{\mathrm{B}}$ are found to be larger than unity, and larger than AVFD model calculation with no CME implemented. Our results are difficult to be explained by a background-only scenario.
+
+
+
+
+
+\section{结果和讨论}
+%\subsection{结果与讨论}
+
+
+
+
+%\subsection{总结}
+在这一章中，我们重建了$\Lambda$和$\bar{\Lambda}$超子，利用BBC和ZDC重建了一阶事件平面。我们提出由实验数据驱动(data-driven)的分辨率修正方法，并且该方法得到了模拟的验证，以使得能够放心的用到实验数据的修正上。
+
+我们测量了在质心系能量为$\sqrt{s}_{NN}$~=~7.7, 11.5, 14.5, 19.6, 27, 39, 62.4和200~GeV 的金金碰撞中，中心度为20-50\%，$\Lambda(\bar{\Lambda})$超子全局极化对其方位角的依赖性。我们发现$\sqrt{s}_{NN}$~=~200~GeV时，在沿着事件平面方向，我们观测到了全局极化，并且随着方位角的增大为减小，在垂直于反应平面的方向，全局极化消失为0。同样的趋势，在$\sqrt{s}_{NN}$~=~7.7, 14.5, 19.6~GeV时，也被观测到，但是趋势相比于$\sqrt{s}_{NN}$~=~200~GeV时，没有那么明显。方位角依赖性的强度$P_{2}$显示出微弱的能量依赖性，随着能量的增加而减小。
+
+到目前为止，理论模型预言了相反的方位角依赖趋势，甚至有理论模型预言的极化的符号与我们的观测相反。这个测量意味着涡旋的输运理论并不是很完善，需要更多的理论来研究相对论重离子碰撞中的涡旋结构和输运特性，用来揭示高涡旋、低粘滞性环境下的动力学特性。并且我们还需要更多的低能实验数据，以及利用更精确的事件平面探测器，来确定极化的方位角依赖强度的能量依赖趋势。
+
+另外，本章节涉及到的数据分析工作全部由作者本人完成。
+
+
+

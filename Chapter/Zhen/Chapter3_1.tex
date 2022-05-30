@@ -1,0 +1,50 @@
+\section{数据集和事例判选}
+STAR于2017年采集了质心系能量为54.4GeV最小无偏（Minimum bias, MB）金-金对撞的数据。在此数据集中，中心度（Centrality）的定义由Glauber模型计算得到的带电粒子多重数得出。  通过将中间快度区域（$|\eta| < 0.5 $）的带电粒子多重数分布均分得到每个中心度对应的带电粒子多重数区间。表 \ref{tab:centrality} 列举出了54.4 GeV 金-金对撞中不同中心度区间对应的带电粒子多重数（RefMult）范围。由于探测器触发（Triggeer）效率的影响，当发生偏心碰撞时实际探测到的带电粒子多重数分布和理论计算存在差异，所以一个权重修正被引入来修正实际数据和理论计算的差距。修正后的带电粒子多重数（RefMultCorr）用来进行最终的中心度计算。本分析中所分析的数据中心度区间为0-80\%。
+
+\begin{table}[h!]
+    \centering
+    \caption{不同中心度带电粒子多重数范围}
+    \label{tab:centrality}
+    \begin{tabular}{|c|c|}
+    \hline
+        中心度 & 带电粒子多重数最小值  \\
+    \hline
+         0-5\% & 361  \\
+     \hline
+         5-10\% & 299  \\
+    \hline
+         10-20\% & 205  \\
+    \hline
+         20-30\% & 138  \\
+    \hline
+         30-40\% & 89  \\
+    \hline
+         40-50\% & 54  \\
+    \hline
+         50-60\% & 31  \\
+    \hline
+         60-70\% & 16  \\
+    \hline
+         70-80\% & 7   \\     
+    \hline
+    \end{tabular}
+\end{table}
+
+为了提高分析中所用到的事例（Event）质量，几个关于事例质量的判选条件被添加到了分析中。如表 \ref{tab:EventSelection} 所示。通过事例质量筛选后所剩事例数约为800M
+
+\begin{table}[h!]
+    \centering
+    \caption{事例判选条件}
+    \label{tab:EventSelection}
+    % \begin{tabularx}{0.8\textwidth} {
+    % | >{\centering\arraybackslash}X | >{\centering\arraybackslash}X | }
+    \begin{tabular}{|c|c|}
+        \hline
+        Trigger ID & Minbias (580001,580021)  \\
+        \hline
+        Vertex & $|V_z| < 35cm ~\&\&~ V_r < 2cm$   \\
+        \hline
+        Vertex Difference & $|V_{z}^{TPC} - V_{z}^{VPD}| < 3cm$\\
+        \hline
+    \end{tabular}
+\end{table}

@@ -1,0 +1,345 @@
+\renewcommand{\thechapter}{}     % change the chapter counter to be nothing
+\def\chaptername{}         % change the chapter language to be Chinese
+\chapter{第一章：相对论重离子碰撞} \vskip -0.5cm
+\renewcommand{\thechapter}{\arabic{chapter}}　% change the chapter counter to be 1
+\thispagestyle{fancy}
+
+
+\section{基本粒子的标准模型}
+粒子物理标准模型是描述宇宙中已知的四种基本力中的三种(电磁、弱和强相互作用，不包括引力)的理论，并对所有已知的基本粒子进行分类。目前的框架是在20世纪70年代中期在实验证实夸克存在的基础上最后确定的。对顶夸克(1994)\cite{abe1994evidence,abachi1995observation,d01996observation}、$\tau$中微子(2000)\cite{kodama2001observation} 和希格斯玻色子(2012)\cite{aad2012observation,chatrchyan2012observation}的观测为标准模型增加了进一步的可信度。此外，标准模型还准确地预测了弱中性流和W、Z玻色子的各种性质。
+
+标准模型包含61种基本粒子。其中自旋为1/2的基本粒子，称为费米子，遵循泡利不相容原理。每个费米子都有相应的反粒子。标准模型中的费米子是根据它们如何相互作用以及携带的电荷分类的。有六个夸克(上，下，粲，奇异，顶，底)和六个轻子(电子，电子中微子，$\mu$，$\mu$中微子，$\tau$，$\tau$中微子)。
+
+在这里，费米子被分为三代，每一代粒子有着不同的质量和味量子数。每两个夸克和两个轻子组成一代，第一代费米子包含上夸克，下夸克，电子，电子中微子。第二代费米子包含粲夸克，奇异夸克，$\mu$，$\mu$中微子，第三代费米子包含顶夸克，底夸克，$\tau$，$\tau$中微子。
+
+夸克携带色荷，即色量子数(red,green,blue)。由于色禁闭，夸克只能被束缚在色中性的强子中，即夸克只能存在与强子中。每一个夸克都对应着一个反夸克。夸克与反夸克结合，形成介子(meson)，三个夸克(反夸克)结合，形成重子(baryon)。标准模型中有6种夸克，每种夸克有三种色量子数，再加上其相应的反夸克，夸克共有有36种。
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.6\textwidth,clip]{figure/sm_carton.pdf}
+\caption{标准模型中的基本粒子}
+\label{fig:sm_carton}
+\end{figure}
+另外六个费米子不携带色荷，称为轻子。三个中微子不带电荷，所以它们的运动只受弱核力的直接影响，这使它们很难被探测到。电子，$\mu$子和$\tau$携带电荷，它们都参与电磁相互作用。每一个轻子都对应一个反轻子，所以，轻子共有12种。
+
+费米子的每一代成员的质量都大于相应的低代粒子。第一代带电的费米子不会衰变，因此所有普通(重子)物质都是由这种粒子构成的。具体来说，所有原子都由原子核和围绕原子核运行的电子组成。原子核由上，下夸克结合形成的中子和质子组成。另一方面，第二代和第三代带电粒子的衰变半衰期很短，只能在相对高能的环境中观察到。三代中微子不会衰变且很少与重子物质相互作用。
+
+在标准模型中，规范玻色子被定义为强、弱和电磁基本相互作用的传播子，自旋为整数。物理学中的相互作用是粒子影响其他粒子的方式。标准模型认为由物质粒子之间的相互作用是通过交换其他粒子产生的，这种粒子通常称为传播子。
+
+光子是无质量的，传递带电粒子之间的电磁相互作用。$W^{\pm}$和Z规范玻色子传播弱相互作用。胶子是无质量的，它传递夸克之间的强相互作用。胶子有八种，由于胶子具有有效的色荷，它们之间可以相互作用。
+
+希格斯粒子是1964年彼得·希格斯(Peter Higgs)提出的一个质量很大的标量基本粒子，是标准模型中的一个关键组成部分，它的自旋为0，因此被归类为玻色子。希格斯玻色子在标准模型中起着独特的作用，特别是希格斯玻色子解释了为什么光子没有质量，而$W^{\pm}$和Z玻色子非常重。基本粒子质量，以及电磁相互作用和弱相互作用之间的差异，对微观物质结构的许多方面至关重要。在电弱理论中，希格斯玻色子产生轻子($e$、$\mu$和$\tau$)和夸克的质量。2012年7月，LHC上的两个实验ATLAS 和CMS独立地报告说，他们发现了一个新粒子，质量约为125 GeV/$c^{2}$，与希格斯粒子的质量相吻合\cite{aad2012observation,chatrchyan2012observation}，后来被证实是希格斯粒子。
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.5\textwidth,clip]{figure/qcd_as.pdf}
+\caption{不同实验测量的强相互作用的耦合常数随着动量交换的关系。}
+\label{fig:qcd_as}
+\end{figure}
+
+上述所描述的强相互作用用可以用量子色动力学(Quantum Chromodynamics)理论描述。该理论是基于基于夸克-胶子自由度的SU(3)非对易规范。它的拉格朗日量为：
+\begin{equation}
+L_{QCD} = \sum_{\psi} \overline \psi_{i} \big (i\gamma^{\mu}(\partial_{\mu}\delta_{ij} - ig_{s}G^{a}_{\mu}T^{a}_{ij}) -m_{\psi\delta_{ij}}\psi_{j} \big ) - \frac{1}{4} G^{a}_{\mu\nu} G^{\mu\nu}_{a}
+\end{equation}
+这里$\psi_{i}$是夸克场狄拉克旋量波函数，$\gamma^{\mu}$是狄拉克矩阵，$G^{a}_{\mu}$是8分量的SU(3)规范场，$T^{a}_{ij}$是SU(3)群的生成元，即3$\times$3盖尔曼矩阵，$G^{a}_{\mu\nu}$是胶子场强张量，$g_{s}$为强相互作用耦合常数。
+
+QCD理论的两大主要性质是色禁闭和渐进自由，色禁闭，即夸克必须禁闭在强子中，不能单独存在。渐近自由即大动量交换或者近距离时，耦合常数变小，强相互作用会减弱，此时QCD拉格朗日量能够通过微扰求解(perturbative QCD)。 渐近自由于1973年被发现\cite{politzer1973reliable,gross1973ultraviolet}，如公式\ref{eq:qcd_as}所示，揭示了重整化之后的强相互作用耦合常数随交换能量的增到而减小。
+\begin{equation}
+\alpha_{s}(Q^{2}) = \frac{g_{s}^{2}(Q^{2})}{4\pi} = \frac{1}{\beta_{0}\mathrm{ln}(Q^2/\Lambda^2_{QCD})}
+\label{eq:qcd_as}
+\end{equation}
+如图\ref{fig:qcd_as}所示，实验测量的$\alpha_{s}$与动量交换之间的关系，当$Q$很大时，夸克胶子之间的耦合变的很弱，趋近于自由状态，可能存在从强子物质形态到夸克胶子等离子体的相变。研究QCD物质相图是相对论重离子碰撞实验的主要目的。
+
+\section{相对论重离子碰撞}
+相对论重离子碰撞是探索极端条件下核物质性质以及强相互作用新物质状态的理想工具。目前世界上正在运行的，能够将重离子加速的大型对撞机有RHIC和LHC。美国纽约布鲁克海文国家实验室(BNL)的相对论重离子对撞机(RHIC)能够将金离子加速到质心能量为每核子对200GeV进行对撞。在欧洲核子中心(CERN)的大型强子对撞机(LHC)能够将铅离子加速到质心能量为每核子对5.02TeV进行对撞。
+
+在能量密度约为$1\rm{GeV}/fm^{3}$时，理论预言将发生从强子物质解禁闭到夸克和胶子，即所谓的夸克胶子等离子体(Quark Gluon Plasma)\cite{shuryak1978quark}。格点量子色动力学(LQCD)计算预测,温度T在170MeV时可能达到发生解禁闭相变所需的能量密度。这种状态可能存在于早期宇宙大爆炸发生后几十微秒，或者仍可能存于核心密度为$10^{18}\rm{kg}/m^{3}$的中子星中。从RHIC上四个实验组(BRAHMS, PHENIX, PHOBOS和STAR)和LHC提供的实验数据表明, 质心能量每核子200~GeV的金-金碰撞中产生了这种新的物质状态\cite{arsene2005quark,back2005phobos,adams2005experimental,adcox2005formation,aamodt2010k,aamodt2011k}。
+
+在这里，回顾一下相对论重离子对撞的过程。首先对撞是相对与固定靶实验而言。相对论是指粒子被加速到接近光速，这个时候相对论效应很明显。如图\ref{fig:collision_geo_evo}中左图所示，由于相对论收缩，原子核看着像一个圆盘。原子核中，有些核子没有参与碰撞，叫做旁观者，有些核子参与了碰撞，叫做参与者。为了定性的描述参与碰撞核子的多少，引入中心碰撞，半中心碰撞，边缘碰撞，或者引入中心度来量化参与碰撞的剧烈程度。两个原子核几何中心的连线在横平面上的投影，叫做碰撞参数(b)。当b=0时，为对心碰撞。实验上，由于无法测量碰撞参数，只能通过末态粒子数的多少来判断碰撞的中心度，一般来讲，粒子数越多，则说明碰撞参数越小，碰撞中心度越小，STAR试验中，一般将中心度分为0-5\%,5-10\%,10-20\%,20-30\%,30-40\%,40-50\%,50-60\%,60-70\%,70-80\%。其中0-5\%对应的是最中心碰撞，即对心碰撞，70-80\%对应的是最边缘的碰撞。
+
+\begin{figure}[htbp]
+\begin{minipage}[t]{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth,clip]{figure/collision_geo.pdf}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth,clip]{figure/time_evolution.pdf}
+\end{minipage}
+\caption{(左)：重离子碰撞的示意图。(右)：相对论重离子碰撞的时空演化图像。}
+\label{fig:collision_geo_evo}
+\end{figure}
+
+如图\ref{fig:collision_geo_evo}中右图所示，相对论核核碰撞的演化过程大概分为以下部分：
+\begin{itemize}
+\item 预平衡：原子核发生对撞，碰撞区域有大量的能量沉积，形成高温高密的环境，RHIC上能量密度大约为$15\rm{GeV}/fm^{3}$，部分子从强子中解禁闭，产生大量的夸克，反夸克和胶子。夸克与胶子之间发生剧烈的相互作用，系统很快达到预平衡，有可能产生QGP。
+\item QGP演化：QGP产生后，部分子之间剧烈的相互作用后使得系统迅速向外扩张碰撞并冷却，并强子化为强子。
+\item 化学冻结：随着系统的演化，强子之间不再发生发生非弹性散射时，系统达到了化学平衡，粒子产额不在发生变化。
+\item 热力学冻结：系统化学冻结之后，随着时间的演化，强子间不在发生弹性散射时，系统达到了热力学冻结，即粒子的动量不再发生改变。
+\end{itemize}
+
+在相对论重离子碰撞中，有许多有意思的观测量，能够反应碰撞系统的性质，譬如$\Lambda$超子极化($P_{H}$)，矢量介子的自旋排列($\rho_{00}$)和粒子的各向异性流等等。
+
+\section{$\Lambda$超子极化及矢量介子的自旋排列}
+在非对心相对论核核碰撞中，两个碰撞核以接近光速对撞，产生了很大的初始角动量，初始的系统的角动量可以达到1000$\hbar$的量级。系统轨道角动量通过核阻止效应很大一部分被沉积到在中间快度区产生的物质中，并通过自旋与系统角动量耦合，在最后阶段产生的粒子的自旋会与系统角动量平行，即全局极化。目前研究的主要包括超子极化和矢量介子的自旋排列，实验上主要测量$\Lambda$超子的极化($P_{H}$)和$\phi$和$k^{\star}$ 介子的自旋排列($\rho_{00}$)。
+
+$\Lambda$超子的极化可以通过测量其衰变出来的质子($\Lambda \to p + \pi^{-}$)在$\Lambda$ 的静止系里的动量与碰撞系统角动量($\textbf{L}$)之间的夹角的分布得到\cite{Bunce:1976yb,Abelev:2007zk}：
+\begin{equation}
+\frac{dN}{d\mathrm{cos}\theta^{\star}} = \frac{1}{2}(1+\alpha_{H} P_{H}\mathrm{cos}\theta^{\star})
+\label{eq:dNdcos_PH}
+\end{equation}
+$P_{H}$是$\Lambda$超子全局极化参数，$\theta^{\star}$是在$\Lambda$的静止系里，衰变出的质子动量与系统角动量($\textbf{L}$)之间的夹角。
+
+对于自旋为1的矢量介子，自旋排列可以通过$3\times3$的单位密度矩阵来描述\cite{schilling1970analysis}。矩阵对角元$\rho_{mm}$ $(m=-1,0,1)$偏离$1/3$，即意味有净自旋排列。由于$\rho_{11}$和$\rho_{-1-1}$是简并的，只有$\rho_{00}$是独立的。在考虑矢量介子的两体衰变时，我们以$\phi$介子为例：$\phi$介子自旋排列$\rho_{00}$的测量可以通过$\phi$介子的衰变产物(在这里取$k^{+}$)($\phi \to k^{+} + k^{-}$)在$\phi$介子的静止坐标系下动量与系统角动量($\textbf{L}$)的夹角的分布来得到：
+\begin{equation}
+\frac{dN}{d(\mathrm{cos}\theta^{\star})} \propto (1-\rho_{00}) + (3 \rho_{00} -1) \mathrm{cos}^2\theta^{\star},
+\label{eq:rho_00}
+\end{equation}
+这里$\theta^{\star}$是$\phi$介子的静止系里，衰变出的$k^{+}$的动量与系统角动量($\textbf{L}$)之间的夹角。
+\subsection{理论现状}
+
+在20世纪初期，Barnett效应\cite{barnett1909magnetization,barnett1915magnetization}和Einstein-de Haas效应\cite{einstein1915deutsche}指出了物质的旋转与极化之间的固有相关性。Barnett效应指出，一个不带电的物体，以角速度$\omega$旋转，该物体被测量到会自发的磁化$M = \chi\omega/\gamma$，即磁化强度与角速度成正比。这里$\chi$是磁化率，$\gamma$是电子的旋磁比。Barnett效应是由于物体旋转引起的自旋排列的一个例子。
+
+2005年，文章\cite{liang2005globally}提出在非对心的核核碰撞中，构成QGP的夸克会被极化，并且会导致超子的极化。该文章的计算局限于夸克夸克相互作用横向能量较小的微扰区域。在这种情况下，估计有大概10\%的夸克的被极化。但是在考虑到不同的强子化图像时，估计超子极化并不是很容易，文章只是做了定性的陈述。如果强子化主要是通过夸克的聚合，那么超子的极化和夸克极化的大小在同一个量级。极化率随碰撞参数的增加近似线性增加，对于反粒子是相同的。强子间的相互作用对极化的影响很小，并不会定性的改变该理论的预言。
+
+文章\cite{gao2008global}对文章\cite{liang2005globally}中的计算作了推广，通过两个极端的模型(Landau firebal和Bjorken scaling)计算了在非对心碰撞中，平均的局部角动量和纵向的流体剪切力。
+该文章还利用有限温度的微扰量子色动力学，计算了夸克的极化率，扩展到不仅仅只是适用于小角度的夸克-夸克散射的情况。小角度近似中隐含的假设是QGP的初始纵向剪切力很大，或者夸克夸克相互作用只发生在高能量。此计算仅在弱耦合极限中有效，强耦合可能在夸克的计划中也有重要的贡献，当耦合增加时，文章中的计算不再可靠。该文章还预言在当时的RHIC碰撞能量下，平均的夸克极化率小于4\%。
+
+对于夸克极化的计算能够为我们认识在夸克的相互作用提供了很有一些有趣的看法，但是夸克的极化很难转换成末态强子的极化。另外研究极化的方法就是，将夸克视为流体的成分，然后在统计的层面考虑夸克之间的相互作用，文章\cite{betz2007polarization,becattini2008angular,becattini2013lambda,csernai2014vorticity,csernai2014turbulence,becattini2015study,pang2016vortical,xie2016lambda,karpenko2017study,ivanov2017vorticity,xie2017global,karpenko2017vorticity,li2017local} 中的计算就是基于这种想法的。对于速度为$\vec{v}$一个特定流体单元，其经典的涡旋为$\vec{\Omega} = \frac{1}{2} \triangledown \times \vec{v}$\cite{betz2007polarization}。在流体热动力学模型下，相应的强子极化率的计算公式可以从文章\cite{becattini2008angular,becattini2015study}得到。如果自旋自由度在强子化时处于局部热平衡状态，则强子极化可以在冻结的表面上进行统计测定。系统的热涡旋为：
+\begin{equation}
+\omega_{\mu\nu} = \frac{1}{2}(\partial^{\mu}\beta^{\nu} + \partial^{\nu}\beta^{\mu})
+\end{equation}
+对于自旋为1/2的强子，对应的极化大小为：
+\begin{equation}
+\Pi_{\mu} = -\frac{1}{8}\varepsilon_{\mu\rho\sigma\tau} (1-n_{F}) \omega^{\rho\sigma} \frac{p^{\tau}}{m}
+\end{equation}
+这里$n_{F}$是费米-狄拉克分布。
+
+在研究相对于系统角动量的全局极化信号时，显然需要对碰撞进行三维描述。在早期的研究中使用的是无粘滞性相对论Particle-in-Cell 模型。文章\cite{xie2017global} 中，如图\ref{fig:vorcity_cen_energy} 中左图所示，通过Particle-in-Cell模型，计算了$\Lambda$ 超子的极化，并与STAR实验结果吻合的很好。
+在后来的研究中，用三维粘性流体力学模型，VHLLE，和基于UrQMD的初始条件进行了计算\cite{karpenko2017study,becattini2018collective}。也有基于AMPT初始条件，利用GPU计算的三维粘性流体力学模型，CLVisc，用来研究超子的极化\cite{pang2016vortical,li2017local}。
+
+在文章\cite{jiang2016rotating,li2017global,sun2017lambda,shi2019searching}中，基于AMPT模型，来计算粒子的极化。AMPT是一个微观模型，可以跟踪单个粒子之间的相互作用以及它们的动量或自旋交换。
+文章\cite{jiang2016rotating}提供了对涡旋的预期，如图\ref{fig:vorcity_cen_energy}系统的涡旋随着能量的升高而降低，从中心到半中心碰撞，涡旋逐渐增大。在AMPT模型中，为了描述涡旋，有必要在小单元内对其进行微观计算。文章\cite{sun2017lambda}, 主要用AMPT产生初始条件，因为流体动力学的初始条件能够很好的描述平衡态的动力学，但是大量的初始夸克极化来自非平衡态，然后通过手征动力学计算，研究超子的极化，如图\ref{fig:ph_th_energy}所示，与STAR实验观测到的$\Lambda$超子极化相吻合。文章\cite{shi2019searching} 则通过AMPT模型，如图\ref{fig:ph_cucu}所示，理论计算得到铜铜碰撞中的$\Lambda$ 超子极化大于铜金碰撞中的$\Lambda$ 超子极化，铜金碰撞中的$\Lambda$ 超子极化大于金金碰撞中的极化。
+\begin{figure}[htbp]
+\begin{minipage}[t]{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth,clip]{figure/voticity_cen.pdf}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth,clip]{figure/voticity_energy.pdf}
+\end{minipage}
+\caption{基于AMPT模型，计算得到不同能量和不同中心度下，系统的涡旋随时间的演化。}
+\label{fig:vorcity_cen_energy}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{minipage}[t]{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth,clip]{figure/ph_intro_th1.pdf}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth,clip]{figure/ph_intro_th2.pdf}
+\end{minipage}
+\caption{(左)：基于PIC流体力学模型，计算得到不同能量下，$\Lambda$超子的极化。(右)：基于AMPT模型，用手征动力学计算得到不同能量下的$\Lambda$超子的极化。}
+\label{fig:ph_th_energy}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.6\textwidth,clip]{figure/ph_cucu.pdf}
+\caption{理论计算不同能量下，金金，金铜，铜铜碰撞中，$\Lambda$超子的极化}
+\label{fig:ph_cucu}
+\end{figure}
+
+文章\cite{becattini2018collective}中，如图\ref{fig:pz_th}所示，由于粒子横向平面的不均匀的扩张，即粒子的椭圆流，会导致沿着Z方向会有极化，并且观察到了经典的四极结构。
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth,clip]{figure/pz_th.pdf}
+\caption{基于PIC流体力学模型的计算，预言了$\Lambda$超子的极化的纵向极化。}
+\label{fig:pz_th}
+\end{figure}
+
+文章\cite{liang2005spin}提到，当考虑夸克与反夸克的极化是，矢量介子的也会产生自旋排列，并且强子化机制不同时，其对应的自旋密度矩阵的00分量$\rho_{00}$不一样。当夸克聚合机制占主导时，$\rho_{00}<1/3$，当部分子碎裂机制占主导地位时$\rho_{00}>1/3$。在夸克聚合的图像里，对于$k^{\star}$
+\begin{equation}
+\rho_{00}^{rec} = \frac{1-P_{q}P_{s}}{3+P_{q}P_{s}}
+\end{equation}
+在部分子碎裂的图像里，对于$k^{\star}$
+\begin{equation}
+\rho_{00}^{frag} = \frac{f_{s}}{f_{s}+n_{s}} \frac{1+\beta P_{q}^{2}}{3-\beta P_{q}^{2}} + \frac{n_{s}}{f_{s}+n_{s}} \frac{1+\beta P_{s}^{2}}{3-\beta P_{s}^{2}}
+\end{equation}
+
+\subsection{实验现状}
+\subsubsection{$\Lambda$超子的全局极化}
+2007年，STAR实验组发表第一篇关于$\Lambda$超子全局极化的文章\cite{Abelev:2007zk}，测量了$\Lambda$超子在$\sqrt{s}_{NN}$ = 62.4~-~200~GeV时，极化参数$P_{H}$随着$\Lambda$超子的横动量，赝快度，以及碰撞中心度的分布。如图\ref{fig:ph_old_pt}和图\ref{fig:ph_old_eta_cen}所示，由于实验的数据的统计量不够，测量到的信号在误差范围内都是等于零的。显然，也并没有观测到$\Lambda$超子全局极化的横动量，赝快度，以及碰撞中心度的依赖性。
+
+\begin{figure}[htbp]
+\begin{minipage}[t]{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth,clip]{figure/ph_old_pt_lam.pdf}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth,clip]{figure/ph_old_pt_lambar.pdf}
+\end{minipage}
+\caption{2007年，STAR实验的测量，$\sqrt{s}_{NN}$ = 62,4~-~200~GeV，$\Lambda$和$\bar{\Lambda}$超子的全局极化，随其横动量变化。左图为$\Lambda$超子，右图为$\bar{\Lambda}$ 超子。}
+\label{fig:ph_old_pt}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth,clip]{figure/ph_old_eta_cen_lam.pdf}
+\caption{2007年，STAR实验的测量，$\sqrt{s}_{NN}$ = 62,4~-~200~GeV，$\Lambda$超子的全局极化，随其赝快度，以及碰撞中心度的变化。}
+\label{fig:ph_old_eta_cen}
+\end{figure}
+
+2017年，STAR实验组在Nature发表了一篇关于$\Lambda$和$\bar{\Lambda}$超子全局极化能量依赖性的测量的文章\cite{adamczyk2017global}。该测量分析了RHIC能量扫描I的实验数据，首次在重离子对撞实验上发现了$\Lambda$和$\bar{\Lambda}$ 超子的全局极化。如图所示~\ref{fig:ph_nature}，可以看到，对于$\Lambda$和$\bar{\Lambda}$，它们的极化参数都随着能量的升高而降低，而且$\bar{\Lambda}$ 的极化参数系统性的高于$\Lambda$的极化参数。在对所有能量的$\Lambda$和$\bar{\Lambda}$超子极化求平均之后，利用流体涡旋与极化之间的关系:
+\begin{equation}
+\omega = k_{B}T(P_{H}(\Lambda)+P_{H}(\bar{\Lambda}))/\hbar
+\end{equation}
+通过假设系统温度$T \sim 100$MeV，可以得到系统的涡旋为$\omega = (9\pm1) \times 10^{21} s^{-1}$。文章\cite{gomez2014shapes}中提到，超流氦纳米液滴被观测到，它的涡旋为$\omega = 1.4 \times 10^{7} s^{-1}$。这意味着，RHIC上产生的物质是目前为止观测到的有着最大涡旋的物质。$\bar{\Lambda}$超子的极化系统性的大于$\Lambda$超子的极化，可以用磁场的作用来解释。系统的角动量与系统产生的磁场方向一致，而$\Lambda$与$\bar{\Lambda}$的磁矩的方向，与磁场耦合时，$\bar{\Lambda}$的自旋与磁场平行，$\Lambda$的自旋与磁场反平行。所以$\bar{\Lambda}$的极化是要小于$\Lambda$的极化的。那么$\bar{\Lambda}$与$\Lambda$极化之间的差异，是可以用来测量碰撞产生的磁场\cite{adamczyk2017global}。
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth,clip]{figure/ph_nature.pdf}
+\caption{2007年和2017年，STAR实验的测量，$\sqrt{s}_{NN}$ = 7.7 - 200~GeV，$\Lambda$和$\bar{\Lambda}$超子的全局极化，随能量的变化。}
+\label{fig:ph_nature}
+\end{figure}
+
+2018年，在积累了足够的统计量之后，STAR实验组又测量了$\sqrt{s}_{NN}$~=~200~GeV时，$\Lambda$和$\bar{\Lambda}$超子的全局极化\cite{adam2018global}。如图\ref{fig:ph_prc_200}所示，在200~GeV，观测到了非零有限的极化信号，并且测量到的极化参数$P_{H}(\Lambda) = 0.277 \pm 0.040 \pm^{0.039}_{0.049} \%$，$P_{H}(\bar{\Lambda}) = 0.240 \pm 0.045 \pm^{0.061}_{0.045} \%$，与流体模型的预言的~0.2\%，在误差范围内相吻合，并且$\Lambda$和$\bar{\Lambda}$之间的极化没有太大差异。
+
+如图\ref{fig:ph_prc_200_cen}所示，可以看到，$\Lambda$和$\bar{\Lambda}$超子的全局极化从对心碰撞到半中心碰撞，是逐渐升高的，但是在边缘碰撞的时候，由于统计误差过大，不能确定$P_{H}$ 的变化趋势，到底是继续增大，还是会减小。如图\ref{fig:ph_prc_200_pt_eta}所示，$P_{H}({\Lambda})$和$P_{H}({\bar{\Lambda}})$ 并没有观测到明显的横动量依赖性和赝快度依赖性性。这是因为，系统的角动量是由两个碰撞核子的产生的，所以不会有明显的$p_{T}$依赖性。
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.5\textwidth,clip]{figure/ph_prc_200.pdf}
+\caption{STAR实验上，$\sqrt{s}_{NN}$~=~7.7 - 200~GeV，$\Lambda$和$\bar{\Lambda}$超子的全局极化，随能量的变化。}
+\label{fig:ph_prc_200}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.6\textwidth,clip]{figure/ph_prc_200_cen.pdf}
+\caption{STAR实验上，$\sqrt{s}_{NN}$~=~200~GeV，$\Lambda$和$\bar{\Lambda}$超子的全局极化，随碰撞中心度的变化。}
+\label{fig:ph_prc_200_cen}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{minipage}[t]{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth,clip]{figure/ph_prc_200_pt.pdf}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth,clip]{figure/ph_prc_200_eta.pdf}
+\end{minipage}
+\caption{STAR实验上，$\sqrt{s}_{NN}$ = 200~GeV，$\Lambda$和$\bar{\Lambda}$超子的全局极化，随其横动量和赝快度的变化。左图为横动量依赖，右图为赝快度依赖。}
+\label{fig:ph_prc_200_pt_eta}
+\end{figure}
+
+ALICE实验组，在Strangeness in Quark Matter 2017会议上展示\cite{mohanty2018measurements}，铅铅碰撞中，$\sqrt{s}_{NN}$~=~2.76~TeV，碰撞中心度为15-50\%，$P_{H}(\Lambda) = 0.08 \pm 0.10 (\mathrm{stat}) \pm 0.04 (\mathrm{syst})$，$P_{H}(\bar{\Lambda}) = 0.05 \pm 0.10 (\mathrm{stat}) \pm 0.03 (\mathrm{syst})$，即观测到的信号在误差范围内等于零。
+
+\subsubsection{$\Lambda$超子的纵向极化}
+在2018年，Quark Matter国际会议上，STAR实验组展示了在$\sqrt{s}_{NN}$ = 200~GeV时，$\Lambda$超子的纵向极化\cite{niida2019global}。在金金碰撞中，由于粒子有大于零的椭圆流，粒子在沿着反应平面方向的集体运动比垂直于反应平面的集体运动要强，那么如图~\ref{fig:pz phi}中左图所示，在第一和第三象限，会产生沿着Z轴的极化。在第二和第四象限，会产生沿着Z轴反方向的极化。
+\begin{figure}[htbp]
+\begin{minipage}[t]{0.33\textwidth}
+\centering
+\includegraphics[width=\textwidth,clip]{figure/pz_carton.pdf}
+\end{minipage}
+\begin{minipage}[t]{0.67\textwidth}
+\centering
+\includegraphics[width=\textwidth,clip]{figure/pz_phi.pdf}
+\end{minipage}
+\caption{(左)：椭圆流引起纵向极化的示意图。(右)：STAR实验上测量到的$\Lambda$超子的纵向极化随方位角的变化。}
+\label{fig:pz phi}
+\end{figure}
+如图~\ref{fig:pz phi}中右图所示：在第一象限，观测到了大于零的纵向极化，在第二象限中，观测到了小于零的纵向极化。这与上述简单的猜想相一致，但是与上述的理论计算不吻合，与理论的计算预测的符号，在不同的象限，刚好相反。
+
+\subsubsection{矢量介子的自旋排列}
+2008年，STAR实验组发表了一篇关于矢量介子自旋排列的文章\cite{abelev2008spin}。如图\ref{fig:rho_prc_cen_pt}所示，由于数据样本不够大，统计误差过大，对于$\phi$和$k^{\star}$矢量介子的细选排列参数$\rho_{00}$，在误差范围内等于1/3，并没有观测到明显的碰撞中心度依赖性，以及横动量依赖性。
+\begin{figure}[htbp]
+\begin{minipage}[t]{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth,clip]{figure/rho_prc_cen.pdf}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth,clip]{figure/rho_prc_pt.pdf}
+\end{minipage}
+\caption{STAR实验上测量的$\phi$和$k^{\star}$对应的$\rho_{00}$随碰撞中心度和横动量的分布。}
+\label{fig:rho_prc_cen_pt}
+\end{figure}
+
+2018年，STAR实验组在Quark Matter国际会议上，展示了基于能量扫描I采集的数据，关于$\phi$介子和$k^{\star}$介子自旋排列的测量结果\cite{zhou2019phi}。如图\ref{fig:rho_new_pt_cen}所示，展示了金金碰撞中，$\sqrt{s}_{NN}$~=~200~GeV时，$\phi$介子自旋排列参数$\rho_{00}$随着横动量的分布，以及随着碰撞中心度的依赖性。首先，可以观测到，$\rho_{00}$明显偏离了1/3，其次，可以看到的$\rho_{00}$随着$p_{T}$先增大，后减小，随着碰撞中心度也是先增大，后减小。图\ref{fig:rho_new_energy}展示了，以及图\ref{fig:rho_new_energy}随着碰撞能量的变化，$\rho_{00}$明显大于1/3，并且有比较弱的能量依赖性。
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth,clip]{figure/rho_new_pt_cen.pdf}
+\caption{STAR实验最新关于$\phi$介子自旋排列的测量结果。}
+\label{fig:rho_new_pt_cen}
+\end{figure}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.6\textwidth,clip]{figure/rho_new_energy.pdf}
+\caption{STAR实验上$\phi$介子自旋排列随碰撞能量的变化关系。}
+\label{fig:rho_new_energy}
+\end{figure}
+如图\ref{fig:rho_new_k_pt_energy}所示，左图展示了，金金碰撞中，$\sqrt{s}_{NN}$~=~39~GeV 时，$k^{\star}$的自旋排列参数$\rho_{00}$随着其横动量的分布。右图展示了，$k^{\star}$的自旋排列参数$\rho_{00}$随着碰撞能量的分布。可以看到，$k^{\star}$的$\rho_{00}$明显小于1/3，但是并没有横动量依赖性，以及能量依赖性。
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth,clip]{figure/rho_new_k_pt_energy.pdf}
+\caption{STAR实验最新关于$k^{\star}$介子自旋排列的测量结果。}
+\label{fig:rho_new_k_pt_energy}
+\end{figure}
+
+ALICE实验组在Quark Matter国际会议上，也展示了关于$k^{\star}$的自旋排列的最新结果\cite{singh2019spin}。如图\ref{fig:rho_k_alice}所示，展示了铅铅碰撞中，$\sqrt{s}_{NN}$~=~2.76TeV时，$k^{\star}$自旋排列随着其横动量和碰撞中心度的变化关系。类似的，小于1/3的$\rho_{00}$被观测到了，并没有的碰撞中心度的依赖性，在$p_{T}<2$~GeV/c时，$\rho_{00}$小于1/3，有非常弱的横动量依赖性，当$p_{T}>2$~GeV/c时，$\rho_{00}$在误差范围内，等于1/3。
+\begin{figure}[htbp]
+\begin{minipage}[t]{0.49\textwidth}
+\centering
+\includegraphics[width=\textwidth,clip]{figure/rho_k_alice_pt.pdf}
+\end{minipage}
+\begin{minipage}[t]{0.51\textwidth}
+\centering
+\includegraphics[width=\textwidth,clip]{figure/rho_k_alice_cen.pdf}
+\end{minipage}
+\caption{ALICE实验上，关于$k^{\star}$介子自旋排列的测量结果。}
+\label{fig:rho_k_alice}
+\end{figure}
+文章\cite{lan2018effects}中提到，接受度对$\phi$矢量介子的自旋排列的测量影响很大。但是STAR 实验组和ALICE实验组，关于$k^{\star}$和$\phi$矢量介子的自旋排列的测量，目前为止都没有做相应的接收度的修正。文章\cite{tang2018practical}中，提出了修正接收度带来的效应。最终的物理，还需要等到STAR和ALICE实验组对测量的自旋排列参数$\rho_{00}$做了接收度的修正之后，再做讨论。
+
+\section{椭圆流}
+如图\ref{fig:v2_cor_mom}所示，在非中心的重离子碰撞中，核核交叠区域的呈现杏仁状，即初始状态核子在坐标空间中呈现不对称性，随着碰撞系统的演化，通过粒子之间的相互作用，初始几何空间的各向异性转化为动量空间的各向异性\cite{kolb2004hydrodynamic}。因此可通过研究末态粒子的动量空间分布来研究碰撞产生的物质的性质。因为末态粒子的各向异性敏感于核核碰撞系统早期的压力梯度，系统的自由度，状态方程以及系统的热化程度。末态粒子在动量空间的方位角分布可以做傅立叶展开\cite{Poskanzer:1998yz,voloshin1996flow}：
+\begin{equation}
+E\frac{d^{3}N}{dp^{3}} = \frac{1}{2\pi} \frac{d^{2}N}{p_{T}dp_{T}dy}(1 + 2 \sum{v_{n}\mathrm{cos}[n(\phi-\Psi_{\mathrm{RP}})]}),
+\end{equation}
+\begin{equation}
+v_{n} = \left \langle \mathrm{cos}[n(\phi-\Psi_{\mathrm{RP}})] \right \rangle,
+\end{equation}
+这里$v_{n}$是各向异性流，第一阶，$v_{1}$，为直接流，反映碰撞系统的压缩性质。第二阶，$v_{2}$，为椭圆流，反映核子在坐标空间的各向异性。第三阶，$v_{3}$，为三角流，反映参与碰撞初期核子在坐标空间的涨落。$\Psi_{\mathrm{RP}}$是反应平面，可以由末态粒子重建出来，叫做事件平面，但是由于末态粒子的数目有限，重建出来的事件平面与反应平面重合，即它们之间存在一个夹角。
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth,clip]{figure/v2_cor_mom.pdf}
+\caption{初始坐标空间的各向异性转化为末态动量空间的示意图。}
+\label{fig:v2_cor_mom}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth,clip]{figure/v2_star_pt.pdf}
+\caption{STAR实验上，2004年测量的金金碰撞中，$\sqrt{s}_{NN}$~=~200~GeV，不同中心度下，粒子的椭圆流随横动量的变化关系。}
+\label{fig:v2_star_pt}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.55\textwidth,clip]{figure/v2_star_ncq.pdf}
+\caption{STAR实验上，2004年测量的金金碰撞中，$\sqrt{s}_{NN}$~=~200~GeV，不同中心度下，经过组分夸克标度之后椭圆流随横动量的变化关系。}
+\label{fig:v2_star_ncq}
+\end{figure}
+如图\ref{fig:v2_star_pt}和图\ref{fig:v2_star_ncq}所示，展示了RHIC实验上，金金碰撞中，$\sqrt{s}_{NN}$~=~200~GeV，$k_{S}^{0}$以及$\Lambda$和$\bar{\Lambda}$的椭圆流的测量\cite{adler2003elliptic,adams2004particle}。上图为$v_{2}$随着其横动量的分布，可以看到介子与重子的椭圆流分开。下图为经过组分夸克数标度之后的$v_{2}$随着其横动量的分布，可以看到，介子与重子的椭圆流基本一致。这说明了强子的椭圆流来自于部分子层次的椭圆流，组分夸克结合形成强子，部分子的集体流发现为强子的集体流。\\
+本文共六章。\\
+第一章，简要介绍了标准模型和相对论重离子碰撞，并简述了$\Lambda$超子几乎和矢量介子自旋排列的理论和实验的进展。\\
+第二章，介绍了相对论重离子对撞机和STAR实验上的探测器。 \\
+第三章，我们基于STAR实验数据，研究了$\Lambda$超子极化的方位角依赖性。 \\
+第四章，提出并修正有限接收度对$\phi$介子自旋排列的测量的影响。 \\
+第五章，基于UrQMD模型，研究了输运质子和产生质子的椭圆流  \\
+第六章，对全文的总结。  \\

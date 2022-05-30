@@ -1,0 +1,338 @@
+%!TEX encoding = UTF-8 Unicode
+%!TEX program = xelatex
+
+
+\documentclass[a4paper, twoside,12pt]{ctexbook}%{report}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+\usepackage{pdfpages}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{diagbox} 
+\usepackage{booktabs}%设置表格粗线
+% \usepackage{subfigure}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{tabularx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+%----------------------font-------------------------------------------
+\usepackage{fontspec}
+\newcommand{\fzbHei}{\heiti}
+\newcommand{\song}{\CJKfamily{song}}    % 宋体   (Windows自带simsun.ttf)
+\newcommand{\fs}{\CJKfamily{fs}}        % 仿宋体 (Windows自带simfs.ttf)
+\newcommand{\kai}{\CJKfamily{kai}}      % 楷体   (Windows自带simkai.ttf)
+\newcommand{\hei}{\heiti}      % 黑体   (Windows自带simhei.ttf)
+\newcommand{\li}{\CJKfamily{li}}        % 隶书   (Windows自带simli.ttf)
+
+\newcommand{\chuhao}{\fontsize{58pt}{58pt}\selectfont}       % 一号, 1.倍行距
+\newcommand{\xiaochu}{\fontsize{36pt}{36pt}\selectfont}       % 一号, 1.倍行距
+\newcommand{\yihao}{\fontsize{26pt}{26pt}\selectfont}       % 一号, 1.倍行距
+\newcommand{\xiaoyi}{\fontsize{24pt}{24pt}\selectfont}      % 小一, 1.倍行距
+\newcommand{\erhao}{\fontsize{22pt}{1.25\baselineskip}\selectfont}       % 二号, 1.倍行距
+\newcommand{\xiaoer}{\fontsize{18pt}{18pt}\selectfont}      % 小二, 单倍行距
+\newcommand{\sanhao}{\fontsize{16pt}{16pt}\selectfont}      % 三号, 1.倍行距
+\newcommand{\xiaosan}{\fontsize{15pt}{15pt}\selectfont}     % 小三, 1.倍行距
+\newcommand{\sihao}{\fontsize{14pt}{14pt}\selectfont}       % 四号, 1.0倍行距
+\newcommand{\xiaosi}{\fontsize{12pt}{12pt}\selectfont}      % 小四, 1.倍行距
+\newcommand{\wuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}   % 五号, 单倍行距
+\newcommand{\xiaowu}{\fontsize{9pt}{9pt}\selectfont}        % 小五, 单倍行距
+
+%\setmainfont{Times New Roman} 
+%--------------------------------------------------------------
+\usepackage{xcolor, colortbl}%table color
+\usepackage[margin=1in, showframe=false]{geometry}
+\definecolor{Gray}{gray}{0.85}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+%--------------------------------------------------------------
+\usepackage{titletoc}
+\usepackage{titlesec}
+\usepackage{zhnumber} 
+% \renewcommand\thechapter{第\zhnum{chapter}章}
+
+
+% \CTEXsetup[name={第,章},number={\zhnum{chapter}}]{chapter}
+% \titleformat{\chapter}{\center\sanhao\fzbHei}{\textbf{第~\thechapter~章 }}{0.5em}{}
+\titleformat{\chapter}{\center\xiaoer\fzbHei}{第\zhnum{chapter}章}{0.5em}{}
+\titlespacing{\chapter}{0pt}{-5.5mm}{8mm}
+\titleformat{\section}{\xiaosan\hei}{\thesection}{0.5em}{}
+\titlespacing{\section}{0pt}{4.5mm}{4.5mm}
+\titleformat{\subsection}{\sihao\hei}{\thesubsection}{0.5em}{}
+\titlespacing{\subsection}{0pt}{4mm}{4mm}
+\titleformat{\subsubsection}{\xiaosi\hei}{\thesubsubsection}{0.5em}{}
+\titlespacing{\subsubsection}{0pt}{3mm}{3mm}
+
+
+\renewcommand{\theequation}%
+  {\arabic{section}.\arabic{equation}}
+%\usepackage{amsmath}
+%\numberwithin{equation}{section}
+
+\renewcommand{\thefigure}
+  {\arabic{section}.\arabic{figure}}
+\renewcommand{\thetable}
+  {\arabic{section}.\arabic{table}}
+
+\usepackage{amsmath} %数学公式
+\usepackage{mathtools}
+\usepackage{bm}%专门处理数学粗体的bm宏包
+%\usepackage{extarrows}
+\usepackage{enumerate}
+%-----------------------------------------------------------------
+\usepackage{url}
+\usepackage{cite}
+\usepackage[colorlinks, linkcolor=blue, anchorcolor=blue, urlcolor=blue, citecolor=blue, breaklinks=true]{hyperref} 
+\usepackage[square, numbers, sort&compress]{natbib} % 上标，加中括号，编号，将8，9，10改为8-10
+\usepackage[hypcap=false]{caption}
+
+%----------------------------------------------------------------------------
+\usepackage{graphicx}% Include figure files
+\graphicspath{{figure/}}%directory of my plots
+%\usepackage{placeins}
+%-----------------------------------------------------------------------------
+
+\usepackage{ctex}   %  添加中文支持
+
+%\renewcommand{\thefigure}{\thechapter{}.\arabic{figure}}
+%\renewcommand{\thetable}{\thechapter{}.\arabic{table}}
+\renewcommand{\theequation}{\thechapter{}.\arabic{equation}}
+\renewcommand{\figurename}{Fig.}
+\def\figureautorefname{Fig.}
+\renewcommand{\tablename}{Tab.}
+\def\tableautorefname{Tab.}
+\def\equationautorefname{Eq.}
+
+\def\figurename{图}%
+\def\tablename{表}%
+\renewcommand{\theequation}{\thesection.\arabic{equation}}%
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}%
+\renewcommand{\thetable}{\thesection.\arabic{table}}%
+\renewcommand{\baselinestretch}{1.25}
+\baselineskip 19pt \cleardoublepage
+
+%页眉页脚
+%------------------------------------------------------------------------------
+%------页眉页脚------
+\usepackage{fancyhdr}
+%----清除设置----
+\pagestyle{fancyplain}
+\fancyhf{}
+%----清除设置----
+
+%----页眉划线----
+\newcommand{\makeheadrule}{%
+\makebox[0pt][l]{\rule[.7\baselineskip]{\headwidth}{0.8pt}}%
+\rule[0.85\baselineskip]{\headwidth}{1.5pt}\vskip-.8\baselineskip}
+
+\makeatletter
+\renewcommand{\headrule}{%
+{\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi
+\makeheadrule}}
+\makeatother
+%----页眉划线----
+
+%----眉脚内容----
+% ----------页眉----------
+\pagestyle{fancy}
+\fancyhf{}
+\makeatletter
+\chead{\zihao{5}\the\ThesisHeader}% 山东大学硕士学位论文
+\makeatother
+% ----------页脚----------
+%\cfoot{--{~\thepage~}--}  % 页码居中显示
+\fancyfoot[C,C]{\thepage}   % 页码居外侧显示
+%----眉脚内容----
+%------页眉页脚------
+
+%--------目录-------------
+\makeatletter
+\def\@bfdottedtocline#1#2#3#4#5{%
+\ifnum #1>\c@tocdepth \else
+  \vskip \z@ \@plus.2\p@
+  {\leftskip #2\relax \rightskip \@tocrmarg \parfillskip -\rightskip
+   \parindent #2\relax\@afterindenttrue
+   \interlinepenalty\@M
+   \leavevmode \bfseries
+   \@tempdima #3\relax
+   \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
+   {#4}\normalfont\nobreak
+   \leaders\hbox{$\m@th
+      \mkern \@dotsep mu\hbox{.}\mkern \@dotsep
+      mu$}\hfill
+   \nobreak
+   \hb@xt@\@pnumwidth{\hfil\normalfont \normalcolor #5}%
+   \par}%
+\fi}
+\renewcommand*\l@chapter{\@bfdottedtocline{0}{0em}{4em}}
+\renewcommand*\l@section{\@dottedtocline{0}{2em}{2em}}
+\renewcommand*\l@subsection{\@dottedtocline{0}{4em}{3em}}
+\renewcommand*\l@figure{\@dottedtocline{0}{4em}{3em}}
+\renewcommand*\l@table{\@dottedtocline{0}{4em}{3em}}
+\makeatother
+%--------目录-------------
+
+
+%==================================================
+\newcommand{\thesisTitle}{The study of the Chiral Magnetic Effect in Relativistic Heavy Ion Collisions at STAR}
+\newcommand{\yourName}{Zhen Wang}
+%\newcommand{\yourCollege}{College of Physical Science and Technology}
+\newcommand{\yourSchool}{Shandong University}
+\newcommand{\yourYear}{2021}
+\newcommand{\yourMonth}{Jun.}
+
+\newcommand{\npart}{$\langle N_{part} \rangle\, $}
+\newcommand{\sNN}{$\sqrt{s_{\mathrm{NN}}}\, $}
+\newcommand{\sNNerbai}{$\sqrt{s_{\mathrm{NN}}} = $ 200 GeV}
+\newcommand{\sNNwushisi}{$\sqrt{s_{\mathrm{NN}}} = $ 54.4 GeV}
+
+\newcommand{\egy}{$\sqrt{s_{\mathrm{NN}}} =  $ 7.7, 11.5, 14.5, 19.6, 27, 39, 54.4, 62.4 and 200 GeV}
+\newcommand{\egyfive}{$\sqrt{s_{\mathrm{NN}}} = $ 19.6, 27, 39, 62.4 and 200 GeV}
+\newcommand{\egyfxt}{$\sqrt{s_{\mathrm{NN}}} = $ 4.5, 7.7, 11.5, 14.5, 19.6, 27, 39, 54.4, 62.4 and 200 GeV}
+\newcommand{\egycucu}{$\sqrt{s_{\mathrm{NN}}} =  $ 22.4, 62.4 and 200 GeV}
+
+\newcommand{\allSys}{in Au+Au collisions at $\sqrt{s_{\mathrm{NN}}} = 7.7 - $200 GeV, in FXT collisions at $\sqrt{s_{\mathrm{NN}}} =  $ 4.5 GeV and in Cu$+$Cu collisions at $\sqrt{s_{\mathrm{NN}}} =  $ 22.4, 62.4 and 200 GeV\,}
+
+\newcommand{\allpt}{$0.4 < p_{\mathrm{T}} < 2.0 \, (\mathrm{GeV}/c)\,$}
+\newcommand{\lowpt}{$0.4  <p_{\mathrm{T}} < 0.8 \, (\mathrm{GeV}/c)\,$}
+\newcommand{\highpt}{$0.8 < p_{\mathrm{T}} < 2.0 \, (\mathrm{GeV}/c)\,$}
+
+\newcommand{\cum}{$C_1, C_2, C_3$ and $C_4\, $}
+\newcommand{\ratio}{$C_{2}/C_{1}, C_{3}/C_{2}$ and $C_{4}/C_{2}\, $}
+\newcommand{\cumratio}{$C_{1}, C_{2}, C_{3}, C_{4}, C_{2}/C_{1}, C_{3}/C_{2}$ and $C_{4}/C_{2}\, $}
+
+\newcommand{\pt}{$p_{\mathrm{T}}$}
+\newcommand{\dEdx}{$d\mathrm{E}/dx$}
+\newcommand{\MeVc}{$\mathrm{MeV}/c$}
+\newcommand{\GeVc}{$\mathrm{GeV}/c$}
+%\newcommand{\corrfun}{$\kappa_1, \kappa_2, \kappa_3$ and $\kappa_4\, $}
+\newcommand{\corrfun}{$\kappa_{2}/\kappa_{1}, \kappa_{3}/\kappa_{1}$ and $ \kappa_{4}/\kappa_{1}$}
+
+\newcommand{\tofm}{nTofmatch\,}
+\newcommand{\btofm}{Beta\_eta1\,}
+
+\renewcommand{\vec}{\boldsymbol }
+\newcommand{\rap}{Y}
+\newcommand{\qw}{Q_\mathrm{w}}
+\newcommand{\nw}{n_\mathrm{w}}
+\newcommand{\qp}{Q_\mathrm{p}}
+\newcommand{\nt}{N_\mathrm{t}}
+\newcommand{\na}{N_\mathrm{a}}
+\newcommand{\nb}{N_\mathrm{b}}
+\newcommand{\dt}{\Delta_\mathrm{t}}
+
+
+\newcommand{\gevc}{$\mathrm{GeV}/c$}
+\newcommand{\gev}{$\mathrm{GeV}$}
+\newcommand{\rlab}{$r_{\mathrm{lab}}$}
+\newcommand{\rrest}{$r_{\mathrm{rest}}$}
+\newcommand{\rb}{$r_{\mathrm{B}}$}
+\newcommand{\ns}{$n_5/s$}
+\newcommand{\nSigmaE}{$n\sigma_\mathrm{e}$}
+\newcommand{\Mee}{$M_\mathrm{ee}$}
+\newcommand{\Npm}{$N_\mathrm{+-}$}
+\newcommand{\Npp}{$N_\mathrm{++}$}
+\newcommand{\Nmm}{$N_\mathrm{--}$}
+\newcommand{\Bpm}{$B_\mathrm{+-}$}
+\newcommand{\Bpp}{$B_\mathrm{++}$}
+\newcommand{\Bmm}{$B_\mathrm{--}$}
+\newcommand{\PhiV}{$\phi_{V}$}
+\newcommand{\Vz}{$V_{z}$}
+\newcommand{\eplus}{$e^{+}$}
+\newcommand{\eminus}{$e^{-}$}
+\newcommand{\piplus}{$\pi^{+}$}
+\newcommand{\piminus}{$\pi^{-}$}
+\newcommand{\muon}{$\mu$子}
+\newcommand{\mum}{${\rm \mu m}$}
+
+\newcommand{\TPC}{时间投影室}
+\newcommand{\TOF}{飞行时间探测器}
+
+\input{Chapter/Zhen/cover}
+% \input{Chapter/Zhen/usersettings}
+
+%---------------------------------------------------------------------------------------------
+%=======================================================
+\graphicspath{{figures/}}
+
+
+\begin{document}
+\date{} 
+%论文扉页和原创性声明和关于学位论文使用授权的说明
+\maketitlepagestatement
+%=======================================================
+
+\newpage
+%摘要
+\pagenumbering{roman}
+%=======================================================
+%---------------------------------------------------------------------------------------------
+%=======================================================
+%   Abstract 
+\include{Chapter/Zhen/Abstract_Cc}
+\include{Chapter/Zhen/Abstract_Ec}
+% \dottedcontents{Chapter}[2em]{\normalsize}{3.0em}{4pt}
+% \dottedcontents{section}[2em]{\normalsize}{3.0em}{4pt}
+% \dottedcontents{subsection}[2em]{\normalsize}{3.0em}{4pt}
+
+\tableofcontents
+\renewcommand{\tableofcontents}{Contents}
+
+\listoffigures
+\renewcommand{\listoffigures}{Figures}
+\listoftables
+
+
+% %=======================================================
+
+% %-------------------------------------------------------------------------------
+% %====================================
+\newpage
+\pagenumbering{arabic} \setcounter{page}{1}
+\input{Chapter/Zhen/Chapter1} \cleardoublepage % each chapter begin with an odd number
+\input{Chapter/Zhen/Chapter2} \cleardoublepage 
+\input{Chapter/Zhen/Chapter4} \cleardoublepage 
+\input{Chapter/Zhen/Chapter3} \cleardoublepage 
+\input{Chapter/Zhen/Chapter5} \cleardoublepage 
+
+
+% \input{Chapter/Zhen/Acknowledgements} \cleardoublepage 
+
+
+% \bibliographystyle{unsrt}
+%\bibliographystyle{elsarticle-num}
+% \bibliography{refs.bib}\cleardoublepage 
+
+
+%=======================================================
+%---------------------------------------------------------------------------------------------
+%=======================================================
+% \include{Chapter/publications}\cleardoublepage 
+% \include{Chapter/acknowledge}\cleardoublepage 
+
+%=======================================================
+%---------------------------------------------------------------------------------------------
+%=======================================================
+
+
+% \include{Chapter/Appendix}\cleardoublepage 
+%\include{Chapter/AppendixB}\cleardoublepage 
+
+
+\addcontentsline{toc}{chapter}{Appendix}
+\setcounter{section}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{equation}{0}
+  
+\renewcommand{\thesection}{\Alph{section}}
+\renewcommand{\theequation}{\Alph{section}.\arabic{equation}}
+\renewcommand{\thefigure}{\Alph{section}.\arabic{figure}}
+\renewcommand{\thetable}{\Alph{section}.\arabic{table}}
+
+\end{document}
+
+
