@@ -2,15 +2,15 @@
 
 \subsubsection{超净室测试}
 
-在STAR的超净室中，首先进行的是电子学测试。在2019年的时候，sTGC使用的是和STAR的时间投影室相同的前端电子学(TPX 电子学)。此电子学为波形取样型读出，可以将波形沿着时间分成每25ns一个的time bin，在每个time bin当中将在此time bin当中收集到的电荷信号转换成数字信号(ADC)读出。图\ref{fig:TPXChannel}为TPX电子学读出时一个通道的信号读出形式。
+在STAR的超净室中，首先进行的是电子学测试。在2019年的时候，sTGC使用的是和STAR的时间投影室相同的前端电子学(TPX 电子学)。此电子学为波形取样型读出，可以将波形沿着时间分成每100 ns一个的time bin，在每个time bin当中将在此time bin当中收集到的电荷信号转换成数字信号(ADC)读出。图\ref{fig:TPXChannel}为TPX电子学读出时一个通道的信号读出形式。
 \begin{figure}[htb]
     \begin{center}
     \includegraphics[width=0.7\textwidth,clip]{figures/Chapter3/TPXChannel.png}
     \end{center}
-    \caption[TPX电子学单个channel信号读出分布]{TPX电子学单个channel信号读出分布，横轴为time bin，每个time bin时间长度为25ns。纵轴为对应time bin读出的ADC的值}
+    \caption[TPX电子学单个channel信号读出分布]{TPX电子学单个channel信号读出分布，横轴为time bin，每个time bin时间长度为100 ns。纵轴为对应time bin读出的ADC的值}
     \label{fig:TPXChannel}
 \end{figure}
-整个探测器的触发使用三块闪烁体作为触发系统。触发系统的设置如图\ref{fig:sTGC_Trigger_CR}所示。两个小闪烁体(8cm $*$ 16cm)紧贴探测器放置在小原型机的上下两侧，另一块较大的闪烁体(23cm $*$ 51cm)放置在探测器测试所用平台的下方，三个闪烁体末端接光电倍增管并且通过信号线将其连入信号甄别器，再联入符合单元。当宇宙线穿过闪烁体产生信号被光电倍增管收集到并传入信号甄别器以后，信号甄别器将其转换成负电压的方波信号。每个闪烁体的信号在经过信号甄别器后再被引入符合单元当中，当三个经过信号甄别器的信号被同时引入符合单元的时候符合单元输出一个信号进入trigger board当中，触发探测器电子学采集信号。在此设置之下宇宙线的触发频率大约为30 event/min。
+整个探测器的触发使用三块闪烁体作为触发系统。触发系统的设置如图\ref{fig:sTGC_Trigger_CR}所示。两个小闪烁体(8cm $*$ 16cm)紧贴探测器放置在小原型机的上下两侧，另一块较大的闪烁体(23cm $*$ 51cm)放置在探测器测试所用平台的下方，三个闪烁体末端接光电倍增管并且通过信号线将其连入信号甄别器，再联入符合单元。当宇宙线穿过闪烁体产生信号被光电倍增管收集到并传入信号甄别器以后，信号甄别器将其转换成标准NIM信号。每个闪烁体的信号在经过信号甄别器后再被引入符合单元当中，当三个经过信号甄别器的信号被同时引入符合单元的时候符合单元输出一个信号进入trigger board当中，触发探测器电子学采集信号。在此设置之下宇宙线的触发频率大约为30 event/min。
 \begin{figure}[htb]
     \begin{center}
     \includegraphics[width=0.7\textwidth,clip]{figures/Chapter3/TiggerCarton.png}
@@ -21,7 +21,7 @@
 
 在2019年6月之前的测试当中，工作气体为C10，两个室高压均为1425V。在前期测试当中，首先利用丝端读出来验证是否探测器是否可以成功地采集信号。当可以通过丝端读出宇宙线的脉冲信号之后，整个探测器和电子学被接入到数据采集系统(Data Acquisition system, DAQ)当中进行取数。原始的.sfs文件经过解码后得到STAR标准的.daq文件，再通过STAR库中的bfc.C和StRoot中与sTGC相关的maker保存成为常用的ROOT文件格式。
 
-在得到数据之后首先要完成的是数据中的通道和探测器当中实际的每个读出条的对应工作，即map的编写。在山大的小原型机测试中此工作已经完成，只需要将整理得到的文件写成头文件整合到z相关的maker当中去即可。对于19年测试使用的TPX电子学，每个前端电子学板(Front End Electronic Card, FEE Card)上共有两个ALTRO芯片，每个ALTRO芯片上共有16个通道(Channel)，每个通道和一个读出条相连接。而不同的前端电子学板上的ALTRO芯片读出时的编号随着前端电子学板的编号变化而变化，这样我们就可以根据电子学读出时的ALTRO芯片编号和通道编号得到唯一对应的读出条编号。示意图见\ref{fig:TPX_map}。从而确定每个信号对应的空间位置来进行之后的效率分析。同时在大原型机和最后的前向窄隙室经济探测器中cluster的重建也需要map，因为后期sTGC的电子学更换为VMM电子学，所以map的对应方式也发生了一些改变。在之后会进行介绍。
+在得到数据之后首先要完成的是电子学通道和探测器通道物理连接的对应工作，即map的编写。在山大的小原型机测试中此工作已经完成，只需要将整理得到的文件写成头文件整合到相关的maker当中去即可。对于19年测试使用的TPX电子学，每个前端电子学板(Front End Electronic Card, FEE Card)上共有两个ALTRO芯片，每个ALTRO芯片上共有16个通道(Channel)，每个通道和一个读出条相连接。而不同的前端电子学板上的ALTRO芯片读出时的编号随着前端电子学板的编号变化而变化，这样我们就可以根据电子学读出时的ALTRO芯片编号和通道编号得到唯一对应的读出条编号。示意图见\ref{fig:TPX_map}。从而确定每个信号对应的空间位置来进行之后的效率分析。同时在大原型机和最后的前向窄隙室经济探测器中cluster的重建也需要map，因为后期sTGC的电子学更换为VMM电子学，所以map的对应方式也发生了一些改变。在之后会进行介绍。
 \begin{figure}[htb]
     \begin{center}
     \includegraphics[width=0.7\textwidth,clip]{figures/Chapter3/TPX_map.png}
@@ -32,7 +32,7 @@
 
 当电子学正确设置并且可以读出信号之后，接下来的任务就是信号挑选和测试小原型机在C10气体下的效率表现。当工作气体为C10的时候，工作高压在1450V附近，当继续加高电压的时候会发生打火现象影响测试。
 
-首先需要确定探测器的噪声水平，即当电子学接入探测器但探测器高压为0V时电子学可以读到的ADC分布。在此种情况下读到的ADC即为整个探测器和电子学在空负载情况下的噪声水平。因为需要接收宇宙线信号，整个小原型机水平放置，很自然地两个窄隙室被分别称为 top chamber 和 bottom chamber。两个窄隙室在0V下的噪音水平如图\ref{fig:ADC_Distribution_0V}所示。top chamber 和 bottom chamber的噪音水平分别为15ADC 和 20ADC。这两个噪音水平将会作为pedestal参与分析。但在2019年6月最开始的数据分析当中，为了对探测器效率有初步概念，pedestal取得相对较为宽松，两个室均为10ADC。
+首先需要确定探测器的噪声水平，即当电子学接入探测器但探测器高压为0V时电子学可以读到的ADC分布。在此种情况下读到的ADC即为整个探测器和电子学在空负载情况下的噪声水平。因为需要接收宇宙线信号，整个小原型机水平放置，很自然地两个窄隙室被分别称为 top chamber 和 bottom chamber。两个窄隙室在0V下的噪音水平如图\ref{fig:ADC_Distribution_0V}所示。top chamber 和 bottom chamber的噪音水平分别为15ADC 和 20ADC。这两个噪音水平将会作为pedestal参与分析。但在2019年6月最开始的数据分析当中，为了对探测器效率有初步概念，pedestal的选取相对来说较为宽松，两个室均为10 ADC。
 \begin{figure}[htb]
     \begin{center}
     \includegraphics[width=0.7\textwidth,clip]{figures/Chapter3/ADC_Distribution_0V.png}
@@ -110,7 +110,7 @@
         \hline
     \end{tabularx}
 \end{table}
-在不同流速下的效率测试结果显示不论是C10还是正戊烷作为工作气体，探测器的效率都没有发生明显的改变，结果如图\ref{fig:GasFlow}所示。证明探测器可以在不同的气体流速下稳定工作。同时可以看到，当正戊烷作为工作气体的时候探测器可以达到很高的探测效率，99约\%，符合探测器设计时的高效率的要求。
+在不同流速下的效率测试结果显示不论是C10还是正戊烷作为工作气体，探测器的效率都没有发生明显的改变，结果如图\ref{fig:GasFlow}所示。证明探测器可以在不同的气体流速下稳定工作。同时可以看到，当正戊烷作为工作气体的时候探测器可以达到很高的探测效率，约99\%，符合探测器设计时的高效率的要求。
 \begin{figure}[htb]
     \begin{center}
     \includegraphics[width=0.9\textwidth,clip]{figures/Chapter3/GasFlow.png}
@@ -119,7 +119,7 @@
     \label{fig:GasFlow}
 \end{figure}
 
-根据参考文献[]，在相同的气压下正戊烷的在混合气体当中所占的百分比和温度正相关，因为气体混合系统并不是完美的混合系统，气体的温度或者组分会在一定范围内浮动，所以我们也需要测试当正戊烷在不同的温度情况下的探测效率表现。测试时气体流速固定均为80 cc/min，信号判选条件以及高压和流速测试时判选条件相同。测试结果如图\ref{fig:Temperature}所示。可以看到当温度在${\rm 15^{\circ}C}$ 至 ${\rm 19^{\circ}C}$的范围内浮动时整个探测器都可以保持很高的探测效率，工作状况稳定，在目标的温度范围内探测器可以稳定工作。
+根据参考文献[]，在相同的气压下正戊烷在混合气体当中所占的百分比和温度正相关，因为气体混合系统并不是完美的混合系统，气体的温度或者组分会在一定范围内浮动，所以我们也需要测试当正戊烷在不同的温度情况下的探测效率表现。测试时气体流速固定均为80 cc/min，信号判选条件以及高压和流速测试时判选条件相同。测试结果如图\ref{fig:Temperature}所示。可以看到当温度在${\rm 15^{\circ}C}$ 至 ${\rm 19^{\circ}C}$的范围内浮动时整个探测器都可以保持很高的探测效率，工作状况稳定，在目标的温度范围内探测器可以稳定工作。
 \begin{figure}[htb]
     \begin{center}
     \includegraphics[width=0.75\textwidth,clip]{figures/Chapter3/Temperature.png}

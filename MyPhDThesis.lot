@@ -1,23 +1,50 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
 \addvspace {10.0pt}
+\defcounter {refsection}{0}\relax 
 \addvspace {10.0pt}
+\defcounter {refsection}{0}\relax 
 \addvspace {10.0pt}
-\contentsline {table}{\numberline {3.3.1}{\ignorespaces 小原型机BNL本地测试第一个宇宙线run效率测试结果\relax }}{36}{table.3.1}%
-\contentsline {table}{\numberline {3.3.2}{\ignorespaces 气体流速测试宇宙线信号挑选判选条件\relax }}{36}{table.3.2}%
-\contentsline {table}{\numberline {3.3.3}{\ignorespaces 不同工作气体小原型机效率测试结果\relax }}{38}{table.3.3}%
-\contentsline {table}{\numberline {3.3.4}{\ignorespaces 束流测试中高压扫描信号判选条件\relax }}{38}{table.3.4}%
-\contentsline {table}{\numberline {3.3.5}{\ignorespaces 大原型机插口号和读出条行号对应关系\relax }}{40}{table.3.5}%
-\contentsline {table}{\numberline {3.3.6}{\ignorespaces SY5527漏电流测试设置\relax }}{43}{table.3.6}%
-\contentsline {table}{\numberline {3.4.7}{\ignorespaces sTGC位于不同象限的模组局部坐标到全局坐标的转换关系\relax }}{50}{table.3.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3.3.1}{\ignorespaces 小原型机BNL本地测试第一个宇宙线run效率测试结果\relax }}{38}{table.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3.3.2}{\ignorespaces 气体流速测试宇宙线信号挑选判选条件\relax }}{38}{table.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3.3.3}{\ignorespaces 不同工作气体小原型机效率测试结果\relax }}{40}{table.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3.3.4}{\ignorespaces 束流测试中高压扫描信号判选条件\relax }}{40}{table.3.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3.3.5}{\ignorespaces 大原型机插口号和读出条行号对应关系\relax }}{42}{table.3.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3.3.6}{\ignorespaces SY5527漏电流测试设置\relax }}{45}{table.3.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3.4.7}{\ignorespaces sTGC位于不同象限的模组局部坐标到全局坐标的转换关系\relax }}{52}{table.3.7}%
+\defcounter {refsection}{0}\relax 
 \addvspace {10.0pt}
-\contentsline {table}{\numberline {4.1.1}{\ignorespaces 不同中心度带电粒子多重数范围\relax }}{53}{table.4.1}%
-\contentsline {table}{\numberline {4.1.2}{\ignorespaces 事例判选条件\relax }}{53}{table.4.2}%
-\contentsline {table}{\numberline {4.2.3}{\ignorespaces 径迹质量和电子鉴别（eID）判选条件\relax }}{54}{table.4.3}%
-\contentsline {table}{\numberline {4.5.4}{\ignorespaces 54.4GeV金-金对撞中不同中心度下Tsallis Blast-Wave模型参数的值\relax }}{63}{table.4.4}%
-\contentsline {table}{\numberline {4.5.5}{\ignorespaces 各个介子电磁形状因子斜率的值\relax }}{64}{table.4.5}%
-\contentsline {table}{\numberline {4.5.6}{\ignorespaces 不同介子和$pi^0$截面的比值\relax }}{65}{table.4.6}%
-\contentsline {table}{\numberline {4.5.7}{\ignorespaces $\sqrt {s_{\mathrm {NN}}}\tmspace +\thinmuskip {.1667em} $= 54.4 GeV 金-金对撞中不同中心度下$\pi ^+$和$\pi ^-$产额的值\relax }}{66}{table.4.7}%
-\contentsline {table}{\numberline {4.5.8}{\ignorespaces 54.4GeV金-金对撞中不同中心度介子产额归一化的值\relax }}{67}{table.4.8}%
-\contentsline {table}{\numberline {4.5.9}{\ignorespaces $\sqrt {s_{\mathrm {NN}}}\tmspace +\thinmuskip {.1667em} $= 54.4 GeV 金-金对撞中不同中心度下$N_{bin}$的值\relax }}{67}{table.4.9}%
-\contentsline {table}{\numberline {4.5.10}{\ignorespaces $\sqrt {s_{\mathrm {NN}}}\tmspace +\thinmuskip {.1667em} $= 54.4 GeV 金-金对撞中不同中心度下a的值\relax }}{70}{table.4.10}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.1.1}{\ignorespaces 不同中心度带电粒子多重数范围\relax }}{55}{table.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.1.2}{\ignorespaces 事例判选条件\relax }}{56}{table.4.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.2.3}{\ignorespaces 径迹质量和电子鉴别（eID）判选条件\relax }}{56}{table.4.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.2.4}{\ignorespaces 选取纯$\rm {\pi /k/p}$样本时的质量判选条件\relax }}{58}{table.4.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.6.5}{\ignorespaces 54.4GeV金-金对撞中不同中心度下Tsallis Blast-Wave模型参数的值\relax }}{71}{table.4.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.6.6}{\ignorespaces 各强子电磁形状因子斜率的值\relax }}{72}{table.4.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.6.7}{\ignorespaces 不同强子截面和$pi^0$截面的比值\relax }}{73}{table.4.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.6.8}{\ignorespaces $\sqrt {s_{\mathrm {NN}}}\tmspace +\thinmuskip {.1667em} $= 54.4 GeV 金-金对撞中不同中心度下$\pi ^+$和$\pi ^-$产额的值\relax }}{73}{table.4.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.6.9}{\ignorespaces 54.4GeV金-金对撞中不同中心度下式\ref {eq:float_meson}中拟合参数的拟合结果\relax }}{74}{table.4.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.6.10}{\ignorespaces $\sqrt {s_{\mathrm {NN}}}\tmspace +\thinmuskip {.1667em} $= 54.4 GeV 金-金对撞中不同中心度下$N_{bin}$的值\relax }}{75}{table.4.10}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.6.11}{\ignorespaces $\sqrt {s_{\mathrm {NN}}}\tmspace +\thinmuskip {.1667em} $= 54.4 GeV 金-金对撞中不同中心度下a的值\relax }}{77}{table.4.11}%
+\defcounter {refsection}{0}\relax 
 \addvspace {10.0pt}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.0.1}{\ignorespaces 54.4GeV金-金对撞中不同中心度下不同拟合方式抽取得到的温度的值\relax }}{82}{table.5.1}%
 \contentsfinish 

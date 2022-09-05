@@ -5,7 +5,9 @@
 \documentclass[a4paper, twoside,12pt]{ctexbook}%{report}
 \usepackage[utf8]{inputenc}
 \usepackage{indentfirst}
-\setlength{\parindent}{2em}
+% \setlength{\parindent}{0em}
+\setlength{\parindent}{2em}%段首缩进
+\setlength{\parskip}{0em}%段间距
 \usepackage{pdfpages}
 \usepackage{float}
 \usepackage{longtable}
@@ -83,10 +85,11 @@
 %\usepackage{extarrows}
 \usepackage{enumerate}
 %-----------------------------------------------------------------
+% \usepackage{biblatex}
 \usepackage{url}
-\usepackage{cite}
+% \usepackage{cite}
 \usepackage[colorlinks, linkcolor=blue, anchorcolor=blue, urlcolor=blue, citecolor=blue, breaklinks=true]{hyperref} 
-\usepackage[square, numbers, sort&compress]{natbib} % 上标，加中括号，编号，将8，9，10改为8-10
+% \usepackage[square, numbers, sort&compress]{natbib} % 上标，加中括号，编号，将8，9，10改为8-10
 \usepackage[hypcap=false]{caption}
 
 %----------------------------------------------------------------------------
@@ -258,6 +261,14 @@
 %=======================================================
 \graphicspath{{figures/}}
 
+% \addbibsource{refs.bib}
+% \addglobalbib{refs.bib}
+% \bibliographystyle{unsrt}
+
+% \renewcommand{\bibname}{参考文献}
+\usepackage[backend=biber, style=numeric-comp, sorting=none]{biblatex}
+\defbibheading{bibliography}[\bibname]{\center\xiaoer\fzbHei 参考文献}
+\addbibresource{bib/ref.bib}
 
 \begin{document}
 \date{} 
@@ -297,15 +308,20 @@
 \input{Chapter/Zhen/Chapter4} \cleardoublepage 
 \input{Chapter/Zhen/Chapter3} \cleardoublepage 
 \input{Chapter/Zhen/Chapter5} \cleardoublepage 
+\input{Chapter/Zhen/Chapter6} \cleardoublepage 
 
 
 % \input{Chapter/Zhen/Acknowledgements} \cleardoublepage 
 
 
-% \bibliographystyle{unsrt}
+\printbibliography
 %\bibliographystyle{elsarticle-num}
-% \bibliography{refs.bib}\cleardoublepage 
+% \addbibsource{refs.bib}
+% \addglobalbib{refs.bib}
 
+% \bibliographystyle{unsrt}
+% \bibliography{bib/refs}
+% \bibliography{bib/ref}
 
 %=======================================================
 %---------------------------------------------------------------------------------------------

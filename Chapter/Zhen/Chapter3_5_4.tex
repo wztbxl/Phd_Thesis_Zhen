@@ -1,7 +1,11 @@
 \subsection{Drell-Yan 过程}
+当对撞的质心能量降低的时候，Drell-Yan过程产生的双电子产额和由璨夸克产生的双电子产额处在同一个数量级。所以在模拟过程中不能忽略来自于Drell-Yan过程的双电子。在进行归一化时所用到的归一化公式和璨夸克模拟的模拟时所用到的类似。Drell-Yan过程的模拟也面临着和璨夸克模拟时类似的问题，缺少截面$\sigma_{DY}$的测量。
 
-在对撞质心能量较低的情况下，来自于Drell-Yan过程的双轻子产额和来自于c夸克的双轻子产额处在同一个量级，所以并不能忽略来自于Drell-Yan过程的双轻子产额。同样，在低能的情况下没有对Drell-Yan过程的截面的测量，在本分析当中仍然需要外推Drell-Yan过程的截面。在STAR \sNN = 19.6 GeV的分析当中，也引入了Drell-Yan过程的贡献，其截面采用的是参考文献[]当中的测量结果。这个截面的值和PYTHIA6当中给出的截面的值的比值作为修正因子来修正PYTHIA6中的截面的真实情况下Drell-Yan过程的截面的差别，从而外推\sNN = 54.4 GeV下的Drell-Yan过程的截面。外推公式和结果如式\ref{eq:DY}所示。
+在STAR之前的双电子谱测量当中，\sNN = 19.6 GeV的测量能量与本分析接近且在其强子衰变模拟中包含了Drell-Yan过程，其中$\sigma_{DY}$为 9.88 nb\cite{STAR:2015zal}。而在Pythia当中，默认的\sNN = 19.6 GeV下的$\sigma_{DY}$为13.44 nb。这两个值之间的比值被用作修正因子来修正\sNN = 54.4 GeV Pythia默认的$\sigma_{DY}$的值来外推得到\sNN = 54.4 GeV中的$\sigma_{DY}$。外推公式和结果如式\ref{eq:DY}所示。
 \begin{equation}
     \label{eq:DY}
-    \sigma_{DY} = \sigma_{DY}^{PYTHIA6}*\frac{\sigma_{DY}^{19.6~GeV~papaer}}{\sigma_{DY}^{19.6~GeV~PYTHIA6}} = 19.25nb, ~~ \sigma_{DY}^{54.4~GeV~PYTHIA6} = 26.19 nb
+    \begin{split}
+        \rm{ \sigma_{DY} = \sigma_{DY}^{Pythia}*\frac{\sigma_{DY}^{19.6~GeV~papaer}}{\sigma_{DY}^{19.6~GeV~Pythia}} = 19.25 nb } \\
+        \rm{  \sigma_{DY}^{54.4~GeV~Pythia} = 26.19 nb }
+    \end{split}
 \end{equation}

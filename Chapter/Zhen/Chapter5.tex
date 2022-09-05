@@ -7,12 +7,54 @@
 \setcounter{table}{0}
 \setcounter{equation}{0}
 
-\chapter{总结与展望}
-% To add a non numbered chapter
+\chapter{结果讨论}
+% To add a non-numbered chapter
 %\addcontentsline{toc}{第一章}{相对论重离子碰撞}
 % To insert this section on the table of contents
 
-当对双电子谱进行完修正并且扣除掉强子衰变模拟的贡献以后，我们就可以得到本分析的最主要的物理测量目标——双电子的额外产额，其主要是由两部分构成，受介质影响的$\rho$介子谱和来自于QGP热辐射的双电子。
+在前文中提到，在本分析当中感兴趣的主要是受介质影响的$\rho$介子质量谱和来自于夸克胶子等离子体热辐射的双电子。这两部分的产额并没有添加到强子衰变模拟当中，这就意味着如果从数据中扣除强子衰变模拟的结果。所剩下的即为我们感兴趣的不便质量谱——双电子额外产额谱。
 
-\input{Chapter/Zhen/Chapter3_6_1}
-\input{Chapter/Zhen/Chapter3_6_2}
+图\ref{fig:Hm_fullCorr_vsCKTs_54GeV_icent0}为0-80\%中心度下经过效率修正和探测器接收度修正后的双电子谱和经过探测器接收度修正强子衰变模拟结果比较。可以很明显地看到，在低质量区间和中等质量区间数据点要高于强子衰变模拟的结果。这就意味着相比于STAR之前的双电子谱测量，\sNN = 54.4 GeV的测量是一个很好的研究来源于夸克胶子等离子体热辐射的双电子谱的机会。并且在STAR的束流能量扫描二阶段(Beam Energy Scan Phase II, BES-II)项目当中，STAR于2019年取了高统计量的\sNN = 27 GeV金-金对撞的数据。因为其与本分析当中的束流对撞质心能量接近，在最后的讨论中\sNN = 27 GeV的结果会和\sNN = 54.4 GeV的结果一起进行讨论。在接下来的几个小节当中将会对不同的物理区间当中的结果分别进行讨论。
+
+\begin{figure}[htb]
+    \begin{center}
+    \includegraphics[width=0.75\textwidth,clip]{figures/Chapter4/Hm_fullCorr_vsCKTs_54GeV_icent0.pdf}
+    \end{center}
+    \caption[\sNN = 54.4 GeV金-金对撞当中0-80\%中心度下双电子谱和强子衰变模拟结果比较]{\sNN = 54.4 GeV金-金对撞当中0-80\%中心度下双电子谱和强子衰变模拟结果比较，强子衰变模拟的不同分量在图中用不同形式的线和填充进行标记}
+    \label{fig:Hm_fullCorr_vsCKTs_54GeV_icent0}
+\end{figure}
+
+% 在得到双轻子额外产额谱之后，我们可以通过拟合的方法来获取系统的温度。本分析中用了不同的拟合方法来对温度进行抽取。拟合方程分别为 (a)$f(M_{ll}) = (a*BW+b*M^{3/2})*e^{-M/T}$和(b)$f(M_{ll}) = b*M^{3/2}*e^{-m/T}$。不同的拟合方法的到的结果物理意义也不尽相同，具体情况会在本章节中进行讨论。所有的拟合结果如图\ref{fig:Excess_fit}所示，拟合得到的温度参数被列在表\ref{tab:T_fitting_result}当中。
+
+% \begin{figure}[htb]
+%     \begin{center}
+%     \includegraphics[width=0.75\textwidth,clip]{figures/Chapter4/Excess_fit.pdf}
+%     \end{center}
+%     \caption[\sNN = 54.4 GeV金-金对撞当中不同中心度下双电子额外产额谱及拟合结果示意图]{\sNN = 54.4 GeV金-金对撞当中不同中心度下双电子额外产额谱及拟合结果示意图，采用的拟合区间和拟合方程在图中进行标示，方程的具体形式见式\ref{}和\ref{}}
+%     \label{fig:Excess_fit}
+% \end{figure}
+
+% \begin{table}[h!]
+%     \centering
+%     \caption{54.4GeV金-金对撞中不同中心度下不同拟合方式抽取得到的温度的值}
+%     \label{tab:T_fitting_result}
+%     \begin{tabularx}{1\textwidth} {
+%     | >{\centering\arraybackslash}X |>{\centering\arraybackslash}X |>{\centering\arraybackslash}X |>{\centering\arraybackslash}X |>{\centering\arraybackslash}X | }
+%         \hline
+%         Centrality & fit function : (a), LMR  & fit function : (a), FMR & fit function : (b), IMR & fit function : (b), FMR   \\
+%         \hline
+%         0-80\%  & $175.4 \pm 15.4$ & $199.3 \pm 18.3$ & $338.7 \pm 58.8$ & $188.4 \pm 10.1$  \\
+%         \hline
+%         0-10\%  & $182.2 \pm 31.2$ & $204.4 \pm 34.5$ & $371.9 \pm 123.3$ & $199.6 \pm 23.5$ \\
+%         \hline
+%         10-40\% & $175.8 \pm 17.1$ & $199.7 \pm 19.3$ & $320.9 \pm 59.9$ & $192.8 \pm 11.8$ \\
+%         \hline
+%         40-80\% & $197.6 \pm 13.6$ & $190.3 \pm 12.7$ & $336.0 \pm 55.6$ & $192.6 \pm 7.8$ \\
+%         \hline
+%     \end{tabularx}
+% \end{table}
+
+\input{Chapter/Zhen/Chapter5_1}
+\input{Chapter/Zhen/Chapter5_2}
+\input{Chapter/Zhen/Chapter5_3}
+\input{Chapter/Zhen/Chapter5_4}

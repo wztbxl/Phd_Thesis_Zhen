@@ -1,6 +1,15 @@
 \section{强子衰变模拟}
 \label{ch:cocktail}
-我们所测量得到的双电子谱的主要来源是各种强子的衰变和重味夸克半轻子衰变，来源于这些过程的双轻子产额可以通过模拟的方式进行研究。因为可以得到双轻子的过程很多又需要最后将各种来源的双轻子累加在一起和最后的双电子谱进行比较，和调制鸡尾酒的方式相似，所以这个过程被称作"hadronic cocktail"。在本节当中，会对强子衰变模拟的模拟方式和模拟过程中需要注意的细节进行讨论。
+在本分析当中测量双电子谱时并没有对物理过程进行具体的挑选，最后所得到的双电子谱是多个物理过程的双电子谱叠加所的到的谱。此分析当中我们感兴趣的物理过程是$\rho$介子的质量谱和直接来自于夸克胶子等离子体热辐射的双电子谱。相对于这两个过程而言，来源于其他过程的双电子谱在本分析当中被我们视为背景过程。为了能从总的双电子谱中抽取来自于感兴趣的物理过程的双电子谱，在本分析中所用到的方法是通过模拟的方法得到来自于背景过程的双电子谱，再将这些来自于背景过程双电子模拟谱从测量得到的双电子谱中扣除。所剩的即为感兴趣的物理过程的双电子谱。这个对背景过程的模拟就是强子衰变模拟。因为所需模拟的过程很多并且最后会加在一起，就像调制鸡尾酒一般，所以又叫做hadronic cocktail。
+
+背景过程主要有有以下几种：
+\begin{itemize}
+    \item 强子两体衰变，如$\omega \rightarrow e^+e^-$,$\phi \rightarrow e^+e^-$,$J/\psi \rightarrow e^+e^-$。
+    \item 强子三体衰变(Dalitz decay)，如$\pi^0 \rightarrow \gamma e^+e^-$,$\eta \rightarrow \gamma e^+e^-$,$\eta^\prime \rightarrow \gamma e^+e^-$,$\omega \rightarrow \gamma e^+e^-$,$\phi \rightarrow \gamma e^+e^-$
+    \item 重味夸克半轻子衰变，如$c\bar{c} \rightarrow e^+e^-+X$
+    \item Drell-Yan过程
+\end{itemize}
+在接下来的几个小节里面会对这些不同的过程的模拟方式进行具体的讨论。
 
 \input{Chapter/Zhen/Chapter3_5_1}
 \input{Chapter/Zhen/Chapter3_5_2}
